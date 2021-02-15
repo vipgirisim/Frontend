@@ -1,6 +1,9 @@
 import http from "./http-common";
-const API_URL = 'https://vipfal.herokuapp.com/api/';
+const API_URL = 'https://vipfal.herokuapp.com/admin/';
 
+const cors = require("cors");
+var router = require("express").Router();
+router.use(cors(corsOptions))
 
 class TutorialDataService {
    
