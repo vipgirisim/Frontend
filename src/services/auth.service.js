@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://vipfal.herokuapp.com/api/auth/";
+const API_URL = "https://vipfal.herokuapp.com/auth/";
 
 class AuthService {
   login(username, password) {
