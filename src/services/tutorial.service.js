@@ -1,12 +1,35 @@
 import http from "./http-common";
+const API_URL = 'https://vipfal.herokuapp.com/api/';
+
 
 class TutorialDataService {
+   
   getAll() {
-    return http.get("/tutorials");
+    const axios = require('axios');
+    let config = {
+      method: 'get',
+      url: '/tutorials',
+      headers: {}
+    }; 
+    return axios(config);
   }
 
-  get(id) {
-    return http.get(`/tutorials/${id}`);
+
+
+ get(id) {
+    const axios = require('axios');
+    let config = {
+      method: 'post',
+      url: '/tutorials/${id}',
+      headers: {}
+    }; 
+    return axios(config);
+  }
+
+
+
+  {
+    return http.get(``);
   }
 
   create(data) {
