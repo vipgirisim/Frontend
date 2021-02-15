@@ -20,7 +20,7 @@ class TutorialDataService {
     const axios = require('axios');
     let config = {
       method: 'post',
-      url: '/tutorials/${id}',
+      url: '/tutorials/'+{id},
       headers: {}
     }; 
     return axios(config);
