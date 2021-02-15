@@ -1,35 +1,13 @@
 import http from "./http-common";
-const API_URL = 'https://vipfal.herokuapp.com/admin/';
-
-const cors = require("cors");
-var router = require("express").Router();
-router.use(cors(corsOptions))
 
 class TutorialDataService {
-   
   getAll() {
-    const axios = require('axios');
-    let config = {
-      method: 'get',
-      url: '/tutorials',
-      headers: {}
-    }; 
-    return axios(config);
+    return http.get("/tutorials");
   }
 
-
-
- get(id) {
-    const axios = require('axios');
-    let config = {
-      method: 'post',
-      url: '/tutorials/'+{id},
-      headers: {}
-    }; 
-    return axios(config);
+  get(id) {
+    return http.get(`/tutorials/${id}`);
   }
-
- 
 
   create(data) {
     return http.post("/tutorials", data);
