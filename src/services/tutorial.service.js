@@ -26,11 +26,7 @@ class TutorialDataService {
     return axios(config);
   }
 
-
-
-  {
-    return http.get(``);
-  }
+ 
 
   create(data) {
     return http.post("/tutorials", data);
