@@ -164,7 +164,7 @@ export default class TutorialsList extends Component {
               </div>
 
               <Link
-                to={"/tutorials/" + currentTutorial.id}
+                to={"/admin/" + currentTutorial.id}
                 className="badge badge-warning"
               >
                 düzenle

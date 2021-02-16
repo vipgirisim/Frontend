@@ -85,11 +85,11 @@ export default class BoardAdmin extends Component {
           <h3> <h3>Duyuru  Paneli</h3></h3>
           <header className="jumbotron">
            
-         
+            <AddTutorial/>
+          <TutorialList/>
  
           </header>
-          <AddTutorial/>
-          <TutorialList/>
+       
         </div>
 
        </div>
