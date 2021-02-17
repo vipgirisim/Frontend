@@ -1,6 +1,6 @@
 import React , { Component} from 'react';
-import "../../components/navbar/Navbar.css";
-import avatar from "../../assets/avatar.svg";
+import "../../src/components/navbar/Navbar.css";
+import avatar from "../../src/assets/img/anime3.png";
 
 const Navbar = ({ sidebarOpen, openSidebar }) => {
   return (
