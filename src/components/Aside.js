@@ -12,20 +12,14 @@ import {
 import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
 import sidebarBg from '../assets/bg1.jpg';
 
-const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
+const Aside = ({toggled, handleToggleSidebar }) => {
   const intl = useIntl();
   return (
-    <ProSidebar
-      image={image ? sidebarBg : false}
-      rtl={rtl}
-      collapsed={collapsed}
+    <ProSidebar 
       toggled={toggled}
       breakPoint="md"
-      onToggle={handleToggleSidebar}
-    >
-      <SidebarHeader>
-
-      </SidebarHeader>
+      onToggle={handleToggleSidebar} >
+       
 
       <SidebarContent>
       <Menu >
@@ -89,6 +83,8 @@ title={intl.formatMessage({ id: 'Admin üye İşlemleri' })}>
 <MenuItem>Güncelle</MenuItem>
 <MenuItem>Burç Linleri</MenuItem>
 <MenuItem>indirim Kuponları</MenuItem>
+<MenuItem>Duyuru Ekle</MenuItem>
+
 {/* <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
 <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
 <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
