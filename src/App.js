@@ -75,7 +75,7 @@ class App extends Component {
               </li>
             )}
 
-            {currentUser && (
+            {/* {currentUser && (
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
                   Kullanıcı
@@ -90,7 +90,7 @@ class App extends Component {
                   Kullanıcı
                 </Link>
               </li>
-            )}
+            )} */}
           </div>
 
           {currentUser ? (

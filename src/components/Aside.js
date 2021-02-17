@@ -24,34 +24,64 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
       onToggle={handleToggleSidebar}
     >
       <SidebarHeader>
-      
+
       </SidebarHeader>
 
       <SidebarContent>
         <Menu  >
-          <MenuItem
-           
-    
-          >
+          <MenuItem>
             {intl.formatMessage({ id: 'Menü' })}
           </MenuItem>
-          <MenuItem> {intl.formatMessage({ id: 'components' })}</MenuItem>
+          <MenuItem>
+            {intl.formatMessage({ id: 'Menü' })}
+          </MenuItem>
+          <MenuItem>
+            {intl.formatMessage({ id: 'Menü' })}
+          </MenuItem>
+          <MenuItem>
+            {intl.formatMessage({ id: 'Menü' })}
+          </MenuItem>
+          <MenuItem>
+            {intl.formatMessage({ id: 'Menü' })}
+          </MenuItem>
+          <MenuItem>
+            {intl.formatMessage({ id: 'Menü' })}
+          </MenuItem>
+
+          <MenuItem>
+            {intl.formatMessage({ id: 'components' })}
+          </MenuItem>
+          <MenuItem>
+            {intl.formatMessage({ id: 'components' })}
+          </MenuItem>
+          <MenuItem>
+            {intl.formatMessage({ id: 'components' })}
+          </MenuItem>
+          <MenuItem>
+            {intl.formatMessage({ id: 'components' })}
+          </MenuItem>
+          <MenuItem>
+            {intl.formatMessage({ id: 'components' })}
+          </MenuItem>
+
         </Menu>
         <Menu >
 
           <SubMenu
-            
-            title={intl.formatMessage({ id: 'withSuffix' })}
-         
-          >
+
+            title={intl.formatMessage({ id: 'withSuffix' })}>
             <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
             <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
             <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+
           </SubMenu>
           <SubMenu
-            
+
             title={intl.formatMessage({ id: 'withPrefix' })}
-            
+
           >
             <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
             <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
@@ -59,15 +89,18 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
           </SubMenu>
 
           <SubMenu title={intl.formatMessage({ id: 'multiLevel' })}>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1 </MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2 </MenuItem>
+            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
+            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
+            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
             <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3`}>
-              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.1 </MenuItem>
-              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.2 </MenuItem>
+              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
+              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
+              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
               <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3.3`}>
                 <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
                 <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
                 <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
+
               </SubMenu>
             </SubMenu>
           </SubMenu>
@@ -81,7 +114,7 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
             padding: '20px 24px',
           }}
         >
-         
+
         </div>
       </SidebarFooter>
     </ProSidebar>
