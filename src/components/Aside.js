@@ -87,7 +87,8 @@ title={intl.formatMessage({ id: 'Admin üye İşlemleri' })}>
 <MenuItem>Sil</MenuItem>
 <MenuItem>Ara</MenuItem>
 <MenuItem>Güncelle</MenuItem>
-
+<MenuItem>Burç Linleri</MenuItem>
+<MenuItem>indirim Kuponları</MenuItem>
 {/* <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
 <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
 <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
@@ -100,20 +101,26 @@ title={intl.formatMessage({ id: 'Admin üye İşlemleri' })}>
 title={intl.formatMessage({ id: 'Mod üye İşlemleri' })}
 
 >
-<MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
-<MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
-<MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+<MenuItem>Ekle</MenuItem>
+<MenuItem>Listele</MenuItem>
+<MenuItem>Sil</MenuItem>
+<MenuItem>Ara</MenuItem>
+<MenuItem>Güncelle</MenuItem>
+<MenuItem>Yetki Ver/Yetki İptal </MenuItem>
 </SubMenu>
 
 
 <SubMenu
 
-title={intl.formatMessage({ id: 'Üye üye İşlemleri' })}
+title={intl.formatMessage({ id: 'Üye İşlemleri' })}
 
 >
-<MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
-<MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
-<MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+<MenuItem>Ekle</MenuItem>
+<MenuItem>Listele</MenuItem>
+<MenuItem>Sil</MenuItem>
+<MenuItem>Ara</MenuItem>
+<MenuItem>Güncelle</MenuItem>
+<MenuItem>Kupon Hediye Et</MenuItem>
 </SubMenu>
 
 <SubMenu
@@ -121,9 +128,22 @@ title={intl.formatMessage({ id: 'Üye üye İşlemleri' })}
 title={intl.formatMessage({ id: 'Falcı İşlemleri' })}
 
 >
-<MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
-<MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
-<MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+<MenuItem>Ekle</MenuItem>
+<MenuItem>Listele</MenuItem>
+<MenuItem>Sil</MenuItem>
+<MenuItem>Ara</MenuItem>
+<MenuItem>Güncelle</MenuItem>
+<MenuItem>Yetki Ver/Yetki İptal </MenuItem>
+</SubMenu>
+
+<SubMenu
+
+title={intl.formatMessage({ id: 'Sistem Ayarları' })}
+
+>
+<MenuItem>Logo Düzenle</MenuItem>
+<MenuItem>Slat Ekle</MenuItem>
+ 
 </SubMenu>
         {/*   <MenuItem>
             {intl.formatMessage({ id: 'Admin üye İşlemleri' })}
@@ -159,7 +179,7 @@ title={intl.formatMessage({ id: 'Falcı İşlemleri' })}
           <MenuItem>
             {intl.formatMessage({ id: 'components' })}
           </MenuItem> */}
-
+{/* 
           <SubMenu title={intl.formatMessage({ id: 'multiLevel' })}>
   <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
   <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
@@ -176,7 +196,7 @@ title={intl.formatMessage({ id: 'Falcı İşlemleri' })}
     </SubMenu>
   </SubMenu>
 </SubMenu>
-
+ */}
         </Menu>
       
       </SidebarContent>
