@@ -33,7 +33,7 @@ function Layout({ setLocale }) {
         toggled={toggled}
         handleToggleSidebar={handleToggleSidebar}
       />
-      <Main
+      {/* <Main
         image={image}
         toggled={toggled}
         collapsed={collapsed}
@@ -42,7 +42,8 @@ function Layout({ setLocale }) {
         handleCollapsedChange={handleCollapsedChange}
         handleRtlChange={handleRtlChange}
         handleImageChange={handleImageChange}
-      />
+      /> */}
+      <h1>asd</h1>
     </div>
   );
 }
