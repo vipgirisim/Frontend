@@ -17,10 +17,10 @@ export default {
     viewSource: 'عرض الكود',
   },
   en: {
-    title: 'React Pro Sidebar',
+    title: ' ',
     sidebarTitle: 'Pro Sidebar',
     description:
-      'React sidebar library with dropdown menus and unlimited number of nested submenus',
+      ' ',
     dashboard: 'Dashboard',
     components: 'Components',
     dropdown: 'Dropdown',
@@ -28,7 +28,7 @@ export default {
     multiLevel: 'Multi Level',
     collapsed: 'Collapsed',
     rtl: 'RTL',
-    image: 'Background image',
+    image: 'Arkaplan Kapat',
     new: 'NEW',
     withPrefix: 'With Prefix',
     withSuffix: 'With Suffix',
