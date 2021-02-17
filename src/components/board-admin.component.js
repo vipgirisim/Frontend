@@ -6,6 +6,8 @@ import Tutorial from "./Admin/tutorial"
 import TutorialList from "./Admin/tutorials-list"
 import Uyeekle from "./register.component"
 
+import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import 'react-pro-sidebar/dist/css/styles.css';
 import Burclar from './Admin/Burclar'
 export default class BoardAdmin extends Component {
   constructor(props) {
@@ -43,7 +45,18 @@ export default class BoardAdmin extends Component {
           <h3>{this.state.content}</h3>
 
         </header>
-        <div className="container">
+
+
+<ProSidebar>
+  <Menu >
+    <MenuItem>Admin Menusu</MenuItem>
+    <SubMenu title="Components">
+      <MenuItem>Component 1</MenuItem>
+      <MenuItem>Component 2</MenuItem>
+    </SubMenu>
+  </Menu>
+</ProSidebar>
+       {/*  <div className="container">
           <h3> <h3> Admin Ekleme Paneli </h3></h3>
 
           <header className="jumbotron">
@@ -90,7 +103,7 @@ export default class BoardAdmin extends Component {
  
           </header>
        
-        </div>
+        </div> */}
 
        </div>
 
