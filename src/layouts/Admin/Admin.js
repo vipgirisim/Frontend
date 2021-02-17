@@ -7,8 +7,8 @@ import PerfectScrollbar from "perfect-scrollbar";
 // core components
 import AdminNavbar from "../../../src/components/Navbars/AdminNavbar";
 import Footer from "../../components/Footer/Footer.js";
-import Sidebar from "../../components/Sidebar/Sidebar.js";
-import FixedPlugin from "../../components/FixedPlugin/FixedPlugin";
+import Sidebar from "../../../src/components/sidebar/Sidebar";
+import FixedPlugin from "../../../src/components/FixedPlugin/FixedPlugin";
 
 import routes from "../../../src/routes.js";
 

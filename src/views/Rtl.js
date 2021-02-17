@@ -31,7 +31,7 @@ import {
   chartExample2,
   chartExample3,
   chartExample4,
-} from "../../../src/views/variables/charts.js";
+} from "../../src/variables/charts";
 
 function Rtl() {
   const [bigChartData, setbigChartData] = React.useState("data1");
