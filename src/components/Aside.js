@@ -79,7 +79,53 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
 
 </Menu>
         <Menu  >
-          <MenuItem>
+        <SubMenu
+
+title={intl.formatMessage({ id: 'Admin üye İşlemleri' })}>
+<MenuItem>Ekle</MenuItem>
+<MenuItem>Listele</MenuItem>
+<MenuItem>Sil</MenuItem>
+<MenuItem>Ara</MenuItem>
+<MenuItem>Güncelle</MenuItem>
+
+{/* <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem> */}
+
+</SubMenu>
+<SubMenu
+
+title={intl.formatMessage({ id: 'Mod üye İşlemleri' })}
+
+>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+</SubMenu>
+
+
+<SubMenu
+
+title={intl.formatMessage({ id: 'Üye üye İşlemleri' })}
+
+>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+</SubMenu>
+
+<SubMenu
+
+title={intl.formatMessage({ id: 'Falcı İşlemleri' })}
+
+>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+<MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+</SubMenu>
+        {/*   <MenuItem>
             {intl.formatMessage({ id: 'Admin üye İşlemleri' })}
           </MenuItem>
           <MenuItem>
@@ -96,9 +142,9 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
           </MenuItem>
           <MenuItem>
             {intl.formatMessage({ id: 'Sistem Modülü İşlemleri' })}
-          </MenuItem>
+          </MenuItem> */}
 
-          <MenuItem>
+         {/*  <MenuItem>
             {intl.formatMessage({ id: 'components' })}
           </MenuItem>
           <MenuItem>
@@ -112,7 +158,7 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
           </MenuItem>
           <MenuItem>
             {intl.formatMessage({ id: 'components' })}
-          </MenuItem>
+          </MenuItem> */}
 
           <SubMenu title={intl.formatMessage({ id: 'multiLevel' })}>
   <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>

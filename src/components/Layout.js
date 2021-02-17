@@ -14,7 +14,9 @@ function Layout({ setLocale }) {
   };
 
   return (
+    
     <div className={`app ${rtl ? 'rtl' : ''} ${toggled ? 'toggled' : ''}`}>
+     
       <Aside
         
       />
@@ -28,7 +30,7 @@ function Layout({ setLocale }) {
         handleRtlChange={handleRtlChange}
         handleImageChange={handleImageChange}
       /> */}
-      <h1> Vip Fal Yönetici Modülü</h1>
+     
     </div>
   );
 }
