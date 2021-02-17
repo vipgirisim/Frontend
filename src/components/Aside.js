@@ -28,24 +28,74 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
       </SidebarHeader>
 
       <SidebarContent>
+      <Menu >
+
+{/* <SubMenu
+
+  title={intl.formatMessage({ id: 'Admin üye İşlemleri' })}>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+
+</SubMenu>
+<SubMenu
+
+  title={intl.formatMessage({ id: 'Mod üye İşlemleri' })}
+
+>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+</SubMenu>
+
+
+<SubMenu
+
+  title={intl.formatMessage({ id: 'Üye üye İşlemleri' })}
+
+>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+</SubMenu>
+
+<SubMenu
+
+  title={intl.formatMessage({ id: 'Falcı İşlemleri' })}
+
+>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+</SubMenu>
+ */}
+
+
+
+
+
+</Menu>
         <Menu  >
           <MenuItem>
-            {intl.formatMessage({ id: 'Menü' })}
+            {intl.formatMessage({ id: 'Admin üye İşlemleri' })}
           </MenuItem>
           <MenuItem>
-            {intl.formatMessage({ id: 'Menü' })}
+            {intl.formatMessage({ id: 'Mod üye İşlemleri' })}
           </MenuItem>
           <MenuItem>
-            {intl.formatMessage({ id: 'Menü' })}
+            {intl.formatMessage({ id: 'Üye üye İşlemleri' })}
           </MenuItem>
           <MenuItem>
-            {intl.formatMessage({ id: 'Menü' })}
+            {intl.formatMessage({ id: 'Falcı İşlemleri' })}
           </MenuItem>
           <MenuItem>
-            {intl.formatMessage({ id: 'Menü' })}
+            {intl.formatMessage({ id: 'İndirim Modülü İşlemleri' })}
           </MenuItem>
           <MenuItem>
-            {intl.formatMessage({ id: 'Menü' })}
+            {intl.formatMessage({ id: 'Sistem Modülü İşlemleri' })}
           </MenuItem>
 
           <MenuItem>
@@ -63,48 +113,26 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
           <MenuItem>
             {intl.formatMessage({ id: 'components' })}
           </MenuItem>
-
-        </Menu>
-        <Menu >
-
-          <SubMenu
-
-            title={intl.formatMessage({ id: 'withSuffix' })}>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
-
-          </SubMenu>
-          <SubMenu
-
-            title={intl.formatMessage({ id: 'withPrefix' })}
-
-          >
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
-          </SubMenu>
 
           <SubMenu title={intl.formatMessage({ id: 'multiLevel' })}>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
-            <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3`}>
-              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
-              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
-              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
-              <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3.3`}>
-                <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
-                <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
-                <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
+  <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
+  <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3`}>
+    <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
+    <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
+    <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
+    <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3.3`}>
+      <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
+      <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
+      <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
 
-              </SubMenu>
-            </SubMenu>
-          </SubMenu>
+    </SubMenu>
+  </SubMenu>
+</SubMenu>
+
         </Menu>
+      
       </SidebarContent>
 
       <SidebarFooter style={{ textAlign: 'center' }}>
