@@ -1,11 +1,11 @@
 import Dashboard from "../src/views/Dashboard";
 import Icons from "../src/views/Icons.js";
 import Map from "../src/views/Map.js";
-import Notifications from "../../src/views/Notifications.js";
+import Notifications from "../src/views/Notifications.js";
 import Rtl from "../src/views/Rtl";
-import TableList from "../../src/views/TableList.js";
-import Typography from "../../src/views/Typography.js";
-import UserProfile from "../../src/views/UserProfile.js";
+import TableList from "../src/views/TableList.js";
+import Typography from "../src/views/Typography.js";
+import UserProfile from "../src/views/UserProfile.js";
 
 var routes = [
   {
