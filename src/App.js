@@ -87,11 +87,11 @@ class App extends Component {
             VipFal
           </Link>
           <div className="navbar-nav mr-auto">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to={"/home"} className="nav-link">
                 Anasayfa
               </Link>
-            </li>
+            </li> */}
 
             {showModeratorBoard && (
               <li className="nav-item">
