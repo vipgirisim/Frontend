@@ -1,7 +1,10 @@
+/*
+ 
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import AdminLayout from "../src/layouts/Admin/Admin";
+
+import AdminLayout from "../src/layouts/Admin/Admin.js";
 import RTLLayout from "../src/layouts/RTL/RTL.js";
 
 import "../src/assets/scss/black-dashboard-react.scss";
@@ -11,9 +14,6 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import ThemeContextWrapper from "../src/components/ThemeWrapper/ThemeWrapper";
 import BackgroundColorWrapper from "../src/components/BackgroundColorWrapper/BackgroundColorWrapper";
-
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <ThemeContextWrapper>
@@ -28,4 +28,23 @@ ReactDOM.render(
     </BackgroundColorWrapper>
   </ThemeContextWrapper>,
   document.getElementById("root")
+
+
+*/
+
+
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
 );
+
+serviceWorker.unregister();

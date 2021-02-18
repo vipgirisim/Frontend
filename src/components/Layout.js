@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Aside from './Aside';
 import Main from './Main';
-
+import AdminLayout from "../../src/layouts/Admin/Admin.js";
 function Layout({ setLocale }) {
   const [rtl, setRtl] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
@@ -17,9 +17,9 @@ function Layout({ setLocale }) {
     
     <div className={`app ${rtl ? 'rtl' : ''} ${toggled ? 'toggled' : ''}`}>
      
-      <Aside
+     {/*  <Aside
         
-      />
+      /> */}
       {/* <Main
         image={image}
         toggled={toggled}
@@ -30,6 +30,9 @@ function Layout({ setLocale }) {
         handleRtlChange={handleRtlChange}
         handleImageChange={handleImageChange}
       /> */}
+
+
+
      
     </div>
   );

@@ -1,18 +1,48 @@
+/*
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+
+import AdminLayout from "../src/layouts/Admin/Admin.js";
+import RTLLayout from "../src/layouts/RTL/RTL.js";
+
+import "../src/assets/scss/black-dashboard-react.scss";
+import "../src/assets/demo/demo.css";
+import "../src/assets/css/nucleo-icons.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+import ThemeContextWrapper from "../src/components/ThemeWrapper/ThemeWrapper";
+import BackgroundColorWrapper from "../src/components/BackgroundColorWrapper/BackgroundColorWrapper";
+
+ReactDOM.render(
+  <ThemeContextWrapper>
+    <BackgroundColorWrapper>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+          <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
+          <Redirect from="/" to="/admin/dashboard" />
+        </Switch>
+      </BrowserRouter>
+    </BackgroundColorWrapper>
+  </ThemeContextWrapper>,
+  document.getElementById("root")
+  */
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
-//import "bootstrap/dist/css/bootstrap.min.css";
-//import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 import AuthService from "./services/auth.service";
 
-import Login from "./components/login.component";
-import Register from "./components/register.component";
-import Home from "./components/home.component";
-import Profile from "./components/profile.component";
-import BoardUser from "./components/board-user.component";
-import BoardModerator from "./components/board-moderator.component";
-import BoardAdmin from "./components/board-admin.component";
-import BoardUnlu from "./components/board-unlu.component";
+import Login from "../src/components/login.component";
+import Register from "../src/components/register.component";
+import Home from "../src/components/home.component";
+import Profile from "../src/components/profile.component";
+import BoardUser from "../src/components/board-user.component";
+import BoardModerator from "../src/components/board-moderator.component";
+import BoardAdmin from "../src/components/board-admin.component";
+import BoardUnlu from "../src/components/board-unlu.component";
 
 
 class App extends Component {
