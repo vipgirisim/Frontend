@@ -32,7 +32,7 @@ function Layout({ setLocale }) {
       /> */}
 
 
-
+<AdminLayout/>
      
     </div>
   );

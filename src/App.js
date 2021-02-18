@@ -30,8 +30,12 @@ ReactDOM.render(
   */
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
+//import "./App.css";
+import "../src/assets/scss/black-dashboard-react.scss";
+import "../src/assets/demo/demo.css";
+import "../src/assets/css/nucleo-icons.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import AuthService from "./services/auth.service";
 
