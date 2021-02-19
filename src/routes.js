@@ -17,46 +17,38 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/dashboard",
-    name: "Admin İşlemleri",
+    path: "/tables",
+    name: "Admin İşlemler",
     rtlName: "لوحة القيادة",
   //  icon: "tim-icons icon-chart-pie-36",
-    component: Dashboard,
+    component: TableList,
     layout: "/admin",
   },
   {
-    path: "/dashboard",
-    name: "Mod İşlemleri",
+    path: "/tables",
+    name: "Mod  İşlemler",
     rtlName: "لوحة القيادة",
   //  icon: "tim-icons icon-chart-pie-36",
-    component: Dashboard,
+    component: TableList,
     layout: "/admin",
   },
   {
-    path: "/dashboard",
-    name: "Uye İşlemleri",
+    path: "/tables",
+    name: "Uye  İşlemler",
     rtlName: "لوحة القيادة",
    // icon: "tim-icons icon-chart-pie-36",
-    component: Dashboard,
-    layout: "/admin",
-  },
-
-  {
-    path: "/icons",
-    name: "Icons",
-    rtlName: "الرموز",
-  //  icon: "tim-icons icon-atom",
-    component: Icons,
+    component: TableList,
     layout: "/admin",
   },
   {
-    path: "/map",
-    name: "Map",
-    rtlName: "خرائط",
-  //  icon: "tim-icons icon-pin",
-    component: Map,
+    path: "/tables",
+    name: "Falcı  İşlemler",
+    rtlName: "لوحة القيادة",
+   // icon: "tim-icons icon-chart-pie-36",
+    component: TableList,
     layout: "/admin",
   },
+ 
   {
     path: "/notifications",
     name: "Notifications",
@@ -67,7 +59,7 @@ var routes = [
   },
   {
     path: "/user-profile",
-    name: "User Profile",
+    name: "Admin Ekle",
     rtlName: "ملف تعريفي للمستخدم",
     icon: "tim-icons icon-single-02",
     component: UserProfile,
@@ -81,14 +73,7 @@ var routes = [
     component: TableList,
     layout: "/admin",
   },
-  {
-    path: "/typography",
-    name: "Typography",
-    rtlName: "طباعة",
- //   icon: "tim-icons icon-align-center",
-    component: Typography,
-    layout: "/admin",
-  },
+   
    
 ];
 export default routes;
