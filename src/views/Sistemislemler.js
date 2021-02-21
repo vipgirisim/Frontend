@@ -20,30 +20,6 @@ function Sistemislemler() {
         <Row>
           <Col md="12">
             <Card>
-<<<<<<< HEAD
-            <Table className="tablesorter" responsive>
-                <thead className="text-primary">
-                  <tr>
-                    <th>Başlık</th>
-                    <th>Duyuru Adı</th>  
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Başlık 1</td>
-                    <td>Duyuru 1</td> 
-                  </tr>
-                  <tr>
-                  <td>Başlık 2</td>
-                    <td>Duyuru 2</td> 
-                  </tr>
-             
-                </tbody>
-              </Table>
-          
-=======
-
->>>>>>> 816c8dac8d650422e9924d518572ead7d5e65d05
               <CardHeader>
                 <CardTitle tag="h4">Duyuru Menüsü </CardTitle>
               </CardHeader>
@@ -63,9 +39,7 @@ function Sistemislemler() {
               <CardHeader>
                 <CardTitle tag="h4">Burçlar Menüsü</CardTitle>
               </CardHeader>
-
-<<<<<<< HEAD
-=======
+ 
               <Table className="tablesorter" responsive>
                 <thead className="text-primary">
                   <tr>
@@ -120,8 +94,7 @@ function Sistemislemler() {
                   </tr>
                 </tbody>
               </Table>
->>>>>>> 816c8dac8d650422e9924d518572ead7d5e65d05
-            </Card>
+             </Card>
           </Col>
           <Col md="12">
             <Card className="card-plain">
