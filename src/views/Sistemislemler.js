@@ -1,6 +1,7 @@
 
 import React from "react";
 import Burcekle from "../../src/components/Admin/AddTutorial"
+import Burcislem from "../../src/components/Admin/tutorials-list"
 
 // reactstrap components
 import {
@@ -46,6 +47,7 @@ function Sistemislemler() {
               </CardHeader>
               <CardBody>
                 <Burcekle />
+                <Burcislem/>
 
               </CardBody>
 
@@ -115,8 +117,7 @@ function Sistemislemler() {
                   </tr>
                 </tbody>
               </Table>
->>>>>>> 816c8dac8d650422e9924d518572ead7d5e65d05
-            </Card>
+             </Card>
           </Col>
           <Col md="12">
             <Card className="card-plain">
