@@ -1,7 +1,10 @@
 
-import React from "react";
-import Burcekle from "../../src/components/Admin/AddTutorial"
+import React from "react";/* 
+import Duyuruekle from "../../src/components/Admin/AddTutorial"
+import Duyuruekle from "../../src/components/Admin/tutorials-list" */
+import BurcEkle from "../../src/components/Admin/BurclEkle"
 import Burcislem from "../../src/components/Admin/tutorials-list"
+
 
 // reactstrap components
 import {
@@ -43,11 +46,11 @@ function Sistemislemler() {
            
 
                <CardHeader>
-                <CardTitle tag="h4">Duyuru Menüsü </CardTitle>
+                <CardTitle tag="h4">Burc Menüsü </CardTitle>
               </CardHeader>
               <CardBody>
-                <Burcekle />
-                <Burcislem/>
+                <BurcEkle />
+       
 
               </CardBody>
 

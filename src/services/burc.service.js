@@ -25,7 +25,7 @@ class TutorialDataService {
     return http.delete(`/burclar`);
   }
 
-  findByTitle(title) {
+  findByTitle(burcadi) {
     return http.get(`/burclar?title=${burcadi}`);
   }
 }

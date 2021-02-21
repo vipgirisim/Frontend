@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TutorialDataService from "../../services/burc.service.service";
+import TutorialDataService from "../../services/burc.service";
 
 export default class AddTutorial extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ export default class AddTutorial extends Component {
   saveTutorial() {
     var data = {
       burcadi: this.state.burcadi,
-      burclinki: this.state.description
+      burclinki: this.state.burclinki
     };
 
     TutorialDataService.create(data)
