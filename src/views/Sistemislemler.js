@@ -38,7 +38,7 @@ function Sistemislemler() {
 
               </CardBody>
               <CardHeader>
-                <CardTitle tag="h4">İndirim Menüsü</CardTitle>
+                <CardTitle tag="h4">Burçlar Menüsü</CardTitle>
               </CardHeader>
 
               <Table className="tablesorter" responsive>
