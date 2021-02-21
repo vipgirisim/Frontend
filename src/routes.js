@@ -1,60 +1,48 @@
-import Dashboard from "../src/views/Dashboard";
-import Icons from "../src/views/Icons.js";
-import Map from "../src/views/Map.js";
-import Notifications from "../src/views/Notifications.js";
-import Rtl from "../src/views/Rtl";
-import TableList from "../src/views/TableList.js";
-import Typography from "../src/views/Typography.js";
+import Dashboard from "../src/views/Dashboard"; 
+import Notifications from "../src/views/Notifications.js"; 
+import TableList from "../src/views/TableList.js"; 
+import Sistemislemler from "../src/views/Sistemislemler.js"; 
+
 import UserProfile from "../src/views/UserProfile.js";
 
 var routes = [
   {
     path: "/dashboard",
     name: "Panel",
-    rtlName: "لوحة القيادة",
- //   icon: "tim-icons icon-chart-pie-36",
-    component: Dashboard,
+      component: Dashboard,
     layout: "/admin",
   },
   {
     path: "/tables",
-    name: "Admin İşlemler",
-    rtlName: "لوحة القيادة",
-  //  icon: "tim-icons icon-chart-pie-36",
+    name: "Admin İşlemler", 
     component: TableList,
     layout: "/admin",
   },
   {
     path: "/tables",
-    name: "Mod  İşlemler",
-    rtlName: "لوحة القيادة",
-  //  icon: "tim-icons icon-chart-pie-36",
+    name: "Mod  İşlemler", 
     component: TableList,
     layout: "/admin",
   },
   {
     path: "/tables",
-    name: "Uye  İşlemler",
-    rtlName: "لوحة القيادة",
-   // icon: "tim-icons icon-chart-pie-36",
+    name: "Uye  İşlemler", 
     component: TableList,
     layout: "/admin",
   },
   {
     path: "/tables",
-    name: "Falcı  İşlemler",
-    rtlName: "لوحة القيادة",
-   // icon: "tim-icons icon-chart-pie-36",
+    name: "Falcı  İşlemler", 
     component: TableList,
     layout: "/admin",
   },
 
   {
-    path: "/tables",
+    path: "/sistemislemler",
     name: "Sistem  İşlemler",
     rtlName: "لوحة القيادة",
    // icon: "tim-icons icon-chart-pie-36",
-    component: TableList,
+    component: Sistemislemler,
     layout: "/admin",
   },
  
