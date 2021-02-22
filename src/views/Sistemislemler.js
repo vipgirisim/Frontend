@@ -67,6 +67,17 @@ görebilme ve onaylama / siilme / onaylarken düzenleyebilme. Üye adı ile yoru
 düzenleyeblimeli. </h1>
                </CardHeader>
 
+               <CardTitle tag="h4">Falcilar  Menüsü</CardTitle>
+                <h1> Zamanı yoktur vs. Bu durumda ilgili falcı başka bir falcıya aktarmak gerekir. 
+Aktarma yapıldığında yine havuz falı mantığında olur ve üye, aynı falcı cevaplamış zanneder.
+
+ Bu tip aktarma için falcıların panelinde fal geldiğinde CEVAPLA butonu vardır, eğer bu buton tıkladıysa fala bakıyor demektir ki biz de falı
+akatramayız. Bize “Şuan Falcı Fala Bakıyor” uyası çıkar ama falcı CEVAPLA butonuna basmadıysa
+biz istediğimiz statüde ve yetkideki sistemdeki tüm falcılardan birini seçip aktarabiliriz. ( Bu
+akarma sonrası yine falcı, aktaruıldığını bilmez ve havuz falcısı gibi fala ilk gönderdiği kişinin
+baktığını zanneder ve yorum ile soruların da mantığı aynıdır ) Tüm satış raporlarını görebilir, falcı kaç fal bakmış görebilirim. </h1>
+          
+
             </Card>
           </Col>
           <Col md="12">
