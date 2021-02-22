@@ -11,17 +11,32 @@ export default class TutorialsList extends Component {
     this.setActiveTutorial = this.setActiveTutorial.bind(this);
     this.removeAllTutorials = this.removeAllTutorials.bind(this);
     this.searchTitle = this.searchTitle.bind(this);
+    this.onChangeTitle = this.onChangeTitle.bind(this);
+    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.getTutorial = this.getTutorial.bind(this);
+    this.updatePublished = this.updatePublished.bind(this);
+    this.updateTutorial = this.updateTutorial.bind(this);
+    this.deleteTutorial = this.deleteTutorial.bind(this);
 
     this.state = {
+      currentTutorial: {
+        id: null,
+        title: "",
+        description: "",
+        published: false
+      },
+      message: "",
       tutorials: [],
       currentTutorial: null,
       currentIndex: -1,
       searchTitle: ""
     };
+    
   }
 
   componentDidMount() {
     this.retrieveTutorials();
+    //this.getTutorial(this.props.match.params.id);
   }
 
   onChangeSearchTitle(e) {
@@ -30,6 +45,93 @@ export default class TutorialsList extends Component {
     this.setState({
       searchTitle: searchTitle
     });
+  }
+
+  onChangeTitle(e) {
+    const title = e.target.value;
+
+    this.setState(function(prevState) {
+      return {
+        currentTutorial: {
+          ...prevState.currentTutorial,
+          title: title
+        }
+      };
+    });
+  }
+
+  onChangeDescription(e) {
+    const description = e.target.value;
+    
+    this.setState(prevState => ({
+      currentTutorial: {
+        ...prevState.currentTutorial,
+        description: description
+      }
+    }));
+  }
+
+  getTutorial(id) {
+    TutorialDataService.get(id)
+      .then(response => {
+        this.setState({
+          currentTutorial: response.data
+        });
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
+
+  updatePublished(status) {
+    var data = {
+      id: this.state.currentTutorial.id,
+      title: this.state.currentTutorial.title,
+      description: this.state.currentTutorial.description,
+      published: status
+    };
+
+    TutorialDataService.update(this.state.currentTutorial.id, data)
+      .then(response => {
+        this.setState(prevState => ({
+          currentTutorial: {
+            ...prevState.currentTutorial,
+            published: status
+          }
+        }));
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
+
+  updateTutorial() {
+    TutorialDataService.update(
+      this.state.currentTutorial.id,
+      this.state.currentTutorial
+    )
+      .then(response => {
+        console.log(response.data);
+        this.setState({
+          message: "başarılı!"
+        });
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
+
+  deleteTutorial() {    
+    TutorialDataService.delete(this.state.currentTutorial.id)
+      .then(response => {
+        console.log(response.data);
+        this.props.history.push('/tutorials')
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
 
   retrieveTutorials() {
@@ -141,41 +243,79 @@ export default class TutorialsList extends Component {
           </button>
         </div>
         <div className="col-md-6">
-          {currentTutorial ? (
-            <div>
-              <h4>Duyuru</h4>
-              <div>
-                <label>
-                  <strong>Başlık:</strong>
-                </label>{" "}
-                {currentTutorial.title}
+        <div>
+        {currentTutorial ? (
+          <div className="edit-form">
+            <h4>Duyuru</h4>
+            <form>
+              <div className="form-group">
+                <label htmlFor="title">başlık</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="title"
+                  value={currentTutorial.title}
+                  onChange={this.onChangeTitle}
+                />
               </div>
-              <div>
-                <label>
-                  <strong>tanım:</strong>
-                </label>{" "}
-                {currentTutorial.description}
-              </div>
-              <div>
-                <label>
-                  <strong>durum:</strong>
-                </label>{" "}
-                {currentTutorial.published ? "Published" : "Pending"}
+              <div className="form-group">
+                <label htmlFor="description">tanımlama</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="description"
+                  value={currentTutorial.description}
+                  onChange={this.onChangeDescription}
+                />
               </div>
 
-              <Link
-                to={"/admin/sistemislemler/" + currentTutorial.id}
-                className="badge badge-warning"
+              <div className="form-group">
+                <label>
+                  <strong>durum:</strong>
+                </label>
+                {currentTutorial.published ? "Published" : "Pending"}
+              </div>
+            </form>
+
+            {currentTutorial.published ? (
+              <button
+                className="badge badge-primary mr-2"
+                onClick={() => this.updatePublished(false)}
               >
-                düzenle
-              </Link>
-            </div>
-          ) : (
-            <div>
-              <br />
-              <p>bir duyuruya tıkla...</p>
-            </div>
-          )}
+                Yayınlanmadı
+              </button>
+            ) : (
+              <button
+                className="badge badge-primary mr-2"
+                onClick={() => this.updatePublished(true)}
+              >
+                Yayınla
+              </button>
+            )}
+
+            <button
+              className="badge badge-danger mr-2"
+              onClick={this.deleteTutorial}
+            >
+              sil
+            </button>
+
+            <button
+              type="submit"
+              className="badge badge-success"
+              onClick={this.updateTutorial}
+            >
+              güncelle
+            </button>
+            <p>{this.state.message}</p>
+          </div>
+        ) : (
+          <div>
+            <br />
+            <p>Lütfen Duyuru tıkla</p>
+          </div>
+        )}
+      </div>
         </div>
       </div>
     );
