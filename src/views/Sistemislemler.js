@@ -1,7 +1,6 @@
 
-import React from "react";/* 
+import React from "react";/* */
 import Duyuruekle from "../../src/components/Admin/AddTutorial"
-import Duyuruekle from "../../src/components/Admin/tutorials-list" */
 import BurcEkle from "../../src/components/Admin/BurclEkle"
 import Duyurulistesi from "../../src/components/Admin/tutorials-list"
 import Burclistesi from "../../src/components/Admin/burc-list"
@@ -31,6 +30,7 @@ function Sistemislemler() {
 
               <CardHeader>
                 <CardTitle tag="h4">Duyuru Menüsü </CardTitle>
+                <Duyuruekle/>
                 <Duyurulistesi />
 
               </CardHeader>

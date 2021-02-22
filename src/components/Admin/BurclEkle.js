@@ -101,7 +101,7 @@ export default class AddTutorial extends Component {
             </div>
 
             <button onClick={this.saveTutorial} className="btn btn-success">
-              Ekle
+              Burc Ekle
             </button>
           </div>
         )}

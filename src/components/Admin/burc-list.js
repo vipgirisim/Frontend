@@ -199,7 +199,7 @@ export default class TutorialsList extends Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Duyuru Ara"
+              placeholder="Burç Ara"
               value={searchTitle}
               onChange={this.onChangeSearchTitle}
             />
@@ -215,7 +215,7 @@ export default class TutorialsList extends Component {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Duyuru Listesi</h4>
+          <h4>Burclar Listesi</h4>
 
           <ul className="list-group">
             {burclar &&
@@ -244,7 +244,7 @@ export default class TutorialsList extends Component {
         <div>
         {currentTutorial ? (
           <div className="edit-form">
-            <h4>Duyuru</h4>
+            <h4>Burclar</h4>
             <form>
               <div className="form-group">
                 <label htmlFor="burcadi">başlık</label>
@@ -310,7 +310,7 @@ export default class TutorialsList extends Component {
         ) : (
           <div>
             <br />
-            <p>Lütfen Duyuru tıkla</p>
+            <p>Lütfen Burclar tıkla</p>
           </div>
         )}
       </div>
