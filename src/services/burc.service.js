@@ -1,6 +1,6 @@
 import http from "./http-common";
 
-class TutorialDataService {
+class BurclarDataService {
   getAll() {
     return http.get("/burclar");
   }
@@ -26,8 +26,8 @@ class TutorialDataService {
   }
 
   findByTitle(burcadi) {
-    return http.get(`/burclar?title=${burcadi}`);
+    return http.get(`/burclar?burcadi=${burcadi}`);
   }
 }
 
-export default new TutorialDataService();
+export default new BurclarDataService();

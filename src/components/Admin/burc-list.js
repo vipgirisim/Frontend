@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import BurclarDataService from "../../services/burc.service";
-import { Link } from "react-router-dom";
-
-export default class BurclarList extends Component {
+ 
+export default class TutorialsList extends Component {
   constructor(props) {
     super(props);
-    this.onChangeSearchburcadi = this.onChangeSearchburcadi.bind(this);
-    this.retrieveburcs = this.retrieveburcs.bind(this);
+    this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
+    this.retrieveTutorials = this.retrieveTutorials.bind(this);
     this.refreshList = this.refreshList.bind(this);
     this.setActiveTutorial = this.setActiveTutorial.bind(this);
-    this.removeAllburcs = this.removeAllburcs.bind(this);
-    this.searchburcadi = this.searchburcadi.bind(this);
-    this.onChangeburcadi = this.onChangeburcadi.bind(this);
-    this.onChangeburclinki = this.onChangeburclinki.bind(this);
+    this.removeAllTutorials = this.removeAllTutorials.bind(this);
+    this.searchTitle = this.searchTitle.bind(this);
+    this.onChangeTitle = this.onChangeTitle.bind(this);
+    this.onChangeDescription = this.onChangeDescription.bind(this);
     this.getTutorial = this.getTutorial.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
     this.updateTutorial = this.updateTutorial.bind(this);
@@ -26,28 +25,28 @@ export default class BurclarList extends Component {
         published: false
       },
       message: "",
-      burcs: [],
+      burclar: [],
       currentTutorial: null,
       currentIndex: -1,
-      searchburcadi: ""
+      searchTitle: ""
     };
     
   }
 
   componentDidMount() {
-    this.retrieveburcs();
+    this.retrieveTutorials();
     //this.getTutorial(this.props.match.params.id);
   }
 
-  onChangeSearchburcadi(e) {
-    const searchburcadi = e.target.value;
+  onChangeSearchTitle(e) {
+    const searchTitle = e.target.value;
 
     this.setState({
-      searchburcadi: searchburcadi
+      searchTitle: searchTitle
     });
   }
 
-  onChangeburcadi(e) {
+  onChangeTitle(e) {
     const burcadi = e.target.value;
 
     this.setState(function(prevState) {
@@ -59,8 +58,7 @@ export default class BurclarList extends Component {
       };
     });
   }
-
-  onChangeburclinki(e) {
+  onChangeDescription(e) {
     const burclinki = e.target.value;
     
     this.setState(prevState => ({
@@ -134,11 +132,11 @@ export default class BurclarList extends Component {
       });
   }
 
-  retrieveburcs() {
+  retrieveTutorials() {
     BurclarDataService.getAll()
       .then(response => {
         this.setState({
-          burcs: response.data
+          burclar: response.data
         });
         console.log(response.data);
       })
@@ -148,21 +146,21 @@ export default class BurclarList extends Component {
   }
 
   refreshList() {
-    this.retrieveburcs();
+    this.retrieveTutorials();
     this.setState({
       currentTutorial: null,
       currentIndex: -1
     });
   }
 
-  setActiveTutorial(tutorial, index) {
+  setActiveTutorial(burcadi, index) {
     this.setState({
-      currentTutorial: tutorial,
+      currentTutorial: burcadi,
       currentIndex: index
     });
   }
 
-  removeAllburcs() {
+  removeAllTutorials() {
     BurclarDataService.deleteAll()
       .then(response => {
         console.log(response.data);
@@ -173,16 +171,16 @@ export default class BurclarList extends Component {
       });
   }
 
-  searchburcadi() {
+  searchTitle() {
     this.setState({
       currentTutorial: null,
       currentIndex: -1
     });
 
-    BurclarDataService.findByburcadi(this.state.searchburcadi)
+    BurclarDataService.findByTitle(this.state.searchTitle)
       .then(response => {
         this.setState({
-          burcs: response.data
+          burclar: response.data
         });
         console.log(response.data);
       })
@@ -192,7 +190,7 @@ export default class BurclarList extends Component {
   }
 
   render() {
-    const { searchburcadi, burcs, currentTutorial, currentIndex } = this.state;
+    const { searchTitle, burclar, currentTutorial, currentIndex } = this.state;
 
     return (
       <div className="list row">
@@ -202,14 +200,14 @@ export default class BurclarList extends Component {
               type="text"
               className="form-control"
               placeholder="Duyuru Ara"
-              value={searchburcadi}
-              onChange={this.onChangeSearchburcadi}
+              value={searchTitle}
+              onChange={this.onChangeSearchTitle}
             />
             <div className="input-group-append">
               <button
                 className="btn btn-outline-secondary"
                 type="button"
-                onClick={this.searchburcadi}
+                onClick={this.searchTitle}
               >
                 Ara
               </button>
@@ -217,27 +215,27 @@ export default class BurclarList extends Component {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Burclar Listesi</h4>
+          <h4>Duyuru Listesi</h4>
 
           <ul className="list-group">
-            {burcs &&
-              burcs.map((tutorial, index) => (
+            {burclar &&
+              burclar.map((burclar, index) => (
                 <li
                   className={
                     "list-group-item " +
                     (index === currentIndex ? "active" : "")
                   }
-                  onClick={() => this.setActiveTutorial(tutorial, index)}
+                  onClick={() => this.setActiveTutorial(burclar, index)}
                   key={index}
                 >
-                  {tutorial.burcadi}
+                  {burclar.burcadi}
                 </li>
               ))}
           </ul>
 
           <button
             className="m-3 btn btn-sm btn-danger"
-            onClick={this.removeAllburcs}
+            onClick={this.removeAllTutorials}
           >
             Hepsini Sil
           </button>
@@ -246,7 +244,7 @@ export default class BurclarList extends Component {
         <div>
         {currentTutorial ? (
           <div className="edit-form">
-            <h4>Burclar</h4>
+            <h4>Duyuru</h4>
             <form>
               <div className="form-group">
                 <label htmlFor="burcadi">başlık</label>
@@ -255,7 +253,7 @@ export default class BurclarList extends Component {
                   className="form-control"
                   id="burcadi"
                   value={currentTutorial.burcadi}
-                  onChange={this.onChangeburcadi}
+                  onChange={this.onChangeTitle}
                 />
               </div>
               <div className="form-group">
@@ -265,7 +263,7 @@ export default class BurclarList extends Component {
                   className="form-control"
                   id="burclinki"
                   value={currentTutorial.burclinki}
-                  onChange={this.onChangeburclinki}
+                  onChange={this.onChangeDescription}
                 />
               </div>
 
@@ -312,7 +310,7 @@ export default class BurclarList extends Component {
         ) : (
           <div>
             <br />
-            <p>Lütfen burc tıkla</p>
+            <p>Lütfen Duyuru tıkla</p>
           </div>
         )}
       </div>
