@@ -16,7 +16,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
- 
+
 
 
 function Sistemislemler() {
@@ -26,14 +26,14 @@ function Sistemislemler() {
         <Row>
           <Col md="12">
             <Card>
-             
+
               <CardHeader>
                 <CardTitle tag="h4">Duyuru Menüsü </CardTitle>
-                <Duyurulistesi/>
+                <Duyurulistesi />
 
               </CardHeader>
               <CardBody>
-              
+
 
               </CardBody>
 
@@ -50,7 +50,24 @@ function Sistemislemler() {
                 <BurcEkle />
               </CardHeader>
 
-             </Card>
+              <CardHeader>
+                <CardTitle tag="h4">Havuz Fal Menüsü</CardTitle>
+
+               </CardHeader>
+
+               <CardHeader>
+                <CardTitle tag="h4">Slayt  Menüsü</CardTitle>
+                
+               </CardHeader>
+
+               <CardHeader>
+                <CardTitle tag="h4">Fal  Menüsü</CardTitle>
+                <h1>Falları görüntüyebilme, filitreeybilme, araların arama yapabilme, Fallar için yapılan üye yorumlarını
+görebilme ve onaylama / siilme / onaylarken düzenleyebilme. Üye adı ile yorumu da
+düzenleyeblimeli. </h1>
+               </CardHeader>
+
+            </Card>
           </Col>
           <Col md="12">
             <Card className="card-plain">
