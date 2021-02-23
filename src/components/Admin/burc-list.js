@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BurclarDataService from "../../services/burc.service";
  
-export default class TutorialsList extends Component {
+export default class BurclarListesi extends Component {
   constructor(props) {
     super(props);
     this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
@@ -105,8 +105,7 @@ export default class TutorialsList extends Component {
   }
 
   updateTutorial() {
-    debugger;
-    BurclarDataService.update(
+     BurclarDataService.update(
       this.state.currentTutorial.id,
       this.state.currentTutorial
     )

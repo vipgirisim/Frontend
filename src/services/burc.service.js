@@ -1,6 +1,5 @@
-import axios from 'axios'
-import http from "./http-common";
-import httppost from "./http-common-post";
+import http from "./http-common-burc";
+import axios from "axios"
 class BurclarDataService {
   getAll() {
     return http.get("/burclar");
@@ -14,21 +13,20 @@ class BurclarDataService {
     return http.post("/burclar", data);
   }
 
+
   update(id, data) {
 
-    const axios = require('axios');
+  
 
-    let config = {
-      method: 'put',
-      url: 'http://vipfal.herokuapp.com/admin/burclar/'+id,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: data
-    };
 
-    return axios(config);
+
+    return  http.post('/burclar/'+id,data);
   }
+
+
+
+
+
 
   delete(id) {
     return http.delete(`/burclar/${id}`);
