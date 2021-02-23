@@ -1,6 +1,5 @@
 import http from "./http-common-burc";
-import axios from "axios"
-class BurclarDataService {
+ class BurclarDataService {
   getAll() {
     return http.get("/burclar");
   }
@@ -15,19 +14,9 @@ class BurclarDataService {
 
 
   update(id, data) {
-
-  
-
-
-
     return  http.post('/burclar/'+id,data);
   }
-
-
-
-
-
-
+ 
   delete(id) {
     return http.delete(`/burclar/${id}`);
   }
