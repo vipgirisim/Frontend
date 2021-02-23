@@ -15,9 +15,19 @@ class BurclarDataService {
   }
 
   update(id, data) {
-    console.log(id);
-    console.log(JSON.stringify(data));
-    return httppost.put("/burclar/"+id,data );
+
+    const axios = require('axios');
+
+    let config = {
+      method: 'put',
+      url: 'http://vipfal.herokuapp.com/admin/burclar/'+id,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    return axios(config);
   }
 
   delete(id) {
