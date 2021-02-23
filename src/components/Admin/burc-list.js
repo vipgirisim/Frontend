@@ -48,7 +48,6 @@ export default class TutorialsList extends Component {
 
   onChangeTitle(e) {
     const burcadi = e.target.value;
-
     this.setState(function(prevState) {
       return {
         currentTutorial: {
@@ -106,6 +105,7 @@ export default class TutorialsList extends Component {
   }
 
   updateTutorial() {
+    debugger;
     BurclarDataService.update(
       this.state.currentTutorial.id,
       this.state.currentTutorial
@@ -121,7 +121,7 @@ export default class TutorialsList extends Component {
       });
   }
 
-  deleteTutorial() {    
+  deleteTutorial() {   
     BurclarDataService.delete(this.state.currentTutorial.id)
       .then(response => {
         console.log(response.data);

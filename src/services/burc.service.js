@@ -1,5 +1,6 @@
+import axios from 'axios'
 import http from "./http-common";
-
+import httppost from "./http-common-post";
 class BurclarDataService {
   getAll() {
     return http.get("/burclar");
@@ -14,7 +15,9 @@ class BurclarDataService {
   }
 
   update(id, data) {
-    return http.put(`/burclar/${id}`, data);
+    console.log(id);
+    console.log(JSON.stringify(data));
+    return httppost.put("/burclar/"+id,data );
   }
 
   delete(id) {
