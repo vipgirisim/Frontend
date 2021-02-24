@@ -57,6 +57,7 @@ export default class BurclarListesi extends Component {
       };
     });
   }
+  
   onChangeDescription(e) {
     const burclinki = e.target.value;
     

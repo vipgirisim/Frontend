@@ -2,12 +2,7 @@ import React, { Component } from "react";
 import IndirimDataService from "../../services/indirim.service";
 
 
-/*          indirimkodu: "",
-            kackisikullansin: "",
-            yuzdeorani: "",
-            baslangicTarihi: "",
-            BitisTarihi: "",
-*/
+ 
 
 export default class BurcEkle extends Component {
     constructor(props) {
@@ -26,10 +21,7 @@ export default class BurcEkle extends Component {
             kackisikullansin: "",
             yuzdeorani: "",
             baslangicTarihi: "",
-            BitisTarihi: "",
-
-
-            submitted: false
+            BitisTarihi: "", 
         };
     }
 
@@ -80,8 +72,7 @@ export default class BurcEkle extends Component {
                     yuzdeorani: response.data.yuzdeorani,
                     baslangicTarihi: response.data.baslangicTarihi,
                     BitisTarihi: response.data.BitisTarihi,
-                    submitted: true
-                });
+                 });
                 console.log(response.data);
             })
             .catch(e => {
@@ -92,13 +83,12 @@ export default class BurcEkle extends Component {
     newTutorial() {
         this.setState({
             id: null,
-            indirimkodu: "",
-            kackisikullansin: "",
+            indirimkodu:"",
+            kackisikullansin:"",
             yuzdeorani: "",
             baslangicTarihi: "",
             BitisTarihi: "", 
-             submitted: false
-        });
+         });
     }
 
     render() {

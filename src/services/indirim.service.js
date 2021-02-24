@@ -1,7 +1,7 @@
 import http from "./http-common-indirim";
  class IndirimDataService {
   getAll() {
-    return http.get("/inidirim");
+    return http.get("/indirim");
   }
 
   get(id) {
