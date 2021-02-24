@@ -5,7 +5,10 @@ export default class BurcEkle extends Component {
   constructor(props) {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeDescription2 = this.onChangeDescription2.bind(this);
+    this.onChangeTitle1 = this.onChangeTitle.bind(this);
+    this.onChangeDescription3 = this.onChangeDescription3.bind(this);
+
     this.saveTutorial = this.saveTutorial.bind(this);
     this.newTutorial = this.newTutorial.bind(this);
 
@@ -31,7 +34,25 @@ export default class BurcEkle extends Component {
 
   onChangeDescription(e) {
     this.setState({
-        indirimkodu: e.target.value
+        kackisikullansin: e.target.value
+    });
+  }
+
+  onChangeTitle1(e) {
+    this.setState({
+        yuzdeorani: e.target.value
+    });
+  }
+
+  onChangeDescription2(e) {
+    this.setState({
+        baslangicTarihi: e.target.value
+    });
+  }
+
+  onChangeDescription3(e) {
+    this.setState({
+        BitisTarihi: e.target.value
     });
   }
 
@@ -88,7 +109,7 @@ export default class BurcEkle extends Component {
         ) : (
           <div>
             <div className="form-group">
-              <label htmlFor="title">Başlık</label>
+              <label htmlFor="title">indirim kodu :</label>
               <input
                 type="text"
                 className="form-control"
@@ -98,41 +119,49 @@ export default class BurcEkle extends Component {
                 onChange={this.onChangeTitle}
                 name="indirimkodu"
               />
+                            <label htmlFor="title">Kaç Kişi Kullansın :</label>
+
                 <input
                 type="text"
                 className="form-control"
                 id="kackisikullansin"
                 required
                 value={this.state.kackisikullansin}
-                onChange={this.onChangeTitle}
+                onChange={this.onChangeDescription}
                 name="kackisikullansin"
               />
+                            <label htmlFor="title">Yuzde Oranı :</label>
+
                 <input
                 type="text"
                 className="form-control"
                 id="indirimkodu"
                 required
                 value={this.state.indirimkodu}
-                onChange={this.onChangeTitle}
+                onChange={this.onChangeTitle1}
                 name="indirimkodu"
               />
+                            <label htmlFor="title">Baslangic Tarihi :</label>
+
                 <input
                 type="text"
                 className="form-control"
                 id="indirimkodu"
                 required
                 value={this.state.indirimkodu}
-                onChange={this.onChangeTitle}
+                onChange={this.onChangeDescription2}
                 name="indirimkodu"
               />
+                            <label htmlFor="title">Bitis Tarihi :</label>
+
                 <input
                 type="text"
                 className="form-control"
-                id="indirimkodu"
+                id="BitisTarihi"
                 required
                 value={this.state.indirimkodu}
-                onChange={this.onChangeTitle}
-                name="indirimkodu"
+                onChange={this.onChangeDescription3}
+                name="BitisTarihi"
               />
             </div>
 
