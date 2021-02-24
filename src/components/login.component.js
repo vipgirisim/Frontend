@@ -81,17 +81,18 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="col-md-12">
-        <div className="card card-container">
-         {/*  <img  style={{justifyContent:"center",alignContent:"center"}} 
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+      <div className="col-md-8" >
+        <img  
+            src="https://www.vipfal.com/images/logo.png"
             alt="profile-img"
             className="profile-img-card"
-            height="500"
+            height="194"
             width="500"
             
-          /> */}
-
+          />  
+          <br/>
+        <div className="card card-container">
+          
           <Form
             onSubmit={this.handleLogin}
             ref={c => {
