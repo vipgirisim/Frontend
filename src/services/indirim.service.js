@@ -1,5 +1,5 @@
 import http from "./http-common-indirim";
- class IndirimDataService {
+ class indirimDataService {
   getAll() {
     return http.get("/indirim");
   }
@@ -26,8 +26,8 @@ import http from "./http-common-indirim";
   }
 
   findByTitle(indirim) {
-    return http.get(`/indirim?indirimadi=${indirim}`);
+    return http.get(`/indirim?/indirimadi=${indirim}`);
   }
 }
 
-export default new IndirimDataService();
+export default new indirimDataService();

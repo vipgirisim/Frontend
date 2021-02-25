@@ -5,6 +5,7 @@ import BurcEkle from "../../src/components/Admin/BurclEkle"
 import Duyurulistesi from "../../src/components/Admin/tutorials-list"
 import Burclistesi from "../../src/components/Admin/burc-list"
 import Indirimekle from "../../src/components/Admin/indirimEkle"
+import Indirimlist from "../../src/components/Admin/indirim-list"
 
 
 
@@ -45,7 +46,7 @@ function Sistemislemler() {
               <CardHeader>
                 <CardTitle tag="h4">İndirim Menüsü</CardTitle>
                 <Indirimekle/>
-              </CardHeader>
+               </CardHeader>
 
               <CardBody>
 

@@ -10,8 +10,10 @@ export default class BurcEkle extends Component {
         this.onchanegeindirimkodu = this.onchanegeindirimkodu.bind(this);
         this.onchanegekackisikullansin= this.onchanegekackisikullansin.bind(this);
         this.onchanegeyuzdeorani= this.onchanegeyuzdeorani.bind(this);
+
         this.onchanegebaslangicTarihi= this.onchanegebaslangicTarihi.bind(this);
         this.onchanegeBitisTarihi= this.onchanegeBitisTarihi.bind(this);
+
         this.saveTutorial = this.saveTutorial.bind(this);
         this.newTutorial = this.newTutorial.bind(this);
 
@@ -21,7 +23,10 @@ export default class BurcEkle extends Component {
             kackisikullansin: "",
             yuzdeorani: "",
             baslangicTarihi: "",
-            BitisTarihi: "", 
+            BitisTarihi: "",
+
+
+            submitted: false
         };
     }
 
@@ -71,7 +76,7 @@ export default class BurcEkle extends Component {
                     kackisikullansin: response.data.kackisikullansin,
                     yuzdeorani: response.data.yuzdeorani,
                     baslangicTarihi: response.data.baslangicTarihi,
-                    BitisTarihi: response.data.BitisTarihi,
+                    BitisTarihi: response.data.BitisTarihi,  
                  });
                 console.log(response.data);
             })
@@ -86,9 +91,10 @@ export default class BurcEkle extends Component {
             indirimkodu:"",
             kackisikullansin:"",
             yuzdeorani: "",
-            baslangicTarihi: "",
+            baslangicTarihi:"",
             BitisTarihi: "", 
-         });
+             submitted: false
+        });
     }
 
     render() {
@@ -114,41 +120,41 @@ export default class BurcEkle extends Component {
                                     onChange={this.onchanegeindirimkodu}
                                     name="indirimkodu"
                                 />
-                                <label htmlFor="title">Kaç Kişi Kullansın :</label>
+                              <label htmlFor="title">Kaç Kişi Kullansın :</label>
 
                                 <input
                                     type="text"
                                     className="form-control"
                                     id="kackisikullansin"
-                                    required
+                                     
                                     value={this.state.kackisikullansin}
                                     onChange={this.onchanegekackisikullansin}
                                     name="kackisikullansin"
                                 />
-                                <label htmlFor="title">Yuzde Oranı :</label>
+                                 <label htmlFor="title">Yuzde Oranı :</label>
 
                                 <input
                                     type="text"
                                     className="form-control"
                                     id="yuzdeorani"
-                                    required
+                                     
                                     value={this.state.yuzdeorani}
                                     onChange={this.onchanegeyuzdeorani}
                                     name="yuzdeorani"
                                 />
                                 <label htmlFor="title">Baslangic Tarihi :</label>
-
+ 
                                 <input
                                     type="text"
                                     className="form-control"
                                     id="baslangicTarihi"
-                                    required
+                                     
                                     value={this.state.baslangicTarihi}
                                     onChange={this.onchanegebaslangicTarihi}
                                     name="baslangicTarihi"
                                 />
                                 <label htmlFor="title">Bitis Tarihi :</label>
-
+ 
                                 <input
                                     type="text"
                                     className="form-control"
@@ -158,7 +164,7 @@ export default class BurcEkle extends Component {
                                     onChange={this.onchanegeBitisTarihi}
                                     name="BitisTarihi"
                                 />
-                            </div>
+                            </div> 
 
 
 
