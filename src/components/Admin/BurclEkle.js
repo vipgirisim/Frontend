@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TutorialDataService from "../../services/burc.service";
 
-export default class BurcEkle extends Component {
+export default class AddTutorial extends Component {
   constructor(props) {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);

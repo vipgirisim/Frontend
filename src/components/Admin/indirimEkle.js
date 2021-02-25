@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import IndirimDataService from "../../services/indirim.service";
+import IndirimDataService from "../../services/discount.service";
 
 
  

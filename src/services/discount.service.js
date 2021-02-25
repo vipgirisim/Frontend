@@ -1,4 +1,4 @@
-import http from "./http-common-indirim";
+import http from "./http-common-burc";
  class indirimDataService {
   getAll() {
     return http.get("/indirim");
@@ -26,7 +26,7 @@ import http from "./http-common-indirim";
   }
 
   findByTitle(indirim) {
-    return http.get(`/indirim?/indirimadi=${indirim}`);
+    return http.get(`/indirim?burcadi=${indirim}`);
   }
 }
 

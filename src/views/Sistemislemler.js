@@ -4,25 +4,21 @@ import Duyuruekle from "../../src/components/Admin/AddTutorial"
 import BurcEkle from "../../src/components/Admin/BurclEkle"
 import Duyurulistesi from "../../src/components/Admin/tutorials-list"
 import Burclistesi from "../../src/components/Admin/burc-list"
-import Indirimekle from "../../src/components/Admin/indirimEkle"
-import IndirimListesi from "../components/Admin/discount-list"
+import IndırımEkle from "../../src/components/Admin/indirimEkle"
+import IndırımListesi from "../../src/components/Admin/indirim-list"
 
 
-
-
-// reactstrap components
+ 
+ 
 import {
   Card,
   CardHeader,
   CardBody,
   CardTitle,
-  Table,
   Row,
   Col,
 } from "reactstrap";
-
-
-
+ 
 function Sistemislemler() {
   return (
     <>
@@ -45,9 +41,9 @@ function Sistemislemler() {
 
               <CardHeader>
                 <CardTitle tag="h4">İndirim Menüsü</CardTitle>
-                <Indirimekle/>
-                <IndirimListesi/>
-                </CardHeader>
+                <IndırımEkle/>
+                <IndırımListesi/>
+              </CardHeader>
 
               <CardBody>
 
