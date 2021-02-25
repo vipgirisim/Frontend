@@ -1,37 +1,31 @@
-
 import React, { Component } from "react";
-import IndirimDataService from "../../services/indirim.service";
+import BurclarDataService from "../../services/indirim.service";
  
-export default class IndirimListesi extends Component {
+export default class BurclarListesi extends Component {
   constructor(props) {
     super(props);
-    this.onchanegeindirimkodu = this.onchanegeindirimkodu.bind(this);
-    this.onchanegekackisikullansin= this.onchanegekackisikullansin.bind(this);
-    this.onchanegeyuzdeorani= this.onchanegeyuzdeorani.bind(this);
-    this.onchanegebaslangicTarihi= this.onchanegebaslangicTarihi.bind(this);
-    this.onchanegeBitisTarihi= this.onchanegeBitisTarihi.bind(this);
-   /*  this.saveTutorial = this.saveTutorial.bind(this);
-    this.newTutorial = this.newTutorial.bind(this);
-
-
-
+    this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
+    this.retrieveTutorials = this.retrieveTutorials.bind(this);
+    this.refreshList = this.refreshList.bind(this);
+    this.setActiveTutorial = this.setActiveTutorial.bind(this);
+    this.removeAllTutorials = this.removeAllTutorials.bind(this);
+    this.searchTitle = this.searchTitle.bind(this);
+    this.onChangeTitle = this.onChangeTitle.bind(this);
+    this.onChangeDescription = this.onChangeDescription.bind(this);
     this.getTutorial = this.getTutorial.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
     this.updateTutorial = this.updateTutorial.bind(this);
-    this.deleteTutorial = this.deleteTutorial.bind(this); */
+    this.deleteTutorial = this.deleteTutorial.bind(this);
 
     this.state = {
       currentTutorial: {
         id: null,
-        indirimkodu: "",
-        kackisikullansin: "",
-        yuzdeorani: "",
-        baslangicTarihi: "",
-        BitisTarihi: "", 
+        burcadi: "",
+        burclinki: "",
         published: false
       },
       message: "",
-      indirim: [],
+      burclar: [],
       currentTutorial: null,
       currentIndex: -1,
       searchTitle: ""
@@ -52,73 +46,31 @@ export default class IndirimListesi extends Component {
     });
   }
 
-
- 
-
-onchanegeindirimkodu(e) {
-    const kackisikullansin = e.target.value;
+  onChangeTitle(e) {
+    const burcadi = e.target.value;
     this.setState(function(prevState) {
       return {
         currentTutorial: {
           ...prevState.currentTutorial,
-          kackisikullansin: kackisikullansin
+          burcadi: burcadi
         }
       };
     });
   }
   
-  onchanegekackisikullansin(e) {
-    const yuzdeorani = e.target.value;
+  onChangeDescription(e) {
+    const burclinki = e.target.value;
     
     this.setState(prevState => ({
       currentTutorial: {
         ...prevState.currentTutorial,
-        yuzdeorani: yuzdeorani
+        burclinki: burclinki
       }
     }));
   }
-
-
-  onchanegeyuzdeorani(e) {
-    const indirimkodu = e.target.value;
-    this.setState(function(prevState) {
-      return {
-        currentTutorial: {
-          ...prevState.currentTutorial,
-          indirimkodu: indirimkodu
-        }
-      };
-    });
-  }
-  
-  onchanegebaslangicTarihi(e) {
-    const baslangicTarihi = e.target.value;
-    
-    this.setState(prevState => ({
-      currentTutorial: {
-        ...prevState.currentTutorial,
-        baslangicTarihi: baslangicTarihi
-      }
-    }));
-  }
-
-  onchanegeBitisTarihi(e) {
-    const BitisTarihi = e.target.value;
-    
-    this.setState(prevState => ({
-      currentTutorial: {
-        ...prevState.currentTutorial,
-        BitisTarihi: BitisTarihi
-      }
-    }));
-  }
-
-
-
-
 
   getTutorial(id) {
-    IndirimDataService.get(id)
+    BurclarDataService.get(id)
       .then(response => {
         this.setState({
           currentTutorial: response.data
@@ -133,16 +85,12 @@ onchanegeindirimkodu(e) {
   updatePublished(status) {
     var data = {
       id: this.state.currentTutorial.id,
-      indirimkodu: this.state.currentTutorial.indirimkodu,
-      kackisikullansin: this.state.currentTutorial.kackisikullansin,
-      yuzdeorani: this.state.currentTutorial.yuzdeorani,
-      baslangicTarihi: this.state.currentTutorial.baslangicTarihi,
-      BitisTarihi: this.state.currentTutorial.BitisTarihi,
-
+      burcadi: this.state.currentTutorial.burcadi,
+      burclinki: this.state.currentTutorial.burclinki,
       published: status
     };
 
-    IndirimDataService.update(this.state.currentTutorial.id, data)
+    BurclarDataService.update(this.state.currentTutorial.id, data)
       .then(response => {
         this.setState(prevState => ({
           currentTutorial: {
@@ -158,7 +106,7 @@ onchanegeindirimkodu(e) {
   }
 
   updateTutorial() {
-     IndirimDataService.update(
+     BurclarDataService.update(
       this.state.currentTutorial.id,
       this.state.currentTutorial
     )
@@ -174,10 +122,10 @@ onchanegeindirimkodu(e) {
   }
 
   deleteTutorial() {   
-    IndirimDataService.delete(this.state.currentTutorial.id)
+    BurclarDataService.delete(this.state.currentTutorial.id)
       .then(response => {
         console.log(response.data);
-        this.props.history.push('/indirim')
+        this.props.history.push('/burclar')
       })
       .catch(e => {
         console.log(e);
@@ -185,7 +133,7 @@ onchanegeindirimkodu(e) {
   }
 
   retrieveTutorials() {
-    IndirimDataService.getAll()
+    BurclarDataService.getAll()
       .then(response => {
         this.setState({
           burclar: response.data
@@ -205,15 +153,15 @@ onchanegeindirimkodu(e) {
     });
   }
 
-  setActiveTutorial(indirimkodu, index) {
+  setActiveTutorial(burcadi, index) {
     this.setState({
-      currentTutorial: indirimkodu,
+      currentTutorial: burcadi,
       currentIndex: index
     });
   }
 
   removeAllTutorials() {
-    IndirimDataService.deleteAll()
+    BurclarDataService.deleteAll()
       .then(response => {
         console.log(response.data);
         this.refreshList();
@@ -229,7 +177,7 @@ onchanegeindirimkodu(e) {
       currentIndex: -1
     });
 
-    IndirimDataService.findByTitle(this.state.searchTitle)
+    BurclarDataService.findByTitle(this.state.searchTitle)
       .then(response => {
         this.setState({
           burclar: response.data
@@ -242,7 +190,7 @@ onchanegeindirimkodu(e) {
   }
 
   render() {
-    const { searchTitle, indirim, currentTutorial, currentIndex } = this.state;
+    const { searchTitle, burclar, currentTutorial, currentIndex } = this.state;
 
     return (
       <div className="list row">
@@ -267,20 +215,20 @@ onchanegeindirimkodu(e) {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Burclar Listesi</h4>
+          <h4>indirim Listesi</h4>
 
           <ul className="list-group">
-            {indirim &&
-              indirim.map((indirim, index) => (
+            {burclar &&
+              burclar.map((burclar, index) => (
                 <li
                   className={
                     "list-group-item " +
                     (index === currentIndex ? "active" : "")
                   }
-                  onClick={() => this.setActiveTutorial(indirim, index)}
+                  onClick={() => this.setActiveTutorial(burclar, index)}
                   key={index}
                 >
-                  {indirim.indirimkodu}
+                  {burclar.burcadi}
                 </li>
               ))}
           </ul>
@@ -296,77 +244,28 @@ onchanegeindirimkodu(e) {
         <div>
         {currentTutorial ? (
           <div className="edit-form">
-            <h4>İndirim</h4>
+            <h4>Burclar</h4>
             <form>
               <div className="form-group">
-                <label htmlFor="indirimkodu">indirimkodu</label>
+                <label htmlFor="burcadi">başlık</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="indirimkodu"
-                  value={currentTutorial.indirimkodu}
-                  onChange={this.onchanegeindirimkodu}
-                />
-              </div>
-
-
-              <div className="form-group">
-                <label htmlFor="kackisikullansin">kackisikullansin</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="kackisikullansin"
-                  value={currentTutorial.kackisikullansin}
-                  onChange={this.onchanegekackisikullansin}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="kackisikullansin">kackisikullansin</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="kackisikullansin"
-                  value={currentTutorial.kackisikullansin}
-                  onChange={this.onchanegekackisikullansin}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="kackisikullansin">kackisikullansin</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="kackisikullansin"
-                  value={currentTutorial.kackisikullansin}
-                  onChange={this.onchanegekackisikullansin}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="kackisikullansin">kackisikullansin</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="kackisikullansin"
-                  value={currentTutorial.kackisikullansin}
-                  onChange={this.onchanegekackisikullansin}
+                  id="burcadi"
+                  value={currentTutorial.burcadi}
+                  onChange={this.onChangeTitle}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="kackisikullansin">kackisikullansin</label>
+                <label htmlFor="burclinki">tanımlama</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="kackisikullansin"
-                  value={currentTutorial.kackisikullansin}
-                  onChange={this.onchanegekackisikullansin}
+                  id="burclinki"
+                  value={currentTutorial.burclinki}
+                  onChange={this.onChangeDescription}
                 />
               </div>
-
-
-
-
 
               <div className="form-group">
                 <label>
