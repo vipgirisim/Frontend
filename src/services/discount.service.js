@@ -1,33 +1,33 @@
 import http from "./http-common-burc";
- class indirimDataService {
+ class IndirimDataService {
   getAll() {
-    return http.get("/indirim");
+    return http.get("/discounts");
   }
 
   get(id) {
-    return http.get(`/indirim/${id}`);
+    return http.get(`/discounts/${id}`);
   }
 
   create(data) {
-    return http.post("/indirim", data);
+    return http.post("/discounts", data);
   }
 
 
   update(id, data) {
-    return  http.post('/indirim/'+id,data);
+    return  http.post('/discounts/'+id,data);
   }
  
   delete(id) {
-    return http.delete(`/indirim/${id}`);
+    return http.delete(`/discounts/${id}`);
   }
 
   deleteAll() {
-    return http.delete(`/indirim`);
+    return http.delete(`/discounts`);
   }
 
-  findByTitle(indirim) {
-    return http.get(`/indirim?burcadi=${indirim}`);
+  findByTitle(discounts) {
+    return http.get(`/discounts?indirimadi=${discounts}`);
   }
 }
 
-export default new indirimDataService();
+export default new IndirimDataService();

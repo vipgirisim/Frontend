@@ -4,8 +4,8 @@ import Duyuruekle from "../../src/components/Admin/AddTutorial"
 import BurcEkle from "../../src/components/Admin/BurclEkle"
 import Duyurulistesi from "../../src/components/Admin/tutorials-list"
 import Burclistesi from "../../src/components/Admin/burc-list"
-import IndırımEkle from "../../src/components/Admin/indirimEkle"
-import IndırımListesi from "../../src/components/Admin/indirim-list"
+import IndirimEkle from "../../src/components/Admin/indirimEkle"
+import IndirimListesi from "../../src/components/Admin/indirim-list"
 
 
  
@@ -41,8 +41,8 @@ function Sistemislemler() {
 
               <CardHeader>
                 <CardTitle tag="h4">İndirim Menüsü</CardTitle>
-                <IndırımEkle/>
-                <IndırımListesi/>
+                <IndirimEkle/>
+                <IndirimListesi/>
               </CardHeader>
 
               <CardBody>

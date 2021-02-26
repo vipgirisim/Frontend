@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import IndirimDataService from "../../services/discount.service";
+import DiscountDataService from "../../services/discount.service";
  
-export default class IndirimListesi extends Component {
+export default class indirimlerListesi extends Component {
   constructor(props) {
     super(props);
+    
     this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
     this.retrieveTutorials = this.retrieveTutorials.bind(this);
-
     this.refreshList = this.refreshList.bind(this);
     this.setActiveTutorial = this.setActiveTutorial.bind(this);
     this.removeAllTutorials = this.removeAllTutorials.bind(this);
+
     this.searchTitle = this.searchTitle.bind(this);
-
-
     this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
 
+
+    this.onChangeIndirimKodu = this.onChangeIndirimKodu.bind(this);
 
     this.getTutorial = this.getTutorial.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
@@ -25,12 +25,15 @@ export default class IndirimListesi extends Component {
     this.state = {
       currentTutorial: {
         id: null,
-       // indirimkodu: "",
-      //  kackisikullansin: "",
+        indirimkodu:"",
+        kackisikullansin: "",
+        yuzdeorani: "",
+        baslangicTarihi:"",
+        BitisTarihi: "",
         published: false
       },
       message: "",
-    //  indirimler: [],
+      indirimler: [],
       currentTutorial: null,
       currentIndex: -1,
       searchTitle: ""
@@ -58,24 +61,30 @@ export default class IndirimListesi extends Component {
         currentTutorial: {
           ...prevState.currentTutorial,
           indirimkodu: indirimkodu
+
+          //buralara ekle
         }
       };
     });
   }
   
-  onChangeDescription(e) {
-    const kackisikullansin = e.target.value;
+  onChangeIndirimKodu(e) {
+    const indirimkodu = e.target.value;
     
     this.setState(prevState => ({
       currentTutorial: {
         ...prevState.currentTutorial,
-        kackisikullansin: kackisikullansin
+        indirimkodu: indirimkodu
       }
     }));
   }
 
+
+
+  //buralara ekle gider alanlari
+
   getTutorial(id) {
-    IndirimDataService.get(id)
+    DiscountDataService.get(id)
       .then(response => {
         this.setState({
           currentTutorial: response.data
@@ -92,10 +101,13 @@ export default class IndirimListesi extends Component {
       id: this.state.currentTutorial.id,
       indirimkodu: this.state.currentTutorial.indirimkodu,
       kackisikullansin: this.state.currentTutorial.kackisikullansin,
+
+
+      //buralara ekle
       published: status
     };
 
-    IndirimDataService.update(this.state.currentTutorial.id, data)
+    DiscountDataService.update(this.state.currentTutorial.id, data)
       .then(response => {
         this.setState(prevState => ({
           currentTutorial: {
@@ -111,7 +123,7 @@ export default class IndirimListesi extends Component {
   }
 
   updateTutorial() {
-     IndirimDataService.update(
+     DiscountDataService.update(
       this.state.currentTutorial.id,
       this.state.currentTutorial
     )
@@ -127,10 +139,10 @@ export default class IndirimListesi extends Component {
   }
 
   deleteTutorial() {   
-    IndirimDataService.delete(this.state.currentTutorial.id)
+    DiscountDataService.delete(this.state.currentTutorial.id)
       .then(response => {
         console.log(response.data);
-        this.props.history.push('/indirim')
+        this.props.history.push('/discounts')
       })
       .catch(e => {
         console.log(e);
@@ -138,7 +150,7 @@ export default class IndirimListesi extends Component {
   }
 
   retrieveTutorials() {
-    IndirimDataService.getAll()
+    DiscountDataService.getAll()
       .then(response => {
         this.setState({
           indirimler: response.data
@@ -166,7 +178,7 @@ export default class IndirimListesi extends Component {
   }
 
   removeAllTutorials() {
-    IndirimDataService.deleteAll()
+    DiscountDataService.deleteAll()
       .then(response => {
         console.log(response.data);
         this.refreshList();
@@ -182,7 +194,7 @@ export default class IndirimListesi extends Component {
       currentIndex: -1
     });
 
-    IndirimDataService.findByTitle(this.state.searchTitle)
+    DiscountDataService.findByTitle(this.state.searchTitle)
       .then(response => {
         this.setState({
           indirimler: response.data
@@ -220,7 +232,7 @@ export default class IndirimListesi extends Component {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Indirim Listesi</h4>
+          <h4>indirimler Listesi</h4>
 
           <ul className="list-group">
             {indirimler &&
@@ -249,10 +261,10 @@ export default class IndirimListesi extends Component {
         <div>
         {currentTutorial ? (
           <div className="edit-form">
-            <h4>Inidirimler</h4>
+            <h4>indirimler</h4>
             <form>
               <div className="form-group">
-                <label htmlFor="indirimkodu">başlık</label>
+                <label htmlFor="indirimkadi">Indirim Adi</label>
                 <input
                   type="text"
                   className="form-control"
@@ -261,14 +273,16 @@ export default class IndirimListesi extends Component {
                   onChange={this.onChangeTitle}
                 />
               </div>
+
+
               <div className="form-group">
-                <label htmlFor="kackisikullansin">tanımlama</label>
+                <label htmlFor="indirimkodu">indirim kodu</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="kackisikullansin"
-                  value={currentTutorial.kackisikullansin}
-                  onChange={this.onChangeDescription}
+                  id="indirimkodu"
+                  value={currentTutorial.indirimkodu}
+                  onChange={this.onChangeIndirimKodu}
                 />
               </div>
 

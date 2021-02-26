@@ -21,8 +21,8 @@ export default class BurcEkle extends Component {
             id: null, 
             indirimkodu: "",
             kackisikullansin: "",
-            yuzdeorani: "",
-           /*  baslangicTarihi: "",
+           /*  yuzdeorani: "",
+            baslangicTarihi: "",
             BitisTarihi: "", */
 
 
@@ -130,7 +130,8 @@ export default class BurcEkle extends Component {
                                     value={this.state.kackisikullansin}
                                     onChange={this.onchanegekackisikullansin}
                                     name="kackisikullansin"
-                                />
+                                />            
+                                  {/*
                                  <label htmlFor="title">Yuzde Oranı :</label>
 
                                 <input
@@ -142,7 +143,7 @@ export default class BurcEkle extends Component {
                                     onChange={this.onchanegeyuzdeorani}
                                     name="yuzdeorani"
                                 />
-                              {/*      <label htmlFor="title">Baslangic Tarihi :</label>
+                      <label htmlFor="title">Baslangic Tarihi :</label>
  
                              <input
                                     type="text"
