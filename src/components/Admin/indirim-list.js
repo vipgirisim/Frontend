@@ -12,7 +12,14 @@ export default class TutorialsList extends Component {
     this.removeAllTutorials = this.removeAllTutorials.bind(this);
     this.searchTitle = this.searchTitle.bind(this);
     this.onChangeTitle = this.onChangeTitle.bind(this);
+
     this.onChangeDescription = this.onChangeDescription.bind(this);
+
+    this.onChangeYuzdeorani = this.onChangeYuzdeorani.bind(this);
+    this.onChangeBaslangicTarihi = this.onChangeBaslangicTarihi.bind(this);
+    this.onChangeBitisTarihi = this.onChangeBitisTarihi.bind(this);
+
+
     this.getTutorial = this.getTutorial.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
     this.updateTutorial = this.updateTutorial.bind(this);
@@ -23,6 +30,10 @@ export default class TutorialsList extends Component {
         id: null,
         indirimkodu: "",
         kackisikullansin: "",
+        yuzdeorani:  "",
+        baslangicTarihi:  "",
+        bitisTarihi: "",
+        
         published: false
       },
       message: "",
@@ -71,6 +82,44 @@ export default class TutorialsList extends Component {
     }));
   }
 
+
+  onChangeYuzdeorani(e) {
+    const yuzdeorani = e.target.value;
+    
+    this.setState(prevState => ({
+      currentTutorial: {
+        ...prevState.currentTutorial,
+        yuzdeorani: yuzdeorani
+      }
+    }));
+  }
+
+
+  onChangeBaslangicTarihi(e) {
+    const baslangicTarihi = e.target.value;
+    
+    this.setState(prevState => ({
+      currentTutorial: {
+        ...prevState.currentTutorial,
+        baslangicTarihi: baslangicTarihi
+      }
+    }));
+  }
+
+  onChangeBitisTarihi(e) {
+    const bitisTarihi = e.target.value;
+    
+    this.setState(prevState => ({
+      currentTutorial: {
+        ...prevState.currentTutorial,
+        bitisTarihi: bitisTarihi
+      }
+    }));
+  }
+
+
+
+
   getTutorial(id) {
     IndirimDataService.get(id)
       .then(response => {
@@ -89,6 +138,9 @@ export default class TutorialsList extends Component {
       id: this.state.currentTutorial.id,
       indirimkodu: this.state.currentTutorial.indirimkodu,
       kackisikullansin: this.state.currentTutorial.kackisikullansin,
+      yuzdeorani:  this.state.currentTutorial.yuzdeorani,
+      baslangicTarihi: this.state.currentTutorial.baslangicTarihi,
+      bitisTarihi:this.state.currentTutorial.bitisTarihi,
       published: status
     };
 
@@ -201,7 +253,7 @@ export default class TutorialsList extends Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Duyuru Ara"
+              placeholder="İndirim Ara"
               value={searchTitle}
               onChange={this.onChangeSearchTitle}
             />
@@ -312,7 +364,7 @@ export default class TutorialsList extends Component {
         ) : (
           <div>
             <br />
-            <p>Lütfen Duyuru tıkla</p>
+            <p>Lütfen İndirim Adına tıkla</p>
           </div>
         )}
       </div>
