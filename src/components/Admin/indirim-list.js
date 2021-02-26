@@ -1,22 +1,18 @@
 import React, { Component } from "react";
-import DiscountDataService from "../../services/discount.service";
- 
-export default class indirimlerListesi extends Component {
+import IndirimDataService from "../../services/discount.service";
+import { Link } from "react-router-dom";
+
+export default class TutorialsList extends Component {
   constructor(props) {
     super(props);
-    
     this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
     this.retrieveTutorials = this.retrieveTutorials.bind(this);
     this.refreshList = this.refreshList.bind(this);
     this.setActiveTutorial = this.setActiveTutorial.bind(this);
     this.removeAllTutorials = this.removeAllTutorials.bind(this);
-
     this.searchTitle = this.searchTitle.bind(this);
     this.onChangeTitle = this.onChangeTitle.bind(this);
-
-
-    this.onChangeIndirimKodu = this.onChangeIndirimKodu.bind(this);
-
+    this.onChangeDescription = this.onChangeDescription.bind(this);
     this.getTutorial = this.getTutorial.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
     this.updateTutorial = this.updateTutorial.bind(this);
@@ -25,15 +21,12 @@ export default class indirimlerListesi extends Component {
     this.state = {
       currentTutorial: {
         id: null,
-        indirimkodu:"",
+        indirimkodu: "",
         kackisikullansin: "",
-        yuzdeorani: "",
-        baslangicTarihi:"",
-        BitisTarihi: "",
         published: false
       },
       message: "",
-      indirimler: [],
+      tutorials: [],
       currentTutorial: null,
       currentIndex: -1,
       searchTitle: ""
@@ -56,35 +49,30 @@ export default class indirimlerListesi extends Component {
 
   onChangeTitle(e) {
     const indirimkodu = e.target.value;
+
     this.setState(function(prevState) {
       return {
         currentTutorial: {
           ...prevState.currentTutorial,
           indirimkodu: indirimkodu
-
-          //buralara ekle
         }
       };
     });
   }
-  
-  onChangeIndirimKodu(e) {
-    const indirimkodu = e.target.value;
+
+  onChangeDescription(e) {
+    const kackisikullansin = e.target.value;
     
     this.setState(prevState => ({
       currentTutorial: {
         ...prevState.currentTutorial,
-        indirimkodu: indirimkodu
+        kackisikullansin: kackisikullansin
       }
     }));
   }
 
-
-
-  //buralara ekle gider alanlari
-
   getTutorial(id) {
-    DiscountDataService.get(id)
+    IndirimDataService.get(id)
       .then(response => {
         this.setState({
           currentTutorial: response.data
@@ -101,13 +89,10 @@ export default class indirimlerListesi extends Component {
       id: this.state.currentTutorial.id,
       indirimkodu: this.state.currentTutorial.indirimkodu,
       kackisikullansin: this.state.currentTutorial.kackisikullansin,
-
-
-      //buralara ekle
       published: status
     };
 
-    DiscountDataService.update(this.state.currentTutorial.id, data)
+    IndirimDataService.update(this.state.currentTutorial.id, data)
       .then(response => {
         this.setState(prevState => ({
           currentTutorial: {
@@ -123,7 +108,7 @@ export default class indirimlerListesi extends Component {
   }
 
   updateTutorial() {
-     DiscountDataService.update(
+    IndirimDataService.update(
       this.state.currentTutorial.id,
       this.state.currentTutorial
     )
@@ -138,8 +123,8 @@ export default class indirimlerListesi extends Component {
       });
   }
 
-  deleteTutorial() {   
-    DiscountDataService.delete(this.state.currentTutorial.id)
+  deleteTutorial() {    
+    IndirimDataService.delete(this.state.currentTutorial.id)
       .then(response => {
         console.log(response.data);
         this.props.history.push('/discounts')
@@ -150,10 +135,10 @@ export default class indirimlerListesi extends Component {
   }
 
   retrieveTutorials() {
-    DiscountDataService.getAll()
+    IndirimDataService.getAll()
       .then(response => {
         this.setState({
-          indirimler: response.data
+          tutorials: response.data
         });
         console.log(response.data);
       })
@@ -170,15 +155,15 @@ export default class indirimlerListesi extends Component {
     });
   }
 
-  setActiveTutorial(indirimkodu, index) {
+  setActiveTutorial(tutorial, index) {
     this.setState({
-      currentTutorial: indirimkodu,
+      currentTutorial: tutorial,
       currentIndex: index
     });
   }
 
   removeAllTutorials() {
-    DiscountDataService.deleteAll()
+    IndirimDataService.deleteAll()
       .then(response => {
         console.log(response.data);
         this.refreshList();
@@ -194,10 +179,10 @@ export default class indirimlerListesi extends Component {
       currentIndex: -1
     });
 
-    DiscountDataService.findByTitle(this.state.searchTitle)
+    IndirimDataService.findByTitle(this.state.searchTitle)
       .then(response => {
         this.setState({
-          indirimler: response.data
+          tutorials: response.data
         });
         console.log(response.data);
       })
@@ -207,7 +192,7 @@ export default class indirimlerListesi extends Component {
   }
 
   render() {
-    const { searchTitle, indirimler, currentTutorial, currentIndex } = this.state;
+    const { searchTitle, tutorials, currentTutorial, currentIndex } = this.state;
 
     return (
       <div className="list row">
@@ -216,7 +201,7 @@ export default class indirimlerListesi extends Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Burç Ara"
+              placeholder="Duyuru Ara"
               value={searchTitle}
               onChange={this.onChangeSearchTitle}
             />
@@ -232,20 +217,20 @@ export default class indirimlerListesi extends Component {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>indirimler Listesi</h4>
+          <h4>indirim Listesi</h4>
 
           <ul className="list-group">
-            {indirimler &&
-              indirimler.map((indirimler, index) => (
+            {tutorials &&
+              tutorials.map((tutorial, index) => (
                 <li
                   className={
                     "list-group-item " +
                     (index === currentIndex ? "active" : "")
                   }
-                  onClick={() => this.setActiveTutorial(indirimler, index)}
+                  onClick={() => this.setActiveTutorial(tutorial, index)}
                   key={index}
                 >
-                  {indirimler.indirimkodu}
+                  {tutorial.indirimkodu}
                 </li>
               ))}
           </ul>
@@ -261,10 +246,10 @@ export default class indirimlerListesi extends Component {
         <div>
         {currentTutorial ? (
           <div className="edit-form">
-            <h4>indirimler</h4>
+            <h4>Duyuru</h4>
             <form>
               <div className="form-group">
-                <label htmlFor="indirimkadi">Indirim Adi</label>
+                <label htmlFor="indirimkodu">indirimkodu</label>
                 <input
                   type="text"
                   className="form-control"
@@ -273,16 +258,14 @@ export default class indirimlerListesi extends Component {
                   onChange={this.onChangeTitle}
                 />
               </div>
-
-
               <div className="form-group">
-                <label htmlFor="indirimkodu">indirim kodu</label>
+                <label htmlFor="kackisikullansin">kackisikullansin</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="indirimkodu"
-                  value={currentTutorial.indirimkodu}
-                  onChange={this.onChangeIndirimKodu}
+                  id="kackisikullansin"
+                  value={currentTutorial.kackisikullansin}
+                  onChange={this.onChangeDescription}
                 />
               </div>
 
@@ -329,7 +312,7 @@ export default class indirimlerListesi extends Component {
         ) : (
           <div>
             <br />
-            <p>Lütfen indirimler tıkla</p>
+            <p>Lütfen Duyuru tıkla</p>
           </div>
         )}
       </div>

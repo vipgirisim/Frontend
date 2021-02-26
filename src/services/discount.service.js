@@ -1,4 +1,4 @@
-import http from "./http-common-burc";
+import http from "./http-common-discount";
  class IndirimDataService {
   getAll() {
     return http.get("/discounts");
