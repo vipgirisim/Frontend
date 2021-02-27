@@ -6,7 +6,8 @@ import Duyurulistesi from "../../src/components/Admin/tutorials-list"
 import Burclistesi from "../../src/components/Admin/burc-list"
 import IndirimEkle from "../../src/components/Admin/indirimEkle"
 import IndirimListesi from "../../src/components/Admin/indirim-list"
-
+ 
+import FileUploadScreen from  "../../src/components/Admin/resimyukle"
 
  
  
@@ -60,9 +61,11 @@ function Sistemislemler() {
                </CardHeader>
 
                <CardHeader>
-                <CardTitle tag="h4">Slayt  Menüsü</CardTitle>
-                
+                <CardTitle tag="h4">Slayt ve Logo Menüsü</CardTitle>
+                <FileUploadScreen/>
                </CardHeader>
+
+           
 
                <CardHeader>
                 <CardTitle tag="h4">Fal  Menüsü</CardTitle>

@@ -65,7 +65,7 @@ export default class TutorialsList extends Component {
       return {
         currentTutorial: {
           ...prevState.currentTutorial,
-          indirimkodu: indirimkodu,
+          indirimkodu: indirimkodu
         }
       };
     });
@@ -273,16 +273,16 @@ export default class TutorialsList extends Component {
 
           <ul className="list-group">
             {tutorials &&
-              tutorials.map((tutorial, index) => (
+              tutorials.map((tutorials, index) => (
                 <li
                   className={
                     "list-group-item " +
                     (index === currentIndex ? "active" : "")
                   }
-                  onClick={() => this.setActiveTutorial(tutorial, index)}
+                  onClick={() => this.setActiveTutorial(tutorials, index)}
                   key={index}
                 >
-                  {tutorial.indirimkodu}
+                  {tutorials.indirimkodu}
                 </li>
               ))}
           </ul>
@@ -301,7 +301,7 @@ export default class TutorialsList extends Component {
             <h4>İndirim</h4>
             <form>
               <div className="form-group">
-                <label htmlFor="indirimkodu">Indirim Kodu</label>
+                <label htmlFor="indirimkodu">Indirim kodu</label>
                 <input
                   type="text"
                   className="form-control"
@@ -335,7 +335,7 @@ export default class TutorialsList extends Component {
 
 
               <div className="form-group">
-                <label htmlFor="baslangicTarihi">Baslangic Tarihi</label>
+                <label htmlFor="baslangicTarihi">baslangic Tarihi</label>
                 <input
                   type="text"
                   className="form-control"
