@@ -32,7 +32,7 @@ export default class TutorialsList extends Component {
         kackisikullansin: "",
         yuzdeorani:  "",
         baslangicTarihi:  "",
-        bitisTarihi: "",
+        BitisTarihi: "",
         
         published: false
       },
@@ -65,7 +65,7 @@ export default class TutorialsList extends Component {
       return {
         currentTutorial: {
           ...prevState.currentTutorial,
-          indirimkodu: indirimkodu
+          indirimkodu: indirimkodu,
         }
       };
     });
@@ -107,12 +107,12 @@ export default class TutorialsList extends Component {
   }
 
   onChangeBitisTarihi(e) {
-    const bitisTarihi = e.target.value;
+    const BitisTarihi = e.target.value;
     
     this.setState(prevState => ({
       currentTutorial: {
         ...prevState.currentTutorial,
-        bitisTarihi: bitisTarihi
+        BitisTarihi: BitisTarihi
       }
     }));
   }
@@ -140,7 +140,7 @@ export default class TutorialsList extends Component {
       kackisikullansin: this.state.currentTutorial.kackisikullansin,
       yuzdeorani:  this.state.currentTutorial.yuzdeorani,
       baslangicTarihi: this.state.currentTutorial.baslangicTarihi,
-      bitisTarihi:this.state.currentTutorial.bitisTarihi,
+      BitisTarihi:this.state.currentTutorial.BitisTarihi,
       published: status
     };
 
@@ -298,10 +298,10 @@ export default class TutorialsList extends Component {
         <div>
         {currentTutorial ? (
           <div className="edit-form">
-            <h4>Duyuru</h4>
+            <h4>İndirim</h4>
             <form>
               <div className="form-group">
-                <label htmlFor="indirimkodu">indirimkodu</label>
+                <label htmlFor="indirimkodu">Indirim Kodu</label>
                 <input
                   type="text"
                   className="form-control"
@@ -318,6 +318,41 @@ export default class TutorialsList extends Component {
                   id="kackisikullansin"
                   value={currentTutorial.kackisikullansin}
                   onChange={this.onChangeDescription}
+                />
+              </div>
+
+
+              <div className="form-group">
+                <label htmlFor="yuzdeorani">Yuzde orani</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="yuzdeorani"
+                  value={currentTutorial.yuzdeorani}
+                  onChange={this.onChangeYuzdeorani}
+                />
+              </div>
+
+
+              <div className="form-group">
+                <label htmlFor="baslangicTarihi">Baslangic Tarihi</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="baslangicTarihi"
+                  value={currentTutorial.baslangicTarihi}
+                  onChange={this.onChangeBaslangicTarihi}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="BitisTarihi">Bitis Tarihi</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="BitisTarihi"
+                  value={currentTutorial.BitisTarihi}
+                  onChange={this.onChangeBitisTarihi}
                 />
               </div>
 

@@ -10,9 +10,9 @@ export default class BurcEkle extends Component {
         this.onchanegeindirimkodu = this.onchanegeindirimkodu.bind(this);
         this.onchanegekackisikullansin= this.onchanegekackisikullansin.bind(this);
         this.onchanegeyuzdeorani= this.onchanegeyuzdeorani.bind(this);
-/* 
+ 
         this.onchanegebaslangicTarihi= this.onchanegebaslangicTarihi.bind(this);
-        this.onchanegeBitisTarihi= this.onchanegeBitisTarihi.bind(this); */
+        this.onchanegeBitisTarihi= this.onchanegeBitisTarihi.bind(this);  
 
         this.saveTutorial = this.saveTutorial.bind(this);
         this.newTutorial = this.newTutorial.bind(this);
@@ -21,9 +21,9 @@ export default class BurcEkle extends Component {
             id: null, 
             indirimkodu: "",
             kackisikullansin: "",
-           /*  yuzdeorani: "",
+            yuzdeorani: "",
             baslangicTarihi: "",
-            BitisTarihi: "", */
+            BitisTarihi: "",  
 
 
             submitted: false
@@ -64,8 +64,8 @@ export default class BurcEkle extends Component {
             indirimkodu: this.state.indirimkodu,
             kackisikullansin: this.state.kackisikullansin,
             yuzdeorani: this.state.yuzdeorani,
-   /*          baslangicTarihi: this.state.baslangicTarihi,
-            BitisTarihi: this.state.BitisTarihi */
+          baslangicTarihi: this.state.baslangicTarihi,
+            BitisTarihi: this.state.BitisTarihi  
         };
 
         IndirimDataService.create(data)
@@ -75,8 +75,8 @@ export default class BurcEkle extends Component {
                     indirimkodu: response.data.indirimkodu,
                     kackisikullansin: response.data.kackisikullansin,
                     yuzdeorani: response.data.yuzdeorani,
-                   /*  baslangicTarihi: response.data.baslangicTarihi,
-                    BitisTarihi: response.data.BitisTarihi,   */
+                    baslangicTarihi: response.data.baslangicTarihi,
+                    BitisTarihi: response.data.BitisTarihi,   
                  });
                 console.log(response.data);
             })
@@ -91,8 +91,8 @@ export default class BurcEkle extends Component {
             indirimkodu:"",
             kackisikullansin:"",
             yuzdeorani: "",
-           /*  baslangicTarihi:"",
-            BitisTarihi: "",  */
+            baslangicTarihi:"",
+            BitisTarihi: "",  
              submitted: false
         });
     }
@@ -131,7 +131,7 @@ export default class BurcEkle extends Component {
                                     onChange={this.onchanegekackisikullansin}
                                     name="kackisikullansin"
                                 />            
-                                  {/*
+                            
                                  <label htmlFor="title">Yuzde Oranı :</label>
 
                                 <input
@@ -164,7 +164,7 @@ export default class BurcEkle extends Component {
                                     value={this.state.BitisTarihi}
                                     onChange={this.onchanegeBitisTarihi}
                                     name="BitisTarihi"
-                                /> */}
+                                />  
                             </div> 
 
 
