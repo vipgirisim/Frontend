@@ -23,7 +23,7 @@ export default class TableList1 extends React.Component {
   }
 
 componentDidMount() {
-    axios.get('http://localhost:8080/api/adminrolesgetir')
+    axios.get('http://localhost:8080/api/modrolesgetir')
     .then(res => {
         console.log(res);
         this.setState({ users: res.data })
@@ -42,7 +42,7 @@ componentDidMount() {
                         return (
                             <div className="col-lg-6" key={user._id.toString()}>
                                 <div className="card" style={{ marginBottom: "20px"}}>
-                                    <div className="card-header text-left">{user.username}</div>
+                                    <div className="card-header text-left">{user.name}</div>
                                     <div className="card-body text-left">
                                         <div className="row">
                                             <div className="col-lg-3">

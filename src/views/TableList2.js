@@ -23,7 +23,7 @@ export default class TableList1 extends React.Component {
   }
 
 componentDidMount() {
-    axios.get('http://localhost:8080/api/adminrolesgetir')
+    axios.get('http://localhost:8080/api/userrolesgetir')
     .then(res => {
         console.log(res);
         this.setState({ users: res.data })
