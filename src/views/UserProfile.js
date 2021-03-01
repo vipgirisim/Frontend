@@ -5,8 +5,7 @@ import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 import axios from "axios";
 
-//import AuthService from "../services/auth.service";
-
+ 
 const required = value => {
   if (!value) {
     return (
@@ -87,7 +86,7 @@ export default class Register extends Component {
   addUser(event) {
     event.preventDefault();
     const userAdd = {
-      username: this.state.username,
+        username: this.state.username,
         email: this.state.email,
         password: this.state.password,      
     }
