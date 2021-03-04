@@ -1,41 +1,46 @@
-/*
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-
-import AdminLayout from "../src/layouts/Admin/Admin.js";
-import RTLLayout from "../src/layouts/RTL/RTL.js";
-
-import "../src/assets/scss/black-dashboard-react.scss";
-import "../src/assets/demo/demo.css";
-import "../src/assets/css/nucleo-icons.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
-import ThemeContextWrapper from "../src/components/ThemeWrapper/ThemeWrapper";
-import BackgroundColorWrapper from "../src/components/BackgroundColorWrapper/BackgroundColorWrapper";
-
-ReactDOM.render(
-  <ThemeContextWrapper>
-    <BackgroundColorWrapper>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-          <Route path="/rtl" render={(props) => <RTLLayout {...props} />} />
-          <Redirect from="/" to="/admin/dashboard" />
-        </Switch>
-      </BrowserRouter>
-    </BackgroundColorWrapper>
-  </ThemeContextWrapper>,
-  document.getElementById("root")
-  */
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
-//import "bootstrap/dist/css/bootstrap.min.css";
-//import "./App.css";
-import "../src/assets/scss/black-dashboard-react.scss";
-import "../src/assets/demo/demo.css";
-import "../src/assets/css/nucleo-icons.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../src/assets/css/fontawesome.min.css";
+import "../src/assets/css/icomoon.css";
+import "../src/style.css";
+  
+//import "../src/assets/scss/black-dashboard-react.scss";
+//import "../src/assets/demo/demo.css";
+//import "../src/assets/css/nucleo-icons.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+
+/**
+ sz_image_001";
+ sz_image_002";
+ sz_image_003";
+ sz_image_slider";
+ sz_portfolio_001";
+ sz_portfolio_002";
+ sz_portfolio_003";
+ sz_portfolio_slider";
+ sz_post_001";
+ sz_post_002";
+ sz_post_003";
+ sz_post_slider";
+ sz_shop_001";
+ sz_shop_002";
+ sz_shop_003";
+ sz_shop_slider";
+ sz_team_001";
+ sz_team_002";
+ sz_team_003";
+ sz_team_slider";
+ sz_video_001";
+ sz_video_002";
+ sz_video_003";
+ sz_video_slider";
+ */
+
+import "../src/lightbox/css/sz_video_002.css";
+
+import "../src/lightbox/css/sz_video_003.css";
+
 
 import AuthService from "./services/auth.service";
 
@@ -82,16 +87,16 @@ class App extends Component {
 
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        {/*   <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand">
             VipFal
           </Link>
           <div className="navbar-nav mr-auto">
-            {/* <li className="nav-item">
+          <li className="nav-item">
               <Link to={"/home"} className="nav-link">
                 Anasayfa  
               </Link>
-            </li> */}
+            </li>  
 
             {showModeratorBoard && (
               <li className="nav-item">
@@ -141,11 +146,11 @@ class App extends Component {
             </div>
           ) : (
             <div className="navbar-nav ml-auto">
-             {/*  <li className="nav-item">
+            <li className="nav-item">
                 <Link to={"/login"} className="nav-link">
                   Giriş
                 </Link>
-              </li> */}
+              </li>  
 
               <li className="nav-item">
                 <Link to={"/register"} className="nav-link">
@@ -154,12 +159,18 @@ class App extends Component {
               </li>
             </div>
           )}
-        </nav>
+        </nav> */}
+
+
+
+
+
+
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/home"]} component={Login} />
-            <Route exact path="/login" component={Login} />
+                       <Route exact path={["/", "/home"]} component={Home} />
+          <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
             <Route path="/user" component={BoardUser} />
