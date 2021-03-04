@@ -96,7 +96,7 @@ export default class Register extends Component {
         console.log(res);
         this.setState({ redirect: this.state.redirect === false });
     })
-    .catch(err => { console.log(err) });
+    .catch(err => { console.log(err)});
   }
 
  
