@@ -87,7 +87,7 @@ class App extends Component {
 
     return (
       <div>
-        {/*   <nav className="navbar navbar-expand navbar-dark bg-dark">
+         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand">
             VipFal
           </Link>
@@ -146,7 +146,7 @@ class App extends Component {
             </div>
           ) : (
             <div className="navbar-nav ml-auto">
-            <li className="nav-item">
+           {/*  <li className="nav-item">
                 <Link to={"/login"} className="nav-link">
                   Giriş
                 </Link>
@@ -156,10 +156,10 @@ class App extends Component {
                 <Link to={"/register"} className="nav-link">
                   Kayıt
                 </Link>
-              </li>
+              </li> */}
             </div>
           )}
-        </nav> */}
+        </nav> 
 
 
 
@@ -169,7 +169,7 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-                       <Route exact path={["/", "/home"]} component={Home} />
+                       <Route exact path={["/", "/home"]} component={Login} />
           <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
