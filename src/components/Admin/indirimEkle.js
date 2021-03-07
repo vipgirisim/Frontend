@@ -2,39 +2,38 @@ import React, { Component } from "react";
 import IndirimDataService from "../../services/discount.service";
 
 
- 
+
 
 export default class BurcEkle extends Component {
     constructor(props) {
         super(props);
         this.onchanegeindirimkodu = this.onchanegeindirimkodu.bind(this);
-        this.onchanegekackisikullansin= this.onchanegekackisikullansin.bind(this);
-        this.onchanegeyuzdeorani= this.onchanegeyuzdeorani.bind(this);
- 
-        this.onchanegebaslangicTarihi= this.onchanegebaslangicTarihi.bind(this);
-        this.onchanegeBitisTarihi= this.onchanegeBitisTarihi.bind(this);  
+        this.onchanegekackisikullansin = this.onchanegekackisikullansin.bind(this);
+        this.onchanegeyuzdeorani = this.onchanegeyuzdeorani.bind(this);
+
+        this.onchanegebaslangicTarihi = this.onchanegebaslangicTarihi.bind(this);
+        this.onchanegeBitisTarihi = this.onchanegeBitisTarihi.bind(this);
 
         this.saveTutorial = this.saveTutorial.bind(this);
         this.newTutorial = this.newTutorial.bind(this);
 
         this.state = {
-            id: null, 
+            id: null,
             indirimkodu: "",
             kackisikullansin: "",
             yuzdeorani: "",
             baslangicTarihi: "",
-            BitisTarihi: "",  
+            BitisTarihi: "",
 
 
             submitted: false
         };
     }
 
-    onchanegeindirimkodu(e)
-     {
+    onchanegeindirimkodu(e) {
         this.setState({
             indirimkodu: e.target.value
-          });
+        });
     }
 
 
@@ -57,15 +56,15 @@ export default class BurcEkle extends Component {
         this.setState({
             BitisTarihi: e.target.value
         });
-    } 
+    }
 
     saveTutorial() {
         var data = {
             indirimkodu: this.state.indirimkodu,
             kackisikullansin: this.state.kackisikullansin,
             yuzdeorani: this.state.yuzdeorani,
-          baslangicTarihi: this.state.baslangicTarihi,
-            BitisTarihi: this.state.BitisTarihi  
+            baslangicTarihi: this.state.baslangicTarihi,
+            BitisTarihi: this.state.BitisTarihi
         };
 
         IndirimDataService.create(data)
@@ -76,8 +75,8 @@ export default class BurcEkle extends Component {
                     kackisikullansin: response.data.kackisikullansin,
                     yuzdeorani: response.data.yuzdeorani,
                     baslangicTarihi: response.data.baslangicTarihi,
-                    BitisTarihi: response.data.BitisTarihi,   
-                 });
+                    BitisTarihi: response.data.BitisTarihi,
+                });
                 console.log(response.data);
             })
             .catch(e => {
@@ -88,15 +87,14 @@ export default class BurcEkle extends Component {
     newTutorial() {
         this.setState({
             id: null,
-            indirimkodu:"",
-            kackisikullansin:"",
+            indirimkodu: "",
+            kackisikullansin: "",
             yuzdeorani: "",
-            baslangicTarihi:"",
-            BitisTarihi: "",  
-             submitted: false
+            baslangicTarihi: "",
+            BitisTarihi: "",
+            submitted: false
         });
     }
-
     render() {
         return (
             <div className="submit-form">
@@ -104,8 +102,8 @@ export default class BurcEkle extends Component {
                     <div>
                         <h4>başarılı!</h4>
                         <button className="btn btn-success" onClick={this.newTutorial}>
-                            Ekle
-            </button>
+                            Add
+                      </button>
                     </div>
                 ) : (
                         <div>
@@ -120,52 +118,52 @@ export default class BurcEkle extends Component {
                                     onChange={this.onchanegeindirimkodu}
                                     name="indirimkodu"
                                 />
-                              <label htmlFor="title">Kaç Kişi Kullansın :</label>
+                                <label htmlFor="title">Kaç Kişi Kullansın :</label>
 
                                 <input
                                     type="text"
                                     className="form-control"
                                     id="kackisikullansin"
-                                     
+
                                     value={this.state.kackisikullansin}
                                     onChange={this.onchanegekackisikullansin}
                                     name="kackisikullansin"
-                                />            
-                            
-                                 <label htmlFor="title">Yuzde Oranı :</label>
+                                />
+
+                                <label htmlFor="title">Yuzde Oranı :</label>
 
                                 <input
                                     type="text"
                                     className="form-control"
                                     id="yuzdeorani"
-                                     
+
                                     value={this.state.yuzdeorani}
                                     onChange={this.onchanegeyuzdeorani}
                                     name="yuzdeorani"
                                 />
-                      <label htmlFor="title">Baslangic Tarihi :</label>
- 
-                             <input
+                                <label htmlFor="title">Baslangic Tarihi :</label>
+
+                                <input
                                     type="text"
                                     className="form-control"
                                     id="baslangicTarihi"
-                                     
+
                                     value={this.state.baslangicTarihi}
                                     onChange={this.onchanegebaslangicTarihi}
                                     name="baslangicTarihi"
                                 />
                                 <label htmlFor="title">Bitis Tarihi :</label>
- 
+
                                 <input
                                     type="text"
                                     className="form-control"
                                     id="BitisTarihi"
-                                     
+
                                     value={this.state.BitisTarihi}
                                     onChange={this.onchanegeBitisTarihi}
                                     name="BitisTarihi"
-                                />  
-                            </div> 
+                                />
+                            </div>
 
 
 

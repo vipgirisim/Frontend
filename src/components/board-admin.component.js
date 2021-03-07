@@ -11,6 +11,7 @@ import Duyurulistesi from "../../src/components/Admin/tutorials-list"
 import Burclistesi from "../../src/components/Admin/burc-list"
 import IndirimEkle from "../../src/components/Admin/indirimEkle"
 import IndirimListesi from "../../src/components/Admin/indirim-list"
+import FileUploadScreen from "../../src/components/Admin/resimyukle"
 import { Button, Modal } from 'react-bootstrap'
 
 import ReactDOM from 'react-dom';
@@ -44,31 +45,7 @@ const titleRight6 = (<span>sub menu 3</span>);
 const titleRight7 = (<span>sub menu 3</span>);
 
 
-
-function AdminInsert() {
-  return (
-    <div>
-      <h1>Ekle</h1>
-    </div>
-  )
-}
-function AdminUpdate() {
-  return (
-    <div>
-      <h1>Güncelle</h1>
-    </div>
-  )
-}
-
-
-
-function AdminView() {
-  return (
-    <div>
-      <h1>Görüntüle</h1>
-    </div>
-  )
-}
+ 
 
 
 
@@ -110,13 +87,13 @@ export default class boardadmincomponent extends React.Component {
           html = <Duyuruekle />
           break;
         case "5-2":
-          html = <Duyuruekle />
+          html = <Duyurulistesi />
           break;
         case "5-3":
-          html = <Duyuruekle />
+          html = <IndirimEkle />
           break;
         case "5-4":
-          html = <Duyuruekle />
+          html = <IndirimListesi />
           break;
         case "5-5":
           html = <BurcEkle />
@@ -125,7 +102,7 @@ export default class boardadmincomponent extends React.Component {
           html = <Burclistesi />
           break;
         case "5-7":
-          html = <Duyuruekle />
+          html = <FileUploadScreen />
           break;
         case "5-8":
           html = <Duyuruekle />

@@ -179,6 +179,8 @@ export default class TutorialsList extends Component {
     IndirimDataService.delete(this.state.currentTutorial.id)
       .then(response => {
         console.log(response.data);
+        this.refreshList();
+
         this.props.history.push('/discounts')
       })
       .catch(e => {
