@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import BurclarDataService from "../../services/burc.service";
- 
+
 export default class BurclarListesi extends Component {
   constructor(props) {
     super(props);
-    
+
     this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
     this.retrieveTutorials = this.retrieveTutorials.bind(this);
     this.refreshList = this.refreshList.bind(this);
@@ -34,7 +34,7 @@ export default class BurclarListesi extends Component {
       currentIndex: -1,
       searchTitle: ""
     };
-    
+
   }
 
   componentDidMount() {
@@ -52,7 +52,7 @@ export default class BurclarListesi extends Component {
 
   onChangeTitle(e) {
     const burcadi = e.target.value;
-    this.setState(function(prevState) {
+    this.setState(function (prevState) {
       return {
         currentTutorial: {
           ...prevState.currentTutorial,
@@ -61,10 +61,10 @@ export default class BurclarListesi extends Component {
       };
     });
   }
-  
+
   onChangeDescription(e) {
     const burclinki = e.target.value;
-    
+
     this.setState(prevState => ({
       currentTutorial: {
         ...prevState.currentTutorial,
@@ -79,7 +79,8 @@ export default class BurclarListesi extends Component {
         this.setState({
           currentTutorial: response.data
         });
-        console.log(response.data);
+        console.log(response.data);  
+
       })
       .catch(e => {
         console.log(e);
@@ -102,7 +103,8 @@ export default class BurclarListesi extends Component {
             published: status
           }
         }));
-        console.log(response.data);
+        console.log(response.data);  
+
       })
       .catch(e => {
         console.log(e);
@@ -110,12 +112,14 @@ export default class BurclarListesi extends Component {
   }
 
   updateTutorial() {
-     BurclarDataService.update(
+    BurclarDataService.update(
       this.state.currentTutorial.id,
       this.state.currentTutorial
     )
       .then(response => {
         console.log(response.data);
+        this.refreshList();
+
         this.setState({
           message: "başarılı!"
         });
@@ -125,15 +129,19 @@ export default class BurclarListesi extends Component {
       });
   }
 
-  deleteTutorial() {   
+  deleteTutorial() {
     BurclarDataService.delete(this.state.currentTutorial.id)
       .then(response => {
         console.log(response.data);
+
+        this.refreshList();
         this.props.history.push('/burclar')
+
       })
       .catch(e => {
         console.log(e);
-      });
+      })
+
   }
 
   retrieveTutorials() {
@@ -142,7 +150,8 @@ export default class BurclarListesi extends Component {
         this.setState({
           burclar: response.data
         });
-        console.log(response.data);
+        console.log(response.data);  
+
       })
       .catch(e => {
         console.log(e);
@@ -167,7 +176,8 @@ export default class BurclarListesi extends Component {
   removeAllTutorials() {
     BurclarDataService.deleteAll()
       .then(response => {
-        console.log(response.data);
+        console.log(response.data); this.refreshList();
+
         this.refreshList();
       })
       .catch(e => {
@@ -186,7 +196,8 @@ export default class BurclarListesi extends Component {
         this.setState({
           burclar: response.data
         });
-        console.log(response.data);
+        console.log(response.data); this.refreshList();
+
       })
       .catch(e => {
         console.log(e);
@@ -245,79 +256,79 @@ export default class BurclarListesi extends Component {
           </button>
         </div>
         <div className="col-md-6">
-        <div>
-        {currentTutorial ? (
-          <div className="edit-form">
-            <h4>Burclar</h4>
-            <form>
-              <div className="form-group">
-                <label htmlFor="burcadi">başlık</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="burcadi"
-                  value={currentTutorial.burcadi}
-                  onChange={this.onChangeTitle}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="burclinki">tanımlama</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="burclinki"
-                  value={currentTutorial.burclinki}
-                  onChange={this.onChangeDescription}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>
-                  <strong>durum:</strong>
-                </label>
-                {currentTutorial.published ? "Published" : "Pending"}
-              </div>
-            </form>
-
-            {currentTutorial.published ? (
-              <button
-                className="badge badge-primary mr-2"
-                onClick={() => this.updatePublished(false)}
-              >
-                Yayınlanmadı
-              </button>
-            ) : (
-              <button
-                className="badge badge-primary mr-2"
-                onClick={() => this.updatePublished(true)}
-              >
-                Yayınla
-              </button>
-            )}
-
-            <button
-              className="badge badge-danger mr-2"
-              onClick={this.deleteTutorial}
-            >
-              sil
-            </button>
-
-            <button
-              type="submit"
-              className="badge badge-success"
-              onClick={this.updateTutorial}
-            >
-              güncelle
-            </button>
-            <p>{this.state.message}</p>
-          </div>
-        ) : (
           <div>
-            <br />
-            <p>Lütfen Burclar tıkla</p>
+            {currentTutorial ? (
+              <div className="edit-form">
+                <h4>Burclar</h4>
+                <form>
+                  <div className="form-group">
+                    <label htmlFor="burcadi">başlık</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="burcadi"
+                      value={currentTutorial.burcadi}
+                      onChange={this.onChangeTitle}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="burclinki">tanımlama</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="burclinki"
+                      value={currentTutorial.burclinki}
+                      onChange={this.onChangeDescription}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label>
+                      <strong>durum:</strong>
+                    </label>
+                    {currentTutorial.published ? "Published" : "Pending"}
+                  </div>
+                </form>
+
+                {currentTutorial.published ? (
+                  <button
+                    className="badge badge-primary mr-2"
+                    onClick={() => this.updatePublished(false)}
+                  >
+                    Yayınlanmadı
+                  </button>
+                ) : (
+                    <button
+                      className="badge badge-primary mr-2"
+                      onClick={() => this.updatePublished(true)}
+                    >
+                      Yayınla
+                    </button>
+                  )}
+
+                <button
+                  className="badge badge-danger mr-2"
+                  onClick={this.deleteTutorial}
+                >
+                  sil
+            </button>
+
+                <button
+                  type="submit"
+                  className="badge badge-success"
+                  onClick={this.updateTutorial}
+                >
+                  güncelle
+            </button>
+                <p>{this.state.message}</p>
+              </div>
+            ) : (
+                <div>
+                  <br />
+                  <p>Lütfen Burclar tıkla</p>
+                </div>
+              )}
           </div>
-        )}
-      </div>
         </div>
       </div>
     );

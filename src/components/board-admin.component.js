@@ -119,10 +119,10 @@ export default class boardadmincomponent extends React.Component {
           html = <Duyuruekle />
           break;
         case "5-5":
-          html = <Duyuruekle />
+          html = <BurcEkle />
           break;
         case "5-6":
-          html = <Duyuruekle />
+          html = <Burclistesi />
           break;
         case "5-7":
           html = <Duyuruekle />
@@ -130,9 +130,13 @@ export default class boardadmincomponent extends React.Component {
         case "5-8":
           html = <Duyuruekle />
           break;
-        case "5-9":
+        case "6":
           html = <Duyuruekle />
           break;
+        case "7":
+          html = <Duyuruekle />
+          break;
+
 
 
         default: html = ""; break;
@@ -198,28 +202,39 @@ export default class boardadmincomponent extends React.Component {
             </SubMenu>
 
             <SubMenu title={titleRight5} key="5">
-              <MenuItem key="5-1">Duyuru Ekle</MenuItem>
-              <MenuItem key="5-2">Duyuru Düzenle </MenuItem>
-              <MenuItem key="5-3">İndirim Ekle </MenuItem>
-              <MenuItem key="5-4">İndirim Düzenle </MenuItem>
+              <MenuItem key="5-1">
+                <Link onClick={() => this.handleClick(1, "5-1")}>Duyuru Ekle</Link>
+              </MenuItem>
 
-              <MenuItem key="5-5">Burçlar Ekle </MenuItem>
-              <MenuItem key="5-6">Burçlar Düzenle </MenuItem>
-              <MenuItem key="5-7">Havuz Fal </MenuItem>
-              <MenuItem key="5-8">Slayt Ekle </MenuItem>
-              <MenuItem key="5-9">Slayt Ekle </MenuItem>
+              <MenuItem key="5-2">
+                <Link onClick={() => this.handleClick(1, "5-2")}>Duyuru Düzenle</Link>
+              </MenuItem>
 
+              <MenuItem key="5-3">
+                <Link onClick={() => this.handleClick(1, "5-3")}>İndirim Ekle</Link>
+              </MenuItem>
 
+              <MenuItem key="5-4">
+                <Link onClick={() => this.handleClick(1, "5-4")}>İndirim Düzenle</Link>
+              </MenuItem>
 
+              <MenuItem key="5-5">
+                <Link onClick={() => this.handleClick(1, "5-5")}>Burçlar Ekle</Link>
+              </MenuItem>
 
-            </SubMenu>
+              <MenuItem key="5-6">
+                <Link onClick={() => this.handleClick(1, "5-6")}>Burçlar Listesi</Link>
+              </MenuItem>
 
-
+              <MenuItem key="5-7">
+                <Link onClick={() => this.handleClick(1, "5-7")}>Slayt Ekle</Link>
+              </MenuItem>
+              <MenuItem key="5-8">
+                <Link onClick={() => this.handleClick(1, "5-8")}>Slayt Düzenle</Link>
+              </MenuItem> 
+            </SubMenu> 
             <MenuItem key="6">Bildirimler</MenuItem>
-
-
-
-
+            <MenuItem key="7">Havuz Fal</MenuItem> 
           </Menu>
 
 
