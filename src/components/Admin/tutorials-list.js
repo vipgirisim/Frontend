@@ -26,7 +26,7 @@ export default class TutorialsList extends Component {
         published: false
       },
       message: "",
-      tutorials: [],
+      duyurus: [],
       currentTutorial: null,
       currentIndex: -1,
       searchTitle: ""
@@ -139,7 +139,7 @@ export default class TutorialsList extends Component {
     TutorialDataService.getAll()
       .then(response => {
         this.setState({
-          tutorials: response.data
+          duyurus: response.data
         });
         console.log(response.data);
       })
@@ -183,7 +183,7 @@ export default class TutorialsList extends Component {
     TutorialDataService.findByTitle(this.state.searchTitle)
       .then(response => {
         this.setState({
-          tutorials: response.data
+          duyurus: response.data
         });
         console.log(response.data);
       })
@@ -193,7 +193,7 @@ export default class TutorialsList extends Component {
   }
 
   render() {
-    const { searchTitle, tutorials, currentTutorial, currentIndex } = this.state;
+    const { searchTitle, duyurus, currentTutorial, currentIndex } = this.state;
 
     return (
       <div className="list row">
@@ -221,8 +221,8 @@ export default class TutorialsList extends Component {
           <h4>Duyuru Listesi</h4>
 
           <ul className="list-group">
-            {tutorials &&
-              tutorials.map((tutorial, index) => (
+            {duyurus &&
+              duyurus.map((tutorial, index) => (
                 <li
                   className={
                     "list-group-item " +

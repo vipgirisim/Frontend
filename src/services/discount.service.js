@@ -26,7 +26,8 @@ import http from "./http-common-discount";
   }
 
   findByTitle(discounts) {
-    return http.get(`/discounts?indirimadi=${discounts}`);
+    return http.get(`/discounts?indirimkodu=${discounts}`);
+    //hata buradanmis indirimkodu yazmaklazimmis
   }
 }
 

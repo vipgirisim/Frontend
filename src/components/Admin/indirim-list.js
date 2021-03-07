@@ -37,7 +37,7 @@ export default class TutorialsList extends Component {
         published: false
       },
       message: "",
-      tutorials: [],
+      indirims: [],
       currentTutorial: null,
       currentIndex: -1,
       searchTitle: ""
@@ -116,10 +116,7 @@ export default class TutorialsList extends Component {
       }
     }));
   }
-
-
-
-
+  
   getTutorial(id) {
     IndirimDataService.get(id)
       .then(response => {
@@ -192,7 +189,7 @@ export default class TutorialsList extends Component {
     IndirimDataService.getAll()
       .then(response => {
         this.setState({
-          tutorials: response.data
+          indirims: response.data
         });
         console.log(response.data);
       })
@@ -209,9 +206,9 @@ export default class TutorialsList extends Component {
     });
   }
 
-  setActiveTutorial(tutorial, index) {
+  setActiveTutorial(indirims, index) {
     this.setState({
-      currentTutorial: tutorial,
+      currentTutorial: indirims,
       currentIndex: index
     });
   }
@@ -236,7 +233,7 @@ export default class TutorialsList extends Component {
     IndirimDataService.findByTitle(this.state.searchTitle)
       .then(response => {
         this.setState({
-          tutorials: response.data
+          indirims: response.data
         });
         console.log(response.data);
       })
@@ -246,7 +243,7 @@ export default class TutorialsList extends Component {
   }
 
   render() {
-    const { searchTitle, tutorials, currentTutorial, currentIndex } = this.state;
+    const { searchTitle, indirims, currentTutorial, currentIndex } = this.state;
 
     return (
       <div className="list row">
@@ -274,17 +271,17 @@ export default class TutorialsList extends Component {
           <h4>indirim Listesi</h4>
 
           <ul className="list-group">
-            {tutorials &&
-              tutorials.map((tutorials, index) => (
+            {indirims &&
+              indirims.map((indirims, index) => (
                 <li
                   className={
                     "list-group-item " +
                     (index === currentIndex ? "active" : "")
                   }
-                  onClick={() => this.setActiveTutorial(tutorials, index)}
+                  onClick={() => this.setActiveTutorial(indirims, index)}
                   key={index}
                 >
-                  {tutorials.indirimkodu}
+                  {indirims.indirimkodu}
                 </li>
               ))}
           </ul>

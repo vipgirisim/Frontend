@@ -42,7 +42,7 @@ const titleRight4 = (<span>Falcı İşlemler</span>);
 
 const titleRight5 = (<span>Sistem İşlemler</span>);
 const titleRight6 = (<span>Havuz Fal</span>);
-const titleRight7 = (<span>sub menu 3</span>);
+const titleRight7 = (<span>Ödeme İşlemleri</span>);
 
 
  
@@ -207,26 +207,38 @@ export default class boardadmincomponent extends React.Component {
                 <Link onClick={() => this.handleClick(1, "5-7")}>Slayt Resmi Ekle</Link>
               </MenuItem>
 
-              <MenuItem key="5-7">
-                <Link onClick={() => this.handleClick(1, "5-7")}>Mobil Css Tasarım</Link>
+              <MenuItem key="5-8">
+                <Link onClick={() => this.handleClick(1, "5-8")}>Mobil Css Tasarım</Link>
               </MenuItem>
             {/*   <MenuItem key="5-8">
                 <Link onClick={() => this.handleClick(1, "5-8")}>Slayt Düzenle</Link>
               </MenuItem>  */}
             </SubMenu> 
            
-           
+            
 
               <SubMenu title={titleRight6} key="7">
               <MenuItem key="7">
-              <Link onClick={() => this.handleClick(1, "5-7")}>Falcı Aktar</Link>
+              <Link onClick={() => this.handleClick(1, "7-1")}>Falcı Aktar</Link>
+              </MenuItem> 
+              <MenuItem key="7-1">
+              <Link onClick={() => this.handleClick(1, "7-2")}>İnaktif Falcılara Bildirim gönder</Link>
               </MenuItem> 
               </SubMenu>
+             
+              <SubMenu title={titleRight7} key="8">
+              <MenuItem key="8">
+              <Link onClick={() => this.handleClick(1, "8-1")}>İnaktif Falcı Bildirimi</Link>
+              </MenuItem> 
+              </SubMenu>
+
               <MenuItem key="6">Bildirimler</MenuItem>
 
+
+              
           </Menu>
 
-
+         
 
         </Grid>
         <Grid container item xs={9} spacing={3} style={{ padding: 20 }}>
