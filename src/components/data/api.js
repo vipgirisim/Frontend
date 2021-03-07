@@ -1,5 +1,5 @@
 import http from "../../services/http-common-upload";
-const apiUrl = "http://localhost:8080/admin/"
+const apiUrl = "http://vipfal.herokuapp.com/admin/"
 
 export const singleFileUpload = async (data, options) => {
     try {

@@ -52,12 +52,12 @@ const FileUploadScreen = (props) => {
         <div className="row mt-3">
             <div className="col-6">
                 <div className="form-group">
-                    <label>Select Single File</label>
+                    <label>Dosya Yükle</label>
                     <input type="file" className="form-control" onChange={(e) => SingleFileChange(e)} />
                 </div>
                 <div className="row">
                     <div className="col-10">
-                        <button type="button" className="btn btn-danger" onClick={() => uploadSingleFile()} >Upload</button>
+                        <button type="button" className="btn btn-danger" onClick={() => uploadSingleFile()} >Yükle</button>
                     </div>
                     <div className="col-2">
                         <CircularProgressbar
@@ -79,17 +79,17 @@ const FileUploadScreen = (props) => {
             </div>
             <div className="col-6">
                    <div className="row">
-                       <div className="col-6">
+                       {/* <div className="col-6">
                             <label >Title</label>
                             <input type="text" onChange={(e) => setTitle(e.target.value) } placeholder="enter title for your gallery" className="form-control"/>
-                       </div>
+                       </div> */}
                        <div className="col-6">
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label>Select Multiple Files</label>
                             <input type="file" onChange={(e) => MultipleFileChange(e)} className="form-control" multiple />
-                        </div>
+                        </div> */}
                        </div>
-                   </div>                   
+                   </div>   {/*                 
                     <div className="row">
                         <div className="col-10">
                             <button type="button" onClick={() => UploadMultipleFiles()}  className="btn btn-danger">Upload</button>
@@ -111,7 +111,7 @@ const FileUploadScreen = (props) => {
                         />
                     </div>
                     </div>
-                </div>
+               */}  </div>
         </div>
     );
 }

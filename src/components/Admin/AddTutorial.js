@@ -68,14 +68,7 @@ export default class AddTutorial extends Component {
   render() {
     return (
       <div className="submit-form">
-        {this.state.submitted ? (
-          <div>
-            <h4>başarılı!</h4>
-            <button className="btn btn-success" onClick={this.newTutorial}>
-              Add
-            </button>
-          </div>
-        ) : (
+        
           <div>
             <div className="form-group">
               <label htmlFor="title">Başlık</label>
@@ -107,8 +100,7 @@ export default class AddTutorial extends Component {
               Ekle
             </button>
           </div>
-        )}
-      </div>
+       </div>
     );
   }
 }

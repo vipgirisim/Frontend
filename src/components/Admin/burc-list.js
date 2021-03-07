@@ -102,7 +102,10 @@ export default class BurclarListesi extends Component {
             ...prevState.currentTutorial,
             published: status
           }
+          
         }));
+        this.refreshList();
+
         console.log(response.data);  
 
       })
@@ -126,6 +129,8 @@ export default class BurclarListesi extends Component {
       })
       .catch(e => {
         console.log(e);
+        this.refreshList();
+
       });
   }
 
