@@ -41,7 +41,7 @@ const titleRight3 = (<span>Uye İşlemler</span>);
 const titleRight4 = (<span>Falcı İşlemler</span>);
 
 const titleRight5 = (<span>Sistem İşlemler</span>);
-const titleRight6 = (<span>sub menu 3</span>);
+const titleRight6 = (<span>Havuz Fal</span>);
 const titleRight7 = (<span>sub menu 3</span>);
 
 
@@ -204,14 +204,26 @@ export default class boardadmincomponent extends React.Component {
               </MenuItem>
 
               <MenuItem key="5-7">
-                <Link onClick={() => this.handleClick(1, "5-7")}>Slayt Ekle</Link>
+                <Link onClick={() => this.handleClick(1, "5-7")}>Slayt Resmi Ekle</Link>
               </MenuItem>
-              <MenuItem key="5-8">
+
+              <MenuItem key="5-7">
+                <Link onClick={() => this.handleClick(1, "5-7")}>Mobil Css Tasarım</Link>
+              </MenuItem>
+            {/*   <MenuItem key="5-8">
                 <Link onClick={() => this.handleClick(1, "5-8")}>Slayt Düzenle</Link>
-              </MenuItem> 
+              </MenuItem>  */}
             </SubMenu> 
-            <MenuItem key="6">Bildirimler</MenuItem>
-            <MenuItem key="7">Havuz Fal</MenuItem> 
+           
+           
+
+              <SubMenu title={titleRight6} key="7">
+              <MenuItem key="7">
+              <Link onClick={() => this.handleClick(1, "5-7")}>Falcı Aktar</Link>
+              </MenuItem> 
+              </SubMenu>
+              <MenuItem key="6">Bildirimler</MenuItem>
+
           </Menu>
 
 
