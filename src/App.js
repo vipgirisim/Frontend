@@ -88,15 +88,16 @@ class App extends Component {
     return (
       <div>
          <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/"} className="navbar-brand">
+          {/* <Link to={"/"} className="navbar-brand">
             VipFal
-          </Link>
+          </Link> */}
           <div className="navbar-nav mr-auto">
-          <li className="nav-item">
+         
+          {/* <li className="nav-item">
               <Link to={"/home"} className="nav-link">
                 Anasayfa  
               </Link>
-            </li>  
+            </li>   */}
 
             {showModeratorBoard && (
               <li className="nav-item">
@@ -113,7 +114,7 @@ class App extends Component {
                 </Link>
               </li>
             )}
-  {currentUser && (
+ {/*  {currentUser && (
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
                   Kullanıcı
@@ -128,7 +129,7 @@ class App extends Component {
                   Kullanıcı
                 </Link>
               </li>
-            )}  
+            )}   */}
           </div>
 
           {currentUser ? (

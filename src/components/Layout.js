@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Aside from './Aside';
 import Main from './Main';
 import AdminLayout from "../../src/layouts/Admin/Admin.js";
+
 function Layout({ setLocale }) {
   const [rtl, setRtl] = useState(false);
   const [collapsed, setCollapsed] = useState(false);

@@ -11,6 +11,7 @@ import UserProfile from "../src/views/UserProfile.js";
 import UserProfile1 from "../src/views/UserProfile1.js";
 import UserProfile2 from "../src/views/UserProfile2.js";
 import UserProfile3 from "../src/views/UserProfile3.js";
+import subSistemislemler from "./views/subSistemislemler";
 
 
 var routes = [
@@ -55,7 +56,7 @@ var routes = [
     name: "Sistem  İşlemler",
     rtlName: "لوحة القيادة",
    // icon: "tim-icons icon-chart-pie-36",
-    component: Sistemislemler,
+    component: subSistemislemler,
     layout: "/admin",
   },
 
