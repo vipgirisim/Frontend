@@ -210,9 +210,7 @@ export default class boardadmincomponent extends React.Component {
               <MenuItem key="5-8">
                 <Link onClick={() => this.handleClick(1, "5-8")}>Mobil Css Tasarım</Link>
               </MenuItem>
-            {/*   <MenuItem key="5-8">
-                <Link onClick={() => this.handleClick(1, "5-8")}>Slayt Düzenle</Link>
-              </MenuItem>  */}
+        
             </SubMenu> 
            
             
