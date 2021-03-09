@@ -1,16 +1,17 @@
-import http from "../../services/http-common-upload";
-const apiUrl = "http://vipfal.herokuapp.com/admin/"
+import axios from 'axios';
+
+const apiUrl = 'http://localhost:8080/yukleme/';
 
 export const singleFileUpload = async (data, options) => {
     try {
-        await http.post(apiUrl + 'singleFile', data, options);
+        await axios.post(apiUrl + 'singleFile', data, options);
     } catch (error) {
         throw error;
     }
 }
 export const getSingleFiles = async () => {
     try {
-            const {data} = await http.get(apiUrl + 'getSingleFiles');
+            const {data} = await axios.get(apiUrl + 'getSingleFiles');
             return data;
     } catch (error) {
         throw error;
@@ -19,14 +20,14 @@ export const getSingleFiles = async () => {
 
 export const multipleFilesUpload = async (data, options) => {
     try {
-        await http.post(apiUrl + 'multipleFiles', data, options);
+        await axios.post(apiUrl + 'multipleFiles', data, options);
     } catch (error) {
         throw error;
     }
 }
 export const getMultipleFiles = async () => {
     try{
-        const {data} = await http.get(apiUrl + 'getMultipleFiles');
+        const {data} = await axios.get(apiUrl + 'getMultipleFiles');
         return data;
     }catch(error){
         throw error;

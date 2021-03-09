@@ -3,7 +3,6 @@ import {singleFileUpload, multipleFilesUpload} from '../data/api';
 import {CircularProgressbar, buildStyles} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-
 const FileUploadScreen = (props) => {
     const [singleFile, setSingleFile] = useState('');
     const [multipleFiles, setMultipleFiles] = useState('');
@@ -52,7 +51,7 @@ const FileUploadScreen = (props) => {
         <div className="row mt-3">
             <div className="col-6">
                 <div className="form-group">
-                    <label>Dosya Yükle</label>
+                    <label>Tekli yükle</label>
                     <input type="file" className="form-control" onChange={(e) => SingleFileChange(e)} />
                 </div>
                 <div className="row">
@@ -79,20 +78,20 @@ const FileUploadScreen = (props) => {
             </div>
             <div className="col-6">
                    <div className="row">
-                       {/* <div className="col-6">
+                      {/*  <div className="col-6">
                             <label >Title</label>
                             <input type="text" onChange={(e) => setTitle(e.target.value) } placeholder="enter title for your gallery" className="form-control"/>
                        </div> */}
                        <div className="col-6">
-                        {/* <div className="form-group">
-                            <label>Select Multiple Files</label>
+                        <div className="form-group">
+                            <label>Çoklu yükle</label>
                             <input type="file" onChange={(e) => MultipleFileChange(e)} className="form-control" multiple />
-                        </div> */}
+                        </div>
                        </div>
-                   </div>   {/*                 
+                   </div>                   
                     <div className="row">
                         <div className="col-10">
-                            <button type="button" onClick={() => UploadMultipleFiles()}  className="btn btn-danger">Upload</button>
+                            <button type="button" onClick={() => UploadMultipleFiles()}  className="btn btn-danger">Yükle</button>
                         </div>
                         <div className="col-2">
                         <CircularProgressbar
@@ -111,7 +110,7 @@ const FileUploadScreen = (props) => {
                         />
                     </div>
                     </div>
-               */}  </div>
+                </div>
         </div>
     );
 }
