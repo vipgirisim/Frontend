@@ -4,14 +4,14 @@ import authHeader from './auth-header';
 const API_URL = 'http://www.madilink.net:8000/api/test/';
 
 class UserService {
-  
+
   getPublicContent() {
     const axios = require('axios');
     let config = {
       method: 'get',
       url: 'http://www.madilink.net:8000/api/test/all',
       headers: {}
-    }; 
+    };
     return axios(config);
   }
 
@@ -23,8 +23,7 @@ class UserService {
     return axios.get(API_URL + 'mod', { headers: authHeader() });
   }
 
-  Adminregister(username, email, password) 
-  {
+  Adminregister(username, email, password) {
     return axios.post("http://localhost:8080/api/admin/adminekle", {
       username,
       email,
@@ -32,31 +31,63 @@ class UserService {
     });
   }
 
-  Modegister(username, email, password) 
-  {
+  Modegister(username, email, password) {
     return axios.post("http://localhost:8080/api/admin/modekle", {
-     
+
       username,
       email,
       password
     });
   }
 
- Userregister(username, email, password) 
-  {
-    return axios.post("http://www.madilink.net:8000/api/admin/userekle", {
+  Userregister(username, email, password) {
+    return axios.post("http://localhost:8080/api/admin/userekle", {
       username,
       email,
       password
     });
   }
 
-  Falciregister(username, email, password) 
-  {
-    return axios.post("http://www.madilink.net:8000/api/admin/falciekle", {
+  Falciregister(username, email, password, FalciRutbesi,
+    KahveFaliSayisi,
+    adminFalciyaYorumlari,
+    baktigiFalAdi,
+    baktigiFalUcreti,
+    baktigiFalid,
+    canlifalFiyati,
+    cuzdan,
+    falbilgisi,
+    iban,
+    indirimkodu,
+    kazandigiKar,
+    profilyazisi,
+    resimyolu,
+    yaziliFalFiyat,
+    yediYirmidort,
+    yorumlar,
+    yorumsayisi) {
+    return axios.post("http://localhost:8080/api/admin/falciekle", {
       username,
       email,
-      password
+      password,
+      FalciRutbesi,
+      KahveFaliSayisi,
+      adminFalciyaYorumlari,
+      baktigiFalAdi,
+      baktigiFalUcreti,
+      baktigiFalid,
+      canlifalFiyati,
+      cuzdan,
+      falbilgisi,
+      iban,
+      indirimkodu,
+      kazandigiKar,
+      profilyazisi,
+      resimyolu,
+      yaziliFalFiyat,
+      yediYirmidort,
+      yorumlar,
+      yorumsayisi
     });
   }
 
@@ -65,5 +96,5 @@ class UserService {
     return axios.get(API_URL + 'admin', { headers: authHeader() });
   }
 }
-  
+
 export default new UserService();

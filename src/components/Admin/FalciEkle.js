@@ -45,7 +45,27 @@ const vpassword = value => {
     );
   }
 };
+/*
+FalciRutbesi
+KahveFaliSayisi
+adminFalciyaYorumlari
+baktigiFalAdi
+baktigiFalUcreti
+baktigiFalid
+canlifalFiyati
+cuzdan
+falbilgisi
+iban
+indirimkodu
+kazandigiKar
+profilyazisi
+resimyolu
+yaziliFalFiyat
+yediYirmidort
+yorumlar
+yorumsayisi 
 
+*/
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -53,13 +73,49 @@ export default class Register extends Component {
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
+    this.onChangeFalciRutbesi = this.onChangeFalciRutbesi.bind(this);
+    this.onChangeKahveFaliSayisi = this.onChangeKahveFaliSayisi.bind(this);
+    this.onChangeadminFalciyaYorumlari = this.onChangeadminFalciyaYorumlari.bind(this);
+    this.onChangebaktigiFalAdi = this.onChangebaktigiFalAdi.bind(this);
+    this.onChangebaktigiFalUcreti = this.onChangebaktigiFalUcreti.bind(this);
+    this.onChangebaktigiFalid = this.onChangebaktigiFalid.bind(this);
+    this.onChangecanlifalFiyati = this.onChangecanlifalFiyati.bind(this);
+    this.onChangecuzdan = this.onChangecuzdan.bind(this);
+    this.onChangefalbilgisi = this.onChangefalbilgisi.bind(this);
+    this.onChangeiban = this.onChangeiban.bind(this);
+    this.onChangeindirimkodu = this.onChangeindirimkodu.bind(this);
+    this.onChangekazandigiKar = this.onChangekazandigiKar.bind(this);
+    this.onChangeprofilyazisi = this.onChangeprofilyazisi.bind(this);
+    this.onChangeresimyolu = this.onChangeresimyolu.bind(this);
+    this.onChangeyaziliFalFiyat = this.onChangeyaziliFalFiyat.bind(this);
+    this.onChangeyediYirmidort = this.onChangeyediYirmidort.bind(this);
+    this.onChangeyorumlar = this.onChangeyorumlar.bind(this);
+    this.onChangeyorumsayisi = this.onChangeyorumsayisi.bind(this);
 
     this.state = {
       username: "",
       email: "",
       password: "",
       successful: false,
-      message: ""
+      message: "",
+      FalciRutbesi: "",
+      KahveFaliSayisi: "",
+      adminFalciyaYorumlari: "",
+      baktigiFalAdi: "",
+      baktigiFalUcreti: "",
+      baktigiFalid: "",
+      canlifalFiyati: "",
+      cuzdan: "",
+      falbilgisi: "",
+      iban: "",
+      indirimkodu: "",
+      kazandigiKar: "",
+      profilyazisi: "",
+      resimyolu: "",
+      yaziliFalFiyat: "",
+      yediYirmidort: "",
+      yorumlar: "",
+      yorumsayisi: ""
     };
   }
 
@@ -81,6 +137,97 @@ export default class Register extends Component {
     });
   }
 
+ onChangeFalciRutbesi(e) {
+  this.setState({
+    FalciRutbesi: e.target.value
+  });
+}  
+ onChangeKahveFaliSayisi(e) {
+  this.setState({
+    KahveFaliSayisi: e.target.value
+  });
+}  
+ onChangeadminFalciyaYorumlari(e) {
+  this.setState({
+    adminFalciyaYorumlari: e.target.value
+  });
+} 
+ onChangebaktigiFalAdi(e) {
+  this.setState({
+    baktigiFalAdi: e.target.value
+  });
+}
+ onChangebaktigiFalUcreti(e) {
+  this.setState({
+    baktigiFalUcreti: e.target.value
+  });
+} 
+ onChangebaktigiFalid(e) {
+  this.setState({
+    baktigiFalid: e.target.value
+  });
+}  
+ onChangecanlifalFiyati(e) {
+  this.setState({
+    canlifalFiyati: e.target.value
+  });
+} 
+ onChangecuzdan(e) {
+  this.setState({
+    cuzdan: e.target.value
+  });
+} 
+ onChangefalbilgisi(e) {
+  this.setState({
+    falbilgisi: e.target.value
+  });
+} 
+ onChangeiban(e) {
+  this.setState({
+    iban: e.target.value
+  });
+} 
+ onChangeindirimkodu(e) {
+  this.setState({
+    indirimkodu: e.target.value
+  });
+}  
+ onChangekazandigiKar(e) {
+  this.setState({
+    kazandigiKar: e.target.value
+  });
+} 
+ onChangeprofilyazisi(e) {
+  this.setState({
+    profilyazisi: e.target.value
+  });
+}  
+ onChangeresimyolu(e) {
+  this.setState({
+    resimyolu: e.target.value
+  });
+}  
+ onChangeyaziliFalFiyat(e) {
+  this.setState({
+    yaziliFalFiyat: e.target.value
+  });
+} 
+ onChangeyediYirmidort(e) {
+  this.setState({
+    yediYirmidort: e.target.value
+  });
+} 
+ onChangeyorumlar(e) {
+  this.setState({
+    yorumlar: e.target.value
+  });
+}  
+ onChangeyorumsayisi(e) {
+  this.setState({
+    yorumsayisi: e.target.value
+  });
+} 
+
   handleRegister(e) {
     e.preventDefault();
 
@@ -95,7 +242,25 @@ export default class Register extends Component {
       AuthService.Falciregister(
         this.state.username,
         this.state.email,
-        this.state.password
+        this.state.password, 
+        this.state.FalciRutbesi,
+        this.state.KahveFaliSayisi,
+        this.state.adminFalciyaYorumlari,
+        this.state.baktigiFalAdi,
+        this.state.baktigiFalUcreti,
+        this.state.baktigiFalid,
+        this.state.canlifalFiyati,
+        this.state.cuzdan,
+        this.state.falbilgisi,
+        this.state.iban,
+        this.state.indirimkodu,
+        this.state.kazandigiKar,
+        this.state.profilyazisi,
+        this.state.resimyolu,
+        this.state.yaziliFalFiyat,
+        this.state.yediYirmidort,
+        this.state.yorumlar,
+        this.state.yorumsayisi,
       ).then(
         response => {
           this.setState({
@@ -124,7 +289,7 @@ export default class Register extends Component {
     return (
       <div className="col-md-12">
         <div className="card card-container">
-        <h1>Falci Ekle</h1>
+          <h1>Falci Ekle</h1>
 
           {/* <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -173,6 +338,18 @@ export default class Register extends Component {
                     value={this.state.password}
                     onChange={this.onChangePassword}
                     validations={[required, vpassword]}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="falcirutbesi">Rutbe</label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="FalciRutbesi"
+                    value={this.state.FalciRutbesi}
+                    onChange={this.onChangeFalciRutbesi}
+                    
                   />
                 </div>
 
