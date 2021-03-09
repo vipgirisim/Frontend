@@ -12,6 +12,8 @@ import Burclistesi from "../../src/components/Admin/burc-list"
 import IndirimEkle from "../../src/components/Admin/indirimEkle"
 import IndirimListesi from "../../src/components/Admin/indirim-list"
 import FileUploadScreen from "../../src/components/Admin/resimyukle"
+import AdminEkle from "../components/Admin/Adminekle"
+
 import { Button, Modal } from 'react-bootstrap'
 
 import ReactDOM from 'react-dom';
@@ -60,7 +62,7 @@ export default class boardadmincomponent extends React.Component {
     if (menuNo === 1) {
       switch (menuCode) {
         case "1-1":
-          html = <Sistemislemler />
+          html = <AdminEkle />
           break;
         case "1-2":
           html = <Duyuruekle />
