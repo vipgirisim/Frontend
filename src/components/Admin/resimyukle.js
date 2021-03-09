@@ -40,7 +40,7 @@ function App() {
                 {singleFiles.map((file, index) => 
                   <div className="col-6">
                     <div className="card mb-2 border-0 p-0">
-                      <img src={`http://localhost:8080/${file.filePath}`} height="200" className="card-img-top img-responsive" alt="img"/>
+                      <img src={`http://www.madilink.net:8000/${file.filePath}`} height="200" className="card-img-top img-responsive" alt="img"/>
                       </div>
                   </div>
                 )}
@@ -55,7 +55,7 @@ function App() {
                       {element.files.map((file, index) =>
                         <div className="col-6">
                             <div className="card mb-2 border-0 p-0">
-                              <img src={`http://localhost:8080/${file.filePath}`} height="200" className="card-img-top img-responsive" alt="img"/>
+                              <img src={`http://www.madilink.net:8000/${file.filePath}`} height="200" className="card-img-top img-responsive" alt="img"/>
                               </div>
                           </div>
                        )}

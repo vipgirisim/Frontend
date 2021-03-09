@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost:8080/uploads/",
+  baseURL: "http://www.madilink.net:8000/admin/",
   headers: { 
     "Access-Control-Allow-Origin": "*",
     https: true

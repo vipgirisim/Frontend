@@ -1,17 +1,16 @@
-import axios from 'axios';
-
-const apiUrl = 'http://localhost:8080/yukleme/';
+import http from "../../services/http-common-upload";
+const apiUrl = "http://www.madilink.net:8000/admin/"
 
 export const singleFileUpload = async (data, options) => {
     try {
-        await axios.post(apiUrl + 'singleFile', data, options);
+        await http.post(apiUrl + 'singleFile', data, options);
     } catch (error) {
         throw error;
     }
 }
 export const getSingleFiles = async () => {
     try {
-            const {data} = await axios.get(apiUrl + 'getSingleFiles');
+            const {data} = await http.get(apiUrl + 'getSingleFiles');
             return data;
     } catch (error) {
         throw error;
@@ -20,14 +19,14 @@ export const getSingleFiles = async () => {
 
 export const multipleFilesUpload = async (data, options) => {
     try {
-        await axios.post(apiUrl + 'multipleFiles', data, options);
+        await http.post(apiUrl + 'multipleFiles', data, options);
     } catch (error) {
         throw error;
     }
 }
 export const getMultipleFiles = async () => {
     try{
-        const {data} = await axios.get(apiUrl + 'getMultipleFiles');
+        const {data} = await http.get(apiUrl + 'getMultipleFiles');
         return data;
     }catch(error){
         throw error;

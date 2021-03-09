@@ -23,9 +23,18 @@ class UserService {
     return axios.get(API_URL + 'mod', { headers: authHeader() });
   }
 
+  register(username, email, password) 
+  {
+    return axios.post("http://localhost:8080/api/admin/adminekle", {
+      username,
+      email,
+      password
+    });
+  }
+
   getAdminBoard() {
     return axios.get(API_URL + 'admin', { headers: authHeader() });
   }
 }
-
+  
 export default new UserService();
