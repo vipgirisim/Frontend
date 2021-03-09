@@ -26,7 +26,7 @@ class UserService {
   Adminregister(username, email, password) 
   {
     return axios.post("http://www.madilink.net:8000/api/admin/adminekle", {
-      username,
+       username,
       email,
       password
     });
@@ -35,6 +35,7 @@ class UserService {
   Modegister(username, email, password) 
   {
     return axios.post("http://www.madilink.net:8000/api/admin/modekle", {
+     
       username,
       email,
       password

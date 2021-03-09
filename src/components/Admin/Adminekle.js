@@ -124,6 +124,8 @@ export default class Register extends Component {
     return (
       <div className="col-md-12">
         <div className="card card-container">
+          <h1>Admin Ekle</h1>
+
           {/* <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
@@ -139,11 +141,14 @@ export default class Register extends Component {
             {!this.state.successful && (
               <div>
                 <div className="form-group">
-                  <label htmlFor="username">Adı soyadı</label>
+                  
+                  <label htmlFor="username">Adı soyadıs</label>
+
                   <Input
                     type="text"
                     className="form-control"
                     name="username"
+
                     value={this.state.username}
                     onChange={this.onChangeUsername}
                     validations={[required, vusername]}

@@ -92,7 +92,7 @@ export default class Register extends Component {
     this.form.validateAll();
 
     if (this.checkBtn.context._errors.length === 0) {
-      AuthService.Modegister(
+      AuthService.Falciregister(
         this.state.username,
         this.state.email,
         this.state.password
@@ -124,7 +124,8 @@ export default class Register extends Component {
     return (
       <div className="col-md-12">
         <div className="card card-container">
-            <h1>Mod Ekle</h1>
+        <h1>Falci Ekle</h1>
+
           {/* <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"

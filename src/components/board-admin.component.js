@@ -13,6 +13,11 @@ import IndirimEkle from "../../src/components/Admin/indirimEkle"
 import IndirimListesi from "../../src/components/Admin/indirim-list"
 import FileUploadScreen from "../../src/components/Admin/resimyukle"
 import AdminEkle from "../components/Admin/Adminekle"
+import ModEkle from "../components/Admin/ModEkle"
+import UyeEkle from "../components/Admin/UyeEkle"
+import FalciEkle from "../components/Admin/FalciEkle"
+
+
 
 import { Button, Modal } from 'react-bootstrap'
 
@@ -68,19 +73,19 @@ export default class boardadmincomponent extends React.Component {
           html = <Duyuruekle />
           break;
         case "2-1":
-          html = <Sistemislemler />
+          html = <ModEkle />
           break;
         case "2-2":
           html = <Duyuruekle />
           break;
         case "3-1":
-          html = <Sistemislemler />
+          html = <UyeEkle />
           break;
         case "3-2":
           html = <Duyuruekle />
           break;
         case "4-1":
-          html = <Sistemislemler />
+          html = <FalciEkle />
           break;
         case "4-2":
           html = <Duyuruekle />
