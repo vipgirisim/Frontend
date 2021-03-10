@@ -5,7 +5,7 @@
   "engines": {
     "node": "12.x"
   },
-   "dependencies": {
+  "dependencies": {
     "@coreui/chartjs": "^2.0.0",
     "@coreui/coreui": "^3.4.0",
     "@coreui/icons": "^2.0.0-rc.0",
@@ -77,6 +77,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
