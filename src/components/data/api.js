@@ -1,5 +1,5 @@
 import http from "../../services/http-common-upload";
-const apiUrl = "http://www.madilink.net:8000/admin/"
+const apiUrl = "http://vipfal.herokuapp.com/admin/"
 
 export const singleFileUpload = async (data, options) => {
     try {

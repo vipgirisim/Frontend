@@ -97,7 +97,7 @@ class App extends Component {
               <Link to={"/home"} className="nav-link">
                 Anasayfa  
               </Link>
-            </li>   */}
+            </li>   
 
             {showModeratorBoard && (
               <li className="nav-item">
@@ -106,7 +106,7 @@ class App extends Component {
                 </Link>
               </li>
             )}
-
+*/}
             {showAdminBoard && (
               <li className="nav-item">
                 <Link to={"/admin"} className="nav-link">

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://www.madilink.net:8000/admin/",
+  baseURL: "http://vipfal.herokuapp.com/admin/",
   headers: { 
     "Access-Control-Allow-Origin": "*",
     https: true
