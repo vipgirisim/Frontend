@@ -2,7 +2,7 @@
   "name": "react-jwt-auth",
   "version": "0.1.0",
   "private": true,
-  "stack": "heroku-20",
+  
   "engines": {
     "node": "14.x"
   },
@@ -60,7 +60,8 @@
     "validator": "^12.2.0",
     "web-vitals": "^1.1.0",
     "webpack": "4.44.2",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.0",
+    "stack": "heroku-20"
   },
   "devDependencies": {
     "animate-sass": "^0.8.2",
