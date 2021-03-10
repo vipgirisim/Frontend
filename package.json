@@ -61,8 +61,7 @@
     "web-vitals": "^1.1.0",
     "webpack": "4.44.2",
     "webpack-dev-server": "3.11.0",
-    "stack": "heroku-20"
-  },
+   },
   "devDependencies": {
     "animate-sass": "^0.8.2",
     "auto-changelog": "~2.2.1",
