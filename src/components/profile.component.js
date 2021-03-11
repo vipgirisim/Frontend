@@ -54,6 +54,26 @@ export default class Profile extends Component {
           {currentUser.roles &&
             currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
         </ul>
+        <header className="jumbotron">
+          <h3>
+
+          <strong>Gelen Yorumlar </strong>
+
+          </h3>
+          <strong>yorumlar</strong>{" "}
+          
+        </header>
+        
+        <header className="jumbotron">
+          <h3>
+
+          <strong>Gelen Fallar </strong>
+
+          </h3>
+
+            <strong>fallar </strong>{" "}
+        </header>
+      
       </div>: null}
       </div>
     );

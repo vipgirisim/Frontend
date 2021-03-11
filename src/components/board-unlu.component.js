@@ -35,6 +35,7 @@ export default class BoardUnlu extends Component {
     return (
       <div className="container">
         <header className="jumbotron">
+          <h1>falci byrada</h1>
           <h3>{this.state.content}</h3>
         </header>
       </div>
