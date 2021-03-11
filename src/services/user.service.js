@@ -91,6 +91,9 @@ class UserService {
       yorumsayisi
     });
   }
+  get(id) {
+    return http.get(`/usergetir/${id}`);
+  }
 
   getAll() {
     return http.get("/adminrolesgetir");
