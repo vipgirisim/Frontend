@@ -501,16 +501,16 @@ export default class TutorialsList extends Component {
 
                     <ul className="list-group">
                         {users &&
-                            users.map((users, index) => (
+                            users.map((tutorial, index) => (
                                 <li
                                     className={
                                         "list-group-item " +
                                         (index === currentIndex ? "active" : "")
                                     }
-                                    onClick={() => this.setActiveTutorial(users, index)}
+                                    onClick={() => this.setActiveTutorial(tutorial, index)}
                                     key={index}
                                 >
-                                    {users.username}
+                                    {tutorial.username}
                                 </li>
                             ))}
                     </ul>
@@ -528,7 +528,7 @@ export default class TutorialsList extends Component {
                             <div className="edit-form">
                                 <h4>Kullanıcılar</h4>
                                 <form>
-                               {/*      <div className="form-group">
+                                 <div className="form-group">
                                         <label htmlFor="indirimkodu">Indirim kodu</label>
                                         <input
                                             type="text"
@@ -537,7 +537,7 @@ export default class TutorialsList extends Component {
                                             value={currentTutorial.indirimkodu}
                                             onChange={this.onChangeTitle}
                                         />
-                                    </div>
+                                      </div>  {/*
                                     <div className="form-group">
                                         <label htmlFor="kackisikullansin">kackisikullansin</label>
                                         <input
