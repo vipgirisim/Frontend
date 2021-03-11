@@ -392,6 +392,8 @@ export default class TutorialsList extends Component {
         )
             .then(response => {
                 console.log(response.data);
+                this.refreshList();
+
                 this.setState({
                     message: "başarılı!"
                 });
@@ -515,12 +517,7 @@ export default class TutorialsList extends Component {
                             ))}
                     </ul>
 
-                    <button
-                        className="m-3 btn btn-sm btn-danger"
-                        onClick={this.removeAllTutorials}
-                    >
-                        Hepsini Sil
-          </button>
+                    
                 </div>
                 <div className="col-md-6">
                     <div>
@@ -699,7 +696,7 @@ export default class TutorialsList extends Component {
                                             className="form-control"
                                             id="FalciRutbesi"
                                             value={currentTutorial.FalciRutbesi}
-                                            onChange={this.onChangecanlifalFiyati}
+                                            onChange={this.onChangeFalciRutbesi}
                                         />
                                     </div>
                                     

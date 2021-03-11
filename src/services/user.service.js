@@ -124,7 +124,7 @@ class UserService {
 
 
   update(id, data) {
-    return  http.post('/userupdate/'+id,data);
+    return  http.put('/userupdate/'+id,data);
   }
  
   delete(id) {
@@ -132,7 +132,7 @@ class UserService {
   }
 
   deleteAll() {
-    return http.delete(`/users`);
+    return http.delete(`/hepsinisil`);
   }
 
   findByTitle(username) {

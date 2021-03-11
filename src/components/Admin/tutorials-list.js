@@ -109,17 +109,17 @@ export default class TutorialsList extends Component {
     TutorialDataService.update(
       this.state.currentTutorial.id,
       this.state.currentTutorial
+      
     )
       .then(response => {
         console.log(response.data);
         this.setState({
           message: "başarılı!"
         });
-        this.refreshList();
-
       })
       .catch(e => {
         console.log(e);
+
       });
   }
 
@@ -129,6 +129,8 @@ export default class TutorialsList extends Component {
         console.log(response.data);
         this.refreshList();
         this.props.history.push('/tutorials')
+        this.refreshList();
+
       })
       .catch(e => {
         console.log(e);
