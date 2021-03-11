@@ -93,8 +93,19 @@ class UserService {
   }
 
 
-  getAll() {
+  getAdminAll() {
     return http.get("/adminrolesgetir");
+  }
+
+  getModAll() {
+    return http.get("/modrolesgetir");
+  }
+  getFalciAll() {
+    return http.get("/falcirolesgetir");
+  }
+
+  getUserAll() {
+    return http.get("/userrolesgetir");
   }
 
   get(id) {

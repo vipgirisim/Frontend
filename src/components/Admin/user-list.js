@@ -415,7 +415,7 @@ export default class TutorialsList extends Component {
     }
 
     retrieveTutorials() {
-        UserDataService.getAll()
+        UserDataService.getUserAll()
             .then(response => {
                 this.setState({
                     users: response.data
