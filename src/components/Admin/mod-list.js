@@ -415,7 +415,7 @@ export default class TutorialsList extends Component {
     }
 
     retrieveTutorials() {
-        UserDataService.getAdminAll()
+        UserDataService.getModAll()
             .then(response => {
                 this.setState({
                     users: response.data
@@ -497,7 +497,7 @@ export default class TutorialsList extends Component {
                     </div>
                 </div>
                 <div className="col-md-6">
-                    <h4>Admin Listesi</h4>
+                    <h4>Mod Listesi</h4>
 
                     <ul className="list-group">
                         {users &&

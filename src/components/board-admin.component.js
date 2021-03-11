@@ -16,7 +16,9 @@ import AdminEkle from "../components/Admin/Adminekle"
 import ModEkle from "../components/Admin/ModEkle"
 import UyeEkle from "../components/Admin/UyeEkle"
 import FalciEkle from "../components/Admin/FalciEkle"
-import Kullanicilistesi from "../components/Admin/user-list"
+import AdminListesi from "./Admin/admin-list"
+import ModListesi from "./Admin/mod-list"
+
 
 
 
@@ -71,13 +73,13 @@ export default class boardadmincomponent extends React.Component {
           html = <AdminEkle />
           break;
         case "1-2":
-          html = <Kullanicilistesi />
+          html = <AdminListesi />
           break;
         case "2-1":
           html = <ModEkle />
           break;
         case "2-2":
-          html = <Duyuruekle />
+          html = <ModListesi />
           break;
         case "3-1":
           html = <UyeEkle />
