@@ -118,13 +118,13 @@ export default class boardadmincomponent extends React.Component {
           html = <FileUploadScreen />
           break;
         case "5-8":
-          html = <Duyuruekle />
+          //html = <Duyuruekle />
           break;
         case "6":
-          html = <Duyuruekle />
+       //   html = <Duyuruekle />
           break;
         case "7":
-          html = <Duyuruekle />
+       //   html = <Duyuruekle />
           break;
 
 
@@ -220,15 +220,15 @@ export default class boardadmincomponent extends React.Component {
                 <Link onClick={() => this.handleClick(1, "5-7")}>Slayt Resmi Ekle</Link>
               </MenuItem>
 
-              <MenuItem key="5-8">
+              {/* <MenuItem key="5-8">
                 <Link onClick={() => this.handleClick(1, "5-8")}>Mobil Css Tasarım</Link>
-              </MenuItem>
+              </MenuItem> */}
         
             </SubMenu> 
            
             
 
-              <SubMenu title={titleRight6} key="7">
+              {/* <SubMenu title={titleRight6} key="7">
               <MenuItem key="7">
               <Link onClick={() => this.handleClick(1, "7-1")}>Falcı Aktar</Link>
               </MenuItem> 
@@ -243,7 +243,7 @@ export default class boardadmincomponent extends React.Component {
               </MenuItem> 
               </SubMenu>
 
-              <MenuItem key="6">Bildirimler</MenuItem>
+              <MenuItem key="6">Bildirimler</MenuItem> */}
 
 
               
