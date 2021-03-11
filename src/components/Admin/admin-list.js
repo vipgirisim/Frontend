@@ -546,7 +546,7 @@ export default class TutorialsList extends Component {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="email">password</label>
+                                        <label htmlFor="password">password</label>
                                         <input
                                             type="text"
                                             className="form-control"

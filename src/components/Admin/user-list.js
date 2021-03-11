@@ -479,11 +479,11 @@ export default class TutorialsList extends Component {
         return (
             <div className="list row">
                 <div className="col-md-8">
-                    <div className="input-group mb-3">
+                    <div className="input-group mb-12">
                         <input
                             type="text"
                             className="form-control"
-                            placeholder="Kullanıcı Ara"
+                            placeholder="Tüm kullanıcıları aramak için sadece Araya basın"
                             value={searchTitle}
                             onChange={this.onChangeSearchTitle}
                         />

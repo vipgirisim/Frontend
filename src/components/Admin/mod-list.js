@@ -483,7 +483,7 @@ export default class TutorialsList extends Component {
                         <input
                             type="text"
                             className="form-control"
-                            placeholder="Kullanıcı Ara"
+                            placeholder="Tüm kullanıcıları çağırmak için Araya basın"
                             value={searchTitle}
                             onChange={this.onChangeSearchTitle}
                         />
