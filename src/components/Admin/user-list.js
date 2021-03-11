@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import IndirimDataService from "../../services/user.service";
+import UserDataService from "../../services/user.service";
 import { Link } from "react-router-dom";
 
 export default class TutorialsList extends Component {
@@ -13,11 +13,35 @@ export default class TutorialsList extends Component {
         this.searchTitle = this.searchTitle.bind(this);
         this.onChangeTitle = this.onChangeTitle.bind(this);
 
-        this.onChangeDescription = this.onChangeDescription.bind(this);
-
+        /* this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeYuzdeorani = this.onChangeYuzdeorani.bind(this);
         this.onChangeBaslangicTarihi = this.onChangeBaslangicTarihi.bind(this);
-        this.onChangeBitisTarihi = this.onChangeBitisTarihi.bind(this);
+        this.onChangeBitisTarihi = this.onChangeBitisTarihi.bind(this); */
+
+        this.onChangeusername = this.onChangeusername.bind(this);
+        this.onChangeemail = this.onChangeemail.bind(this);
+        this.onChangepassword = this.onChangepassword.bind(this);
+        this.onChangeiban = this.onChangeiban.bind(this);
+        this.onChangecuzdan = this.onChangecuzdan.bind(this);
+        this.onChangefalbilgisi = this.onChangefalbilgisi.bind(this);
+        this.onChangeindirimkodu = this.onChangeindirimkodu.bind(this);
+        this.onChangeresimyolu = this.onChangeresimyolu.bind(this);
+        this.onChangeprofilyazisi = this.onChangeprofilyazisi.bind(this);
+        this.onChangeyorumlar = this.onChangeyorumlar.bind(this);
+        this.onChangeyorumsayisi = this.onChangeyorumsayisi.bind(this);
+        this.onChangeyediYirmidort = this.onChangeyediYirmidort.bind(this);
+        this.onChangebaktigiFalid = this.onChangebaktigiFalid.bind(this);
+        this.onChangebaktigiFalAdi = this.onChangebaktigiFalAdi.bind(this);
+        this.onChangebaktigiFalUcreti = this.onChangebaktigiFalUcreti.bind(this);
+        this.onChangekazandigiKar = this.onChangekazandigiKar.bind(this);
+        this.onChangeadminFalciyaYorumlari = this.onChangeadminFalciyaYorumlari.bind(this);
+        this.onChangeyaziliFalFiyat = this.onChangeyaziliFalFiyat.bind(this);
+        this.onChangecanlifalFiyati = this.onChangecanlifalFiyati.bind(this);
+        this.onChangeFalciRutbesi = this.onChangeFalciRutbesi.bind(this);
+        this.onChangeKahveFaliSayisi = this.onChangeKahveFaliSayisi.bind(this);
+
+
+
 
 
         this.getTutorial = this.getTutorial.bind(this);
@@ -30,26 +54,26 @@ export default class TutorialsList extends Component {
                 id: null,
 
                 username: "",
-                email:  "",
-                password:  "",
-                iban:  "",
-                cuzdan:  "",
-                falbilgisi:  "",
+                email: "",
+                password: "",
+                iban: "",
+                cuzdan: "",
+                falbilgisi: "",
                 indirimkodu: "",
-                resimyolu:  "",
-                profilyazisi:  "",
-                yorumlar:  "",
+                resimyolu: "",
+                profilyazisi: "",
+                yorumlar: "",
                 yorumsayisi: "",
-                yediYirmidort:  "",
-                baktigiFalid:  "",
-                baktigiFalAdi:  "",
-                baktigiFalUcreti:  "",
-                kazandigiKar:  "",
-                adminFalciyaYorumlari:  "",
-                yaziliFalFiyat:  "",
-                canlifalFiyati:  "",
-                FalciRutbesi:  "",
-                KahveFaliSayisi:  "",
+                yediYirmidort: "",
+                baktigiFalid: "",
+                baktigiFalAdi: "",
+                baktigiFalUcreti: "",
+                kazandigiKar: "",
+                adminFalciyaYorumlari: "",
+                yaziliFalFiyat: "",
+                canlifalFiyati: "",
+                FalciRutbesi: "",
+                KahveFaliSayisi: "",
             },
             message: "",
             users: [],
@@ -74,66 +98,234 @@ export default class TutorialsList extends Component {
     }
 
     onChangeTitle(e) {
-        const indirimkodu = e.target.value;
+        const username = e.target.value;
 
         this.setState(function (prevState) {
             return {
                 currentTutorial: {
                     ...prevState.currentTutorial,
-                    indirimkodu: indirimkodu
+                    username: username
                 }
             };
         });
     }
 
-    onChangeDescription(e) {
-        const kackisikullansin = e.target.value;
+    onChangeusername(e) {
+        const username = e.target.value;
 
         this.setState(prevState => ({
             currentTutorial: {
                 ...prevState.currentTutorial,
-                kackisikullansin: kackisikullansin
+                username: username
+            }
+        }));
+    }
+    onChangeemail(e) {
+        const email = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                email: email
+            }
+        }));
+    }
+    onChangepassword(e) {
+        const password = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                password: password
+            }
+        }));
+    }
+    onChangeiban(e) {
+        const iban = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                iban: iban
+            }
+        }));
+    }
+    onChangecuzdan(e) {
+        const cuzdan = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                cuzdan: cuzdan
+            }
+        }));
+    }
+    onChangefalbilgisi(e) {
+        const falbilgisi = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                resimyolu: falbilgisi
+            }
+        }));
+    }
+    onChangeindirimkodu(e) {
+        const indirimkodu = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                indirimkodu: indirimkodu
+            }
+        }));
+    }
+    onChangeresimyolu(e) {
+        const resimyolu = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                resimyolu: resimyolu
+            }
+        }));
+    }
+    onChangeprofilyazisi(e) {
+        const profilyazisi = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                profilyazisi: profilyazisi
+            }
+        }));
+    }
+    onChangeyorumlar(e) {
+        const yorumlar = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                yorumlar: yorumlar
+            }
+        }));
+    }
+    onChangeyorumsayisi(e) {
+        const yorumsayisi = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                yorumsayisi: yorumsayisi
+            }
+        }));
+    }
+    onChangeyediYirmidort(e) {
+        const yediYirmidort = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                yediYirmidort: yediYirmidort
+            }
+        }));
+    }
+    onChangebaktigiFalid(e) {
+        const baktigiFalid = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                baktigiFalid: baktigiFalid
+            }
+        }));
+    }
+    onChangebaktigiFalAdi(e) {
+        const baktigiFalAdi = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                baktigiFalAdi: baktigiFalAdi
+            }
+        }));
+    }
+    onChangebaktigiFalUcreti(e) {
+        const baktigiFalUcreti = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                baktigiFalUcreti: baktigiFalUcreti
+            }
+        }));
+    }
+    onChangekazandigiKar(e) {
+        const kazandigiKar = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                kazandigiKar: kazandigiKar
+            }
+        }));
+    }
+    onChangeadminFalciyaYorumlari(e) {
+        const adminFalciyaYorumlari = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                adminFalciyaYorumlari: adminFalciyaYorumlari
+            }
+        }));
+    }
+    onChangeyaziliFalFiyat(e) {
+        const yaziliFalFiyat = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                yaziliFalFiyat: yaziliFalFiyat
+            }
+        }));
+    }
+    onChangecanlifalFiyati(e) {
+        const canlifalFiyati = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                canlifalFiyati: canlifalFiyati
+            }
+        }));
+    }
+    onChangeFalciRutbesi(e) {
+        const FalciRutbesi = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                FalciRutbesi: FalciRutbesi
+            }
+        }));
+    }
+    onChangeKahveFaliSayisi(e) {
+        const KahveFaliSayisi = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                KahveFaliSayisi: KahveFaliSayisi
             }
         }));
     }
 
 
-    onChangeYuzdeorani(e) {
-        const yuzdeorani = e.target.value;
 
-        this.setState(prevState => ({
-            currentTutorial: {
-                ...prevState.currentTutorial,
-                yuzdeorani: yuzdeorani
-            }
-        }));
-    }
-
-
-    onChangeBaslangicTarihi(e) {
-        const baslangicTarihi = e.target.value;
-
-        this.setState(prevState => ({
-            currentTutorial: {
-                ...prevState.currentTutorial,
-                baslangicTarihi: baslangicTarihi
-            }
-        }));
-    }
-
-    onChangeBitisTarihi(e) {
-        const BitisTarihi = e.target.value;
-
-        this.setState(prevState => ({
-            currentTutorial: {
-                ...prevState.currentTutorial,
-                BitisTarihi: BitisTarihi
-            }
-        }));
-    }
 
     getTutorial(id) {
-        IndirimDataService.get(id)
+        UserDataService.get(id)
             .then(response => {
                 this.setState({
                     currentTutorial: response.data
@@ -148,15 +340,37 @@ export default class TutorialsList extends Component {
     updatePublished(status) {
         var data = {
             id: this.state.currentTutorial.id,
-            indirimkodu: this.state.currentTutorial.indirimkodu,
+            /* indirimkodu: this.state.currentTutorial.indirimkodu,
             kackisikullansin: this.state.currentTutorial.kackisikullansin,
             yuzdeorani: this.state.currentTutorial.yuzdeorani,
             baslangicTarihi: this.state.currentTutorial.baslangicTarihi,
-            BitisTarihi: this.state.currentTutorial.BitisTarihi,
+            BitisTarihi: this.state.currentTutorial.BitisTarihi, */
+
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password,
+            iban: this.state.iban,
+            cuzdan: this.state.cuzdan,
+            falbilgisi: this.state.falbilgisi,
+            indirimkodu: this.state.indirimkodu,
+            resimyolu: this.state.resimyolu,
+            profilyazisi: this.state.profilyazisi,
+            yorumlar: this.state.yorumlar,
+            yorumsayisi: this.state.yorumsayisi,
+            yediYirmidort: this.state.yediYirmidort,
+            baktigiFalid: this.state.baktigiFalid,
+            baktigiFalAdi: this.state.baktigiFalAdi,
+            baktigiFalUcreti: this.state.baktigiFalUcreti,
+            kazandigiKar: this.state.kazandigiKar,
+            adminFalciyaYorumlari: this.state.adminFalciyaYorumlari,
+            yaziliFalFiyat: this.state.yaziliFalFiyat,
+            canlifalFiyati: this.state.canlifalFiyati,
+            FalciRutbesi: this.state.FalciRutbesi,
+            KahveFaliSayisi: this.state.KahveFaliSayisi,
             published: status
         };
 
-        IndirimDataService.update(this.state.currentTutorial.id, data)
+        UserDataService.update(this.state.currentTutorial.id, data)
             .then(response => {
                 this.setState(prevState => ({
                     currentTutorial: {
@@ -172,7 +386,7 @@ export default class TutorialsList extends Component {
     }
 
     updateTutorial() {
-        IndirimDataService.update(
+        UserDataService.update(
             this.state.currentTutorial.id,
             this.state.currentTutorial
         )
@@ -188,7 +402,7 @@ export default class TutorialsList extends Component {
     }
 
     deleteTutorial() {
-        IndirimDataService.delete(this.state.currentTutorial.id)
+        UserDataService.delete(this.state.currentTutorial.id)
             .then(response => {
                 console.log(response.data);
                 this.refreshList();
@@ -201,7 +415,7 @@ export default class TutorialsList extends Component {
     }
 
     retrieveTutorials() {
-        IndirimDataService.getAll()
+        UserDataService.getAll()
             .then(response => {
                 this.setState({
                     users: response.data
@@ -229,7 +443,7 @@ export default class TutorialsList extends Component {
     }
 
     removeAllTutorials() {
-        IndirimDataService.deleteAll()
+        UserDataService.deleteAll()
             .then(response => {
                 console.log(response.data);
                 this.refreshList();
@@ -245,7 +459,7 @@ export default class TutorialsList extends Component {
             currentIndex: -1
         });
 
-        IndirimDataService.findByTitle(this.state.searchTitle)
+        UserDataService.findByTitle(this.state.searchTitle)
             .then(response => {
                 this.setState({
                     users: response.data
@@ -267,7 +481,7 @@ export default class TutorialsList extends Component {
                         <input
                             type="text"
                             className="form-control"
-                            placeholder="İndirim Ara"
+                            placeholder="Kullanıcı Ara"
                             value={searchTitle}
                             onChange={this.onChangeSearchTitle}
                         />
@@ -312,9 +526,9 @@ export default class TutorialsList extends Component {
                     <div>
                         {currentTutorial ? (
                             <div className="edit-form">
-                                <h4>İndirim</h4>
+                                <h4>Kullanıcılar</h4>
                                 <form>
-                                    <div className="form-group">
+                               {/*      <div className="form-group">
                                         <label htmlFor="indirimkodu">Indirim kodu</label>
                                         <input
                                             type="text"
@@ -368,7 +582,7 @@ export default class TutorialsList extends Component {
                                             value={currentTutorial.BitisTarihi}
                                             onChange={this.onChangeBitisTarihi}
                                         />
-                                    </div>
+                                    </div> */}
 
                                     <div className="form-group">
                                         <label>
