@@ -2,7 +2,7 @@ import axios from 'axios';
 import authHeader from './auth-header';
 import http from "./http-common-users";
 
-const API_URL = 'http://vipfal.herokuapp.com/api/test/';
+const API_URL = 'https://vipfal.herokuapp.com/api/test/';
 
 class UserService {
 
@@ -10,7 +10,7 @@ class UserService {
     const axios = require('axios');
     let config = {
       method: 'get',
-      url: 'http://vipfal.herokuapp.com/api/test/all',
+      url: 'https://vipfal.herokuapp.com/api/test/all',
       headers: {}
     };
     return axios(config);
@@ -25,7 +25,7 @@ class UserService {
   }
 
   Adminregister(username, email, password) {
-    return axios.post("http://localhost:8080/api/admin/adminekle", {
+    return axios.post("https://vipfal.herokuapp.com/api/admin/adminekle", {
       username,
       email,
       password
@@ -33,7 +33,7 @@ class UserService {
   }
 
   Modegister(username, email, password) {
-    return axios.post("http://localhost:8080/api/admin/modekle", {
+    return axios.post("https://vipfal.herokuapp.com/api/admin/modekle", {
 
       username,
       email,
@@ -42,7 +42,7 @@ class UserService {
   }
 
   Userregister(username, email, password) {
-    return axios.post("http://localhost:8080/api/admin/userekle", {
+    return axios.post("https://vipfal.herokuapp.com/api/admin/userekle", {
       username,
       email,
       password
@@ -67,7 +67,7 @@ class UserService {
     yediYirmidort,
     yorumlar,
     yorumsayisi) {
-    return axios.post("http://localhost:8080/api/admin/falciekle", {
+    return axios.post("https://vipfal.herokuapp.com/api/admin/falciekle", {
       username,
       email,
       password,

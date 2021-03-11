@@ -25,7 +25,7 @@ export default class TableList3 extends React.Component {
   }
 
 componentDidMount() {
-    axios.get('http://localhost:8080/api/falcirolesgetir')
+    axios.get('https://vipfal.herokuapp.com/api/falcirolesgetir')
     .then(res => {
         console.log(res);
         this.setState({ users: res.data })

@@ -91,7 +91,7 @@ export default class Register extends Component {
         password: this.state.password,      
     }
     console.log(userAdd)
-    axios.post('http://vipfal.herokuapp.com/api/admin/userekle', userAdd)
+    axios.post('https://vipfal.herokuapp.com/api/admin/userekle', userAdd)
     .then(res => { 
         console.log(res);
         this.setState({ redirect: this.state.redirect === false });
