@@ -119,7 +119,10 @@ export default class BurclarListesi extends Component {
         this.setState({
           message: "başarılı!"
         });
+        this.refreshList();
+
       })
+      
       .catch(e => {
         console.log(e);
       });

@@ -166,6 +166,8 @@ export default class TutorialsList extends Component {
         this.setState({
           message: "başarılı!"
         });
+        this.refreshList();
+
       })
       .catch(e => {
         console.log(e);

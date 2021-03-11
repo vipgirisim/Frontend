@@ -64,15 +64,7 @@ export default class Profile extends Component {
           
         </header>
         
-        <header className="jumbotron">
-          <h3>
-
-          <strong>Gelen Fallar </strong>
-
-          </h3>
-
-            <strong>fallar </strong>{" "}
-        </header>
+        
       
       </div>: null}
       </div>

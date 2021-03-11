@@ -117,6 +117,8 @@ export default class TutorialsList extends Component {
         this.setState({
           message: "başarılı!"
         });
+        this.refreshList();
+
       })
       .catch(e => {
         console.log(e);
@@ -161,6 +163,7 @@ export default class TutorialsList extends Component {
       currentTutorial: tutorial,
       currentIndex: index
     });
+ 
   }
 
   removeAllTutorials() {
