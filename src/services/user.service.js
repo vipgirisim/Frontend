@@ -119,7 +119,7 @@ class UserService {
   }
 
   findByTitle(username) {
-    return http.get(`/users?username=${username}`);
+    return http.get(`/kullaniciara?username=${username}`);
     //hata buradanmis indirimkodu yazmaklazimmis
   }
 
