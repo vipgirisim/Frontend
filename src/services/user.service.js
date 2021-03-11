@@ -94,24 +94,24 @@ class UserService {
 
 
   getAll() {
-    return http.get("/tumusergetir");
+    return http.get("/adminrolesgetir");
   }
 
   get(id) {
-    return http.get(`/users/${id}`);
+    return http.get(`/usergetir/${id}`);
   }
 
-  create(data) {
+ /*  create(data) {
     return http.post("/users", data);
-  }
+  } */
 
 
   update(id, data) {
-    return  http.post('/users/'+id,data);
+    return  http.post('/userupdate/'+id,data);
   }
  
   delete(id) {
-    return http.delete(`/users/${id}`);
+    return http.delete(`/usersil/${id}`);
   }
 
   deleteAll() {
