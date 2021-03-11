@@ -92,6 +92,9 @@ class UserService {
     });
   }
 
+  getAll() {
+    return http.get("/adminrolesgetir");
+  }
 
   getAdminAll() {
     return http.get("/adminrolesgetir");

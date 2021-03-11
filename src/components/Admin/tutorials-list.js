@@ -22,8 +22,6 @@ export default class TutorialsList extends Component {
       currentTutorial: {
         id: null,
         title: "",
-        description: "",
-        published: false
       },
       message: "",
       duyurus: [],
