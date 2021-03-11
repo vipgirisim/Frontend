@@ -252,7 +252,7 @@ export default class boardadmincomponent extends React.Component {
          
 
         </Grid>
-        <Grid container item xs={9} spacing={3} style={{ padding: 20 }}>
+        <Grid container item xs={9} spacing={1} style={{ padding: 20,paddingLeft:150 }}>
           <div id="page-content">
             {this.state.content}
           </div>

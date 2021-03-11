@@ -392,11 +392,11 @@ export default class TutorialsList extends Component {
         )
             .then(response => {
                 console.log(response.data);
-                
+                this.refreshList();
+
                 this.setState({
                     message: "başarılı!"
                 });
-                
             })
             .catch(e => {
                 console.log(e);
@@ -409,7 +409,7 @@ export default class TutorialsList extends Component {
                 console.log(response.data);
                 this.refreshList();
 
-                this.props.history.push('/discounts')
+                this.props.history.push('/adminlistesi')
             })
             .catch(e => {
                 console.log(e);
@@ -499,7 +499,7 @@ export default class TutorialsList extends Component {
                     </div>
                 </div>
                 <div className="col-md-6">
-                    <h4>Admin Listesi</h4>
+                    <h4>Kullanıcı Listesi</h4>
 
                     <ul className="list-group">
                         {users &&
@@ -517,7 +517,7 @@ export default class TutorialsList extends Component {
                             ))}
                     </ul>
 
-                     
+                    
                 </div>
                 <div className="col-md-6">
                     <div>
@@ -526,50 +526,181 @@ export default class TutorialsList extends Component {
                                 <h4>Kullanıcılar</h4>
                                 <form>
                                  <div className="form-group">
-                                        <label htmlFor="indirimkodu">Indirim kodu</label>
+                                        <label htmlFor="username">username</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="username"
+                                            value={currentTutorial.username}
+                                            onChange={this.onChangeusername}
+                                        />
+                                      </div>  
+                                    <div className="form-group">
+                                        <label htmlFor="email">email</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="email"
+                                            value={currentTutorial.email}
+                                            onChange={this.onChangeemail}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="email">password</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="password"
+                                            value={currentTutorial.password}
+                                            onChange={this.onChangepassword}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="email">email</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="email"
+                                            value={currentTutorial.email}
+                                            onChange={this.onChangeemail}
+                                        />
+                                    </div>
+
+
+                                    <div className="form-group">
+                                        <label htmlFor="yuzdeorani">iban</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="iban"
+                                            value={currentTutorial.iban}
+                                            onChange={this.onChangeiban}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="cuzdan">cuzdan</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="cuzdan"
+                                            value={currentTutorial.cuzdan}
+                                            onChange={this.onChangecuzdan}
+                                        />
+                                    </div>
+
+
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">falbilgisi</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="falbilgisi"
+                                            value={currentTutorial.falbilgisi}
+                                            onChange={this.onChangefalbilgisi}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">indirim kodu</label>
                                         <input
                                             type="text"
                                             className="form-control"
                                             id="indirimkodu"
                                             value={currentTutorial.indirimkodu}
-                                            onChange={this.onChangeTitle}
-                                        />
-                                      </div>  {/*
-                                    <div className="form-group">
-                                        <label htmlFor="kackisikullansin">kackisikullansin</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="kackisikullansin"
-                                            value={currentTutorial.kackisikullansin}
-                                            onChange={this.onChangeDescription}
+                                            onChange={this.onChangeindirimkodu}
                                         />
                                     </div>
 
-
-                                    <div className="form-group">
-                                        <label htmlFor="yuzdeorani">Yuzde orani</label>
+                                  {/*   <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">resimyolu</label>
                                         <input
                                             type="text"
                                             className="form-control"
-                                            id="yuzdeorani"
-                                            value={currentTutorial.yuzdeorani}
-                                            onChange={this.onChangeYuzdeorani}
+                                            id="resimyolu"
+                                            value={currentTutorial.resimyolu}
+                                            onChange={this.onChangeresimyolu}
                                         />
-                                    </div>
-
+                                    </div> */}
 
                                     <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">baslangic Tarihi</label>
+                                        <label htmlFor="baslangicTarihi">profil yazisi</label>
                                         <input
                                             type="text"
                                             className="form-control"
-                                            id="baslangicTarihi"
-                                            value={currentTutorial.baslangicTarihi}
-                                            onChange={this.onChangeBaslangicTarihi}
+                                            id="profilyazisi"
+                                            value={currentTutorial.profilyazisi}
+                                            onChange={this.onChangeprofilyazisi}
                                         />
                                     </div>
 
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">7/24</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="yediYirmidort"
+                                            value={currentTutorial.yediYirmidort}
+                                            onChange={this.onChangeyediYirmidort}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">baktigi Fal Ucreti</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="baktigiFalUcreti"
+                                            value={currentTutorial.baktigiFalUcreti}
+                                            onChange={this.onChangebaktigiFalUcreti}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">kazandigiKar</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="kazandigiKar"
+                                            value={currentTutorial.kazandigiKar}
+                                            onChange={this.onChangekazandigiKar}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">yazili Fal Fiyat</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="yaziliFalFiyat"
+                                            value={currentTutorial.yaziliFalFiyat}
+                                            onChange={this.onChangeyaziliFalFiyat}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">canli fal Fiyati</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="canlifalFiyati"
+                                            value={currentTutorial.canlifalFiyati}
+                                            onChange={this.onChangecanlifalFiyati}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">FalciRutbesi</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="FalciRutbesi"
+                                            value={currentTutorial.FalciRutbesi}
+                                            onChange={this.onChangeFalciRutbesi}
+                                        />
+                                    </div>
+                                    
+{/*
                                     <div className="form-group">
                                         <label htmlFor="BitisTarihi">Bitis Tarihi</label>
                                         <input
