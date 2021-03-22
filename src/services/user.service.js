@@ -48,47 +48,66 @@ class UserService {
       password
     });
   }
-
-  Falciregister(username, email, password, FalciRutbesi,
-    KahveFaliSayisi,
-    adminFalciyaYorumlari,
-    baktigiFalAdi,
-    baktigiFalUcreti,
-    baktigiFalid,
-    canlifalFiyati,
-    cuzdan,
-    falbilgisi,
-    iban,
-    indirimkodu,
-    kazandigiKar,
-    profilyazisi,
-    resimyolu,
-    yaziliFalFiyat,
-    yediYirmidort,
-    yorumlar,
-    yorumsayisi) {
-    return axios.post("https://vipfal.herokuapp.com/api/admin/falciekle", {
-      username,
+  /*
+             username, 
+              email, 
+              password, 
+              iban, 
+              phone, 
+              cuzdan, 
+              falbilgisi, 
+              indirimkodu, 
+              resimyolu, 
+              profilyazisi, 
+              yorumlar, 
+              yorumsayisi, 
+              yediYirmidort, 
+              baktigiFalid, 
+              baktigiFalAdi, 
+              baktigiFalUcreti, 
+              kazandigiKar, 
+              adminFalciyaYorumlari, 
+              yaziliFalFiyat, 
+              canlifalFiyati, 
+              FalciRutbesi, 
+              KahveFaliSayis, 
+              published: status
+  
+  */
+  Falciregister(
+    username ,
+    profilyazisi ,
+    email,
+    password ,
+    phone,
+    iban ,
+    FalciRutbesi ,
+    
+    yediYirmidort ,
+    falcirutbe ,
+    kazandigiKar ,
+    yaziliFalFiyat ,
+    canlifalFiyati ,
+    KahveFaliSayisi ,
+    baktigiFalAdi ,
+    baktigiFalUcreti , 
+  ) {
+    return axios.post("http://localhost:8080/api/admin/falciekle", {
+      username ,
+      profilyazisi ,
       email,
-      password,
-      FalciRutbesi,
-      KahveFaliSayisi,
-      adminFalciyaYorumlari,
-      baktigiFalAdi,
-      baktigiFalUcreti,
-      baktigiFalid,
-      canlifalFiyati,
-      cuzdan,
-      falbilgisi,
-      iban,
-      indirimkodu,
-      kazandigiKar,
-      profilyazisi,
-      resimyolu,
-      yaziliFalFiyat,
-      yediYirmidort,
-      yorumlar,
-      yorumsayisi
+      password ,
+      phone,
+      iban ,
+      FalciRutbesi ,
+      yediYirmidort ,
+      falcirutbe ,
+      kazandigiKar ,
+      yaziliFalFiyat ,
+      canlifalFiyati ,
+      KahveFaliSayisi ,
+      baktigiFalAdi ,
+      baktigiFalUcreti , 
     });
   }
   get(id) {
@@ -118,15 +137,15 @@ class UserService {
     return http.get(`/usergetir/${id}`);
   }
 
- /*  create(data) {
-    return http.post("/users", data);
-  } */
+  /*  create(data) {
+     return http.post("/users", data);
+   } */
 
 
   update(id, data) {
-    return  http.put('/userupdate/'+id,data);
+    return http.put('/userupdate/' + id, data);
   }
- 
+
   delete(id) {
     return http.delete(`/usersil/${id}`);
   }

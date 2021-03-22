@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UserDataService from "../../services/user.service";
 import { Link } from "react-router-dom";
+import Input from "react-validation/build/input";
 
 export default class TutorialsList extends Component {
     constructor(props) {
@@ -39,9 +40,8 @@ export default class TutorialsList extends Component {
         this.onChangecanlifalFiyati = this.onChangecanlifalFiyati.bind(this);
         this.onChangeFalciRutbesi = this.onChangeFalciRutbesi.bind(this);
         this.onChangeKahveFaliSayisi = this.onChangeKahveFaliSayisi.bind(this);
-
-
-
+        this.onChangePhone=this.onChangePhone.bind(this);
+        this.onChangeFalciYetkisi=this.onChangeFalciYetkisi.bind(this);
 
 
         this.getTutorial = this.getTutorial.bind(this);
@@ -57,11 +57,13 @@ export default class TutorialsList extends Component {
                 email: "",
                 password: "",
                 iban: "",
+                phone:"",
                 cuzdan: "",
                 falbilgisi: "",
                 indirimkodu: "",
                 resimyolu: "",
                 profilyazisi: "",
+                Falciyetkisi: "", 
                 yorumlar: "",
                 yorumsayisi: "",
                 yediYirmidort: "",
@@ -120,6 +122,21 @@ export default class TutorialsList extends Component {
             }
         }));
     }
+
+    onChangeFalciYetkisi(e) {
+        const Falciyetkisi = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                Falciyetkisi: Falciyetkisi
+            }
+        }));
+    }
+
+
+
+
     onChangeemail(e) {
         const email = e.target.value;
 
@@ -166,7 +183,7 @@ export default class TutorialsList extends Component {
         this.setState(prevState => ({
             currentTutorial: {
                 ...prevState.currentTutorial,
-                resimyolu: falbilgisi
+                falbilgisi: falbilgisi
             }
         }));
     }
@@ -321,6 +338,17 @@ export default class TutorialsList extends Component {
         }));
     }
 
+    onChangePhone(e) {
+        const phone = e.target.value;
+
+        this.setState(prevState => ({
+            currentTutorial: {
+                ...prevState.currentTutorial,
+                phone: phone
+            }
+        }));
+    }
+
 
 
 
@@ -340,16 +368,27 @@ export default class TutorialsList extends Component {
     updatePublished(status) {
         var data = {
             id: this.state.currentTutorial.id,
-            /* indirimkodu: this.state.currentTutorial.indirimkodu,
-            kackisikullansin: this.state.currentTutorial.kackisikullansin,
-            yuzdeorani: this.state.currentTutorial.yuzdeorani,
-            baslangicTarihi: this.state.currentTutorial.baslangicTarihi,
-            BitisTarihi: this.state.currentTutorial.BitisTarihi, */
+            /*   indirimkodu: "",
+                resimyolu: "",
+                profilyazisi: "",
+                yorumlar: "",
+                yorumsayisi: "",
+                yediYirmidort: "",
+                baktigiFalid: "",
+                baktigiFalAdi: "",
+                baktigiFalUcreti: "",
+                kazandigiKar: "",
+                adminFalciyaYorumlari: "",
+                yaziliFalFiyat: "",
+                canlifalFiyati: "",
+                FalciRutbesi: "",
+                KahveFaliSayisi: "", */
 
             username: this.state.username,
             email: this.state.email,
             password: this.state.password,
             iban: this.state.iban,
+            phone:this.state.phone,
             cuzdan: this.state.cuzdan,
             falbilgisi: this.state.falbilgisi,
             indirimkodu: this.state.indirimkodu,
@@ -366,6 +405,7 @@ export default class TutorialsList extends Component {
             yaziliFalFiyat: this.state.yaziliFalFiyat,
             canlifalFiyati: this.state.canlifalFiyati,
             FalciRutbesi: this.state.FalciRutbesi,
+            Falciyetkisi:this.state.Falciyetkisi,
             KahveFaliSayisi: this.state.KahveFaliSayisi,
             published: status
         };
@@ -535,6 +575,16 @@ export default class TutorialsList extends Component {
                                             onChange={this.onChangeusername}
                                         />
                                       </div>  
+                                      <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">profil yazisi</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="profilyazisi"
+                                            value= {currentTutorial.profilyazisi}
+                                            onChange={this.onChangeprofilyazisi}
+                                        />
+                                    </div>
                                     <div className="form-group">
                                         <label htmlFor="email">email</label>
                                         <input
@@ -555,18 +605,42 @@ export default class TutorialsList extends Component {
                                             onChange={this.onChangepassword}
                                         />
                                     </div>
+                                
+
                                     <div className="form-group">
-                                        <label htmlFor="email">email</label>
+                                        <label htmlFor="phone">Telefon</label>
                                         <input
                                             type="text"
                                             className="form-control"
-                                            id="email"
-                                            value={currentTutorial.email}
-                                            onChange={this.onChangeemail}
+                                            id="phone"
+                                            value= {currentTutorial.phone}
+                                            onChange={this.onChangePhone}
                                         />
                                     </div>
 
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">Falci Yetki</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="FalciRutbesi"
+                                            value="Falci Yetki"//{currentTutorial.FalciRutbesi}
+                                            onChange={this.onChangeFalciRutbesi}
+                                        />
+                                    </div>
 
+                                    <div className="form-group">
+                                        <label htmlFor="baslangicTarihi">Falci Rutbesi</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="FalciRutbesi"
+                                            value="FalciRutbesi"//{currentTutorial.FalciRutbesi}
+                                            onChange={this.onChangeFalciRutbesi}
+                                        />
+                                    </div>
+
+ 
                                     <div className="form-group">
                                         <label htmlFor="yuzdeorani">iban</label>
                                         <input
@@ -578,61 +652,6 @@ export default class TutorialsList extends Component {
                                         />
                                     </div>
 
-                                    <div className="form-group">
-                                        <label htmlFor="cuzdan">cuzdan</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="cuzdan"
-                                            value={currentTutorial.cuzdan}
-                                            onChange={this.onChangecuzdan}
-                                        />
-                                    </div>
-
-
-                                    <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">falbilgisi</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="falbilgisi"
-                                            value={currentTutorial.falbilgisi}
-                                            onChange={this.onChangefalbilgisi}
-                                        />
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">indirim kodu</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="indirimkodu"
-                                            value={currentTutorial.indirimkodu}
-                                            onChange={this.onChangeindirimkodu}
-                                        />
-                                    </div>
-
-                                  {/*   <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">resimyolu</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="resimyolu"
-                                            value={currentTutorial.resimyolu}
-                                            onChange={this.onChangeresimyolu}
-                                        />
-                                    </div> */}
-
-                                    <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">profil yazisi</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="profilyazisi"
-                                            value={currentTutorial.profilyazisi}
-                                            onChange={this.onChangeprofilyazisi}
-                                        />
-                                    </div>
 
                                     <div className="form-group">
                                         <label htmlFor="baslangicTarihi">7/24</label>
@@ -646,18 +665,7 @@ export default class TutorialsList extends Component {
                                     </div>
 
                                     <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">baktigi Fal Ucreti</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="baktigiFalUcreti"
-                                            value={currentTutorial.baktigiFalUcreti}
-                                            onChange={this.onChangebaktigiFalUcreti}
-                                        />
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">kazandigiKar</label>
+                                        <label htmlFor="baslangicTarihi">Kazanç Yüzdesi % cinsinden</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -668,7 +676,7 @@ export default class TutorialsList extends Component {
                                     </div>
 
                                     <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">yazili Fal Fiyat</label>
+                                        <label htmlFor="baslangicTarihi">yazili Fal Fiyat </label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -679,7 +687,7 @@ export default class TutorialsList extends Component {
                                     </div>
 
                                     <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">canli fal Fiyati</label>
+                                        <label htmlFor="baslangicTarihi">Canli fal Fiyati </label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -689,28 +697,21 @@ export default class TutorialsList extends Component {
                                         />
                                     </div>
 
+
+                                    
                                     <div className="form-group">
-                                        <label htmlFor="baslangicTarihi">FalciRutbesi</label>
+                                        <label htmlFor="baslangicTarihi">Kahve Fali Sayisi </label>
                                         <input
                                             type="text"
                                             className="form-control"
-                                            id="FalciRutbesi"
-                                            value={currentTutorial.FalciRutbesi}
-                                            onChange={this.onChangeFalciRutbesi}
+                                            id="KahveFaliSayisi"
+                                            value={currentTutorial.KahveFaliSayisi}
+                                            onChange={this.onChangeKahveFaliSayisi}
                                         />
                                     </div>
-                                    
-{/*
-                                    <div className="form-group">
-                                        <label htmlFor="BitisTarihi">Bitis Tarihi</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="BitisTarihi"
-                                            value={currentTutorial.BitisTarihi}
-                                            onChange={this.onChangeBitisTarihi}
-                                        />
-                                    </div> */}
+   
+
+                 
 
                                     <div className="form-group">
                                         <label>
@@ -755,7 +756,7 @@ export default class TutorialsList extends Component {
                         ) : (
                             <div>
                                 <br />
-                                <p>Lütfen İndirim Adına tıkla</p>
+                                <p>Lütfen Falcı Adına tıkla</p>
                             </div>
                         )}
                     </div>

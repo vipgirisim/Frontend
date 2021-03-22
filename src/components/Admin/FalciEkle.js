@@ -45,27 +45,7 @@ const vpassword = value => {
     );
   }
 };
-/*
-FalciRutbesi
-KahveFaliSayisi
-adminFalciyaYorumlari
-baktigiFalAdi
-baktigiFalUcreti
-baktigiFalid
-canlifalFiyati
-cuzdan
-falbilgisi
-iban
-indirimkodu
-kazandigiKar
-profilyazisi
-resimyolu
-yaziliFalFiyat
-yediYirmidort
-yorumlar
-yorumsayisi 
-
-*/
+ 
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -91,33 +71,44 @@ export default class Register extends Component {
     this.onChangeyediYirmidort = this.onChangeyediYirmidort.bind(this);
     this.onChangeyorumlar = this.onChangeyorumlar.bind(this);
     this.onChangeyorumsayisi = this.onChangeyorumsayisi.bind(this);
+    this.onChangePhone=this.onChangePhone.bind(this);
+    this.onChangeFalciYetkisi=this.onChangeFalciYetkisi.bind(this);
+
 
     this.state = {
       username: "",
+      profilyazisi: "",
       email: "",
       password: "",
+      phone:"",
+      iban: "",
+      FalciRutbesi: "", // falci rütbesi diğeri eksik yetkilendirmesi havuz falcısımı vs 
+      yediYirmidort: "", 
+      Falciyetkisi: "", 
+      kazandigiKar: "",
+      yaziliFalFiyat: "",
+      canlifalFiyati: "",
+      KahveFaliSayisi: "", 
+      baktigiFalAdi: "",
+      baktigiFalUcreti: "", 
+   //   resimyolu: "",
+
+
       successful: false,
       message: "",
-      FalciRutbesi: "",
-      KahveFaliSayisi: "",
-      adminFalciyaYorumlari: "",
-      baktigiFalAdi: "",
-      baktigiFalUcreti: "",
-      baktigiFalid: "",
-      canlifalFiyati: "",
-      cuzdan: "",
-      falbilgisi: "",
-      iban: "",
-      indirimkodu: "",
-      kazandigiKar: "",
-      profilyazisi: "",
-      resimyolu: "",
-      yaziliFalFiyat: "",
-      yediYirmidort: "",
-      yorumlar: "",
-      yorumsayisi: ""
     };
   }
+
+
+
+  onChangeFalciYetkisi(e) {
+    this.setState({
+      Falciyetkisi: e.target.value
+    });
+  }
+
+
+
 
   onChangeUsername(e) {
     this.setState({
@@ -228,6 +219,13 @@ export default class Register extends Component {
   });
 } 
 
+onChangePhone(e) {
+  this.setState({
+    phone: e.target.value
+  });
+} 
+
+
   handleRegister(e) {
     e.preventDefault();
 
@@ -241,26 +239,20 @@ export default class Register extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.Falciregister(
         this.state.username,
-        this.state.email,
-        this.state.password, 
-        this.state.FalciRutbesi,
-        this.state.KahveFaliSayisi,
-        this.state.adminFalciyaYorumlari,
-        this.state.baktigiFalAdi,
-        this.state.baktigiFalUcreti,
-        this.state.baktigiFalid,
-        this.state.canlifalFiyati,
-        this.state.cuzdan,
-        this.state.falbilgisi,
-        this.state.iban,
-        this.state.indirimkodu,
-        this.state.kazandigiKar,
         this.state.profilyazisi,
-        this.state.resimyolu,
-        this.state.yaziliFalFiyat,
+        this.state.email,
+        this.state.password,
+        this.state.phone,
+        this.state.iban,
+        this.state.FalciRutbesi,
         this.state.yediYirmidort,
-        this.state.yorumlar,
-        this.state.yorumsayisi,
+        this.state.falcirutbe,
+        this.state.kazandigiKar,
+        this.state.yaziliFalFiyat,
+        this.state.canlifalFiyati,
+        this.state.KahveFaliSayisi,
+        this.state.baktigiFalAdi,
+        this.state.baktigiFalUcreti 
       ).then(
         response => {
           this.setState({
@@ -318,6 +310,17 @@ export default class Register extends Component {
                 </div>
 
                 <div className="form-group">
+                  <label htmlFor="password">Profil Yazisi</label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="profilyazisi"
+                    value={this.state.profilyazisi}
+                    onChange={this.onChangeprofilyazisi}
+                   />
+                </div>
+
+                <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <Input
                     type="text"
@@ -342,13 +345,112 @@ export default class Register extends Component {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="falcirutbesi">Rutbe</label>
+                  <label htmlFor="phone">Telefon</label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="phone"
+                    value={this.state.phone}
+                    onChange={this.onChangePhone}
+                   />
+                </div>
+
+               
+
+                <div className="form-group">
+                  <label htmlFor="falcirutbesi">Falci Rutbesi</label>
                   <Input
                     type="text"
                     className="form-control"
                     name="FalciRutbesi"
                     value={this.state.FalciRutbesi}
                     onChange={this.onChangeFalciRutbesi}
+                    
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="falcirutbesi">iban</label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="iban"
+                    value={this.state.iban}
+                    onChange={this.onChangeiban}
+                    
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="falcirutbesi">7/24</label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="yediYirmidort"
+                    value={this.state.yediYirmidort}
+                    onChange={this.onChangeyediYirmidort}
+                    
+                  />
+                </div>
+
+                
+
+                <div className="form-group">
+                  <label htmlFor="falcirutbesi">Falcı Yetki</label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="FalciYetkisi"
+                    value={this.state.FalciYetkisi}
+                    onChange={this.onChangeFalciYetkisi}
+                    
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="falcirutbesi">Kazanç Yüzdesi</label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="kazandigiKar"
+                    value={this.state.kazandigiKar}
+                    onChange={this.onChangekazandigiKar}
+                    
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="falcirutbesi">Yazılı Kahve Falı </label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="yaziliFalFiyat"
+                    value={this.state.yaziliFalFiyat}
+                    onChange={this.onChangeyaziliFalFiyat}
+                    
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="falcirutbesi">Canlı Kahve Falı </label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="canlifalFiyati"
+                    value={this.state.canlifalFiyati}
+                    onChange={this.onChangecanlifalFiyati}
+                    
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="falcirutbesi">Kahve Falı Sayısı</label>
+                  <Input
+                    type="text"
+                    className="form-control"
+                    name="KahveFaliSayisi"
+                    value={this.state.KahveFaliSayisi}
+                    onChange={this.onChangeKahveFaliSayisi}
                     
                   />
                 </div>
@@ -385,3 +487,7 @@ export default class Register extends Component {
     );
   }
 }
+/*
+  Falcı eklerken falcı fotosu, 
+ 
+*/
