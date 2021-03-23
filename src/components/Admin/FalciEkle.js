@@ -45,7 +45,7 @@ const vpassword = value => {
     );
   }
 };
- 
+
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -71,8 +71,8 @@ export default class Register extends Component {
     this.onChangeyediYirmidort = this.onChangeyediYirmidort.bind(this);
     this.onChangeyorumlar = this.onChangeyorumlar.bind(this);
     this.onChangeyorumsayisi = this.onChangeyorumsayisi.bind(this);
-    this.onChangePhone=this.onChangePhone.bind(this);
-    this.onChangeFalciYetkisi=this.onChangeFalciYetkisi.bind(this);
+    this.onChangePhone = this.onChangePhone.bind(this);
+    this.onChangeFalciYetkisi = this.onChangeFalciYetkisi.bind(this);
 
 
     this.state = {
@@ -80,18 +80,18 @@ export default class Register extends Component {
       profilyazisi: "",
       email: "",
       password: "",
-      phone:"",
+      phone: "",
       iban: "",
-      FalciRutbesi: "-",
-      yediYirmidort: "", 
-      Falciyetkisi: "", 
+      FalciRutbesi: "Yetki Seçilmedi",
+      yediYirmidort: "",
+      Falciyetkisi: "",
       kazandigiKar: "",
       yaziliFalFiyat: "",
       canlifalFiyati: "",
-      KahveFaliSayisi: "", 
+      KahveFaliSayisi: "",
       baktigiFalAdi: "",
-      baktigiFalUcreti: "", 
-   //   resimyolu: "",
+      baktigiFalUcreti: "",
+      //   resimyolu: "",
 
 
       successful: false,
@@ -124,163 +124,264 @@ export default class Register extends Component {
 
   onChangePassword(e) {
     this.setState({
-      password:e.target.value
+      password: e.target.value
     });
   }
 
- onChangeFalciRutbesi(e) {
-  this.setState({
-    //FalciRutbesi: e.target.value
-    FalciRutbesi: e.target.value
-  });
-}  
- onChangeKahveFaliSayisi(e) {
-  this.setState({
-    KahveFaliSayisi: e.target.value
-  });
-}  
- onChangeadminFalciyaYorumlari(e) {
-  this.setState({
-    adminFalciyaYorumlari: e.target.value
-  });
-} 
- onChangebaktigiFalAdi(e) {
-  this.setState({
-    baktigiFalAdi: e.target.value
-  });
-}
- onChangebaktigiFalUcreti(e) {
-  this.setState({
-    baktigiFalUcreti: e.target.value
-  });
-} 
- onChangebaktigiFalid(e) {
-  this.setState({
-    baktigiFalid: e.target.value
-  });
-}  
- onChangecanlifalFiyati(e) {
-  this.setState({
-    canlifalFiyati: e.target.value
-  });
-} 
- onChangecuzdan(e) {
-  this.setState({
-    cuzdan: e.target.value
-  });
-} 
- onChangefalbilgisi(e) {
-  this.setState({
-    falbilgisi: e.target.value
-  });
-} 
- onChangeiban(e) {
-  this.setState({
-    iban: e.target.value
-  });
-} 
- onChangeindirimkodu(e) {
-  this.setState({
-    indirimkodu: e.target.value
-  });
-}  
- onChangekazandigiKar(e) {
-  this.setState({
-    kazandigiKar: e.target.value
-  });
-} 
- onChangeprofilyazisi(e) {
-  this.setState({
-    profilyazisi: e.target.value
-  });
-}  
- onChangeresimyolu(e) {
-  this.setState({
-    resimyolu: e.target.value
-  });
-}  
- onChangeyaziliFalFiyat(e) {
-  this.setState({
-    yaziliFalFiyat: e.target.value
-  });
-} 
- onChangeyediYirmidort(e) {
-  this.setState({
-    yediYirmidort: e.target.value
-  });
-} 
- onChangeyorumlar(e) {
-  this.setState({
-    yorumlar: e.target.value
-  });
-}  
- onChangeyorumsayisi(e) {
-  this.setState({
-    yorumsayisi: e.target.value
-  });
-} 
+  onChangeFalciRutbesi(e) {
+    this.setState({
+      FalciRutbesi: e.target.value
+    });
+  }
+  onChangeKahveFaliSayisi(e) {
+    this.setState({
+      KahveFaliSayisi: e.target.value
+    });
+  }
+  onChangeadminFalciyaYorumlari(e) {
+    this.setState({
+      adminFalciyaYorumlari: e.target.value
+    });
+  }
+  onChangebaktigiFalAdi(e) {
+    this.setState({
+      baktigiFalAdi: e.target.value
+    });
+  }
+  onChangebaktigiFalUcreti(e) {
+    this.setState({
+      baktigiFalUcreti: e.target.value
+    });
+  }
+  onChangebaktigiFalid(e) {
+    this.setState({
+      baktigiFalid: e.target.value
+    });
+  }
+  onChangecanlifalFiyati(e) {
+    this.setState({
+      canlifalFiyati: e.target.value
+    });
+  }
+  onChangecuzdan(e) {
+    this.setState({
+      cuzdan: e.target.value
+    });
+  }
+  onChangefalbilgisi(e) {
+    this.setState({
+      falbilgisi: e.target.value
+    });
+  }
+  onChangeiban(e) {
+    this.setState({
+      iban: e.target.value
+    });
+  }
+  onChangeindirimkodu(e) {
+    this.setState({
+      indirimkodu: e.target.value
+    });
+  }
+  onChangekazandigiKar(e) {
+    this.setState({
+      kazandigiKar: e.target.value
+    });
+  }
+  onChangeprofilyazisi(e) {
+    this.setState({
+      profilyazisi: e.target.value
+    });
+  }
+  onChangeresimyolu(e) {
+    this.setState({
+      resimyolu: e.target.value
+    });
+  }
+  onChangeyaziliFalFiyat(e) {
+    this.setState({
+      yaziliFalFiyat: e.target.value
+    });
+  }
+  onChangeyediYirmidort(e) {
+    this.setState({
+      yediYirmidort: e.target.value
+    });
+  }
+  onChangeyorumlar(e) {
+    this.setState({
+      yorumlar: e.target.value
+    });
+  }
+  onChangeyorumsayisi(e) {
+    this.setState({
+      yorumsayisi: e.target.value
+    });
+  }
 
-onChangePhone(e) {
-  this.setState({
-    phone: e.target.value
-  });
-} 
+  onChangePhone(e) {
+    this.setState({
+      phone: e.target.value
+    });
+  }
 
 
   handleRegister(e) {
     e.preventDefault();
-    alert('FalciRutbesi: ' + this.state.FalciRutbesi);
+    //alert('FalciRutbesi: ' + this.state.FalciRutbesi);
     this.setState({
       message: "",
       successful: false,
-      //FalciRutbesi:e.FalciRutbesi.value
     });
 
     //this.form.validateAll();
 
 
     if (this.checkBtn.context._errors.length === 0) {
-      AuthService.Falciregister(
-        this.state.username,
-        this.state.profilyazisi,
-        this.state.email,
-        this.state.password,
-        this.state.phone,
-        this.state.iban,
-        this.state.FalciRutbesi,
-        this.state.yediYirmidort,
-        this.state.falcirutbe,
-        this.state.kazandigiKar,
-        this.state.yaziliFalFiyat,
-        this.state.canlifalFiyati,
-        this.state.KahveFaliSayisi,
-        this.state.baktigiFalAdi,
-        this.state.baktigiFalUcreti 
-      ).then(
-        response => {
-          this.setState({
-            message: response.data.message,
-            successful: true
-          });
-        },
-        error => {
-          const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
+     
+      if (this.state.FalciRutbesi == "Havuz Falcisi") 
+      {
 
-          this.setState({
-            successful: false,
-            message: resMessage
-          });
-        }
-      );
+        AuthService.HavuzFalciregister(
+          this.state.username,
+          this.state.profilyazisi,
+          this.state.email,
+          this.state.password,
+          this.state.phone,
+          this.state.iban,
+          this.state.FalciRutbesi,
+          this.state.yediYirmidort,
+          this.state.falcirutbe,
+          this.state.kazandigiKar,
+          this.state.yaziliFalFiyat,
+          this.state.canlifalFiyati,
+          this.state.KahveFaliSayisi,
+          this.state.baktigiFalAdi,
+          this.state.baktigiFalUcreti
+        ).then(
+          response => {
+            this.setState({
+              message: response.data.message,
+              successful: true
+            });
+          },
+          error => {
+            const resMessage =
+              (error.response &&
+                error.response.data &&
+                error.response.data.message) ||
+              error.message ||
+              error.toString();
+
+            this.setState({
+              successful: false,
+              message: resMessage
+            });
+          }
+        );
+
+
+
+
+       }
+     
+      if (this.state.FalciRutbesi == "Yönetici Falcı") { 
+
+        AuthService.YoneticiFalciregister(
+          this.state.username,
+          this.state.profilyazisi,
+          this.state.email,
+          this.state.password,
+          this.state.phone,
+          this.state.iban,
+          this.state.FalciRutbesi,
+          this.state.yediYirmidort,
+          this.state.falcirutbe,
+          this.state.kazandigiKar,
+          this.state.yaziliFalFiyat,
+          this.state.canlifalFiyati,
+          this.state.KahveFaliSayisi,
+          this.state.baktigiFalAdi,
+          this.state.baktigiFalUcreti
+        ).then(
+          response => {
+            this.setState({
+              message: response.data.message,
+              successful: true
+            });
+          },
+          error => {
+            const resMessage =
+              (error.response &&
+                error.response.data &&
+                error.response.data.message) ||
+              error.message ||
+              error.toString();
+
+            this.setState({
+              successful: false,
+              message: resMessage
+            });
+          }
+        );
+
+
+
+
+
+
+
+      }
+      //falci
+
+      if (this.state.FalciRutbesi == "falci") {
+        AuthService.Falciregister(
+          this.state.username,
+          this.state.profilyazisi,
+          this.state.email,
+          this.state.password,
+          this.state.phone,
+          this.state.iban,
+          this.state.FalciRutbesi,
+          this.state.yediYirmidort,
+          this.state.falcirutbe,
+          this.state.kazandigiKar,
+          this.state.yaziliFalFiyat,
+          this.state.canlifalFiyati,
+          this.state.KahveFaliSayisi,
+          this.state.baktigiFalAdi,
+          this.state.baktigiFalUcreti
+        ).then(
+          response => {
+            this.setState({
+              message: response.data.message,
+              successful: true
+            });
+          },
+          error => {
+            const resMessage =
+              (error.response &&
+                error.response.data &&
+                error.response.data.message) ||
+              error.message ||
+              error.toString();
+
+            this.setState({
+              successful: false,
+              message: resMessage
+            });
+          }
+        );
+
+
+      }
+
+
     }
-  
-  
-  
+
+
+
+
   }
 
   render() {
@@ -297,8 +398,8 @@ onChangePhone(e) {
 
           <Form
             onSubmit={this.handleRegister}
-           // ref={c => {
-            //  this.form = c;
+          // ref={c => {
+          //  this.form = c;
           //  }}
           >
             {!this.state.successful && (
@@ -323,7 +424,7 @@ onChangePhone(e) {
                     name="profilyazisi"
                     value={this.state.profilyazisi}
                     onChange={this.onChangeprofilyazisi}
-                   />
+                  />
                 </div>
 
                 <div className="form-group">
@@ -358,13 +459,13 @@ onChangePhone(e) {
                     name="phone"
                     value={this.state.phone}
                     onChange={this.onChangePhone}
-                   />
+                  />
                 </div>
 
-               
+
 
                 <div className="form-group">
-              
+
                   {/* <Input
                     type="text"
                     className="form-control"
@@ -374,12 +475,13 @@ onChangePhone(e) {
                     
                   /> */}
 
-          <label htmlFor="falcirutbesi">Falci Rutbesi Seçin :
+                  <label htmlFor="falcirutbesi">Falci Rutbesi Seçin :
            <select value={this.state.FalciRutbesi} onChange={this.onChangeFalciRutbesi}>
-            <option value="HavuzFalcisi">Havuz Falcı</option>
-            <option value="YoneticiFalci">Yönetici Falcı</option> 
-          </select>
-        </label>
+                      <option value="falci">Havuz Falcı</option>
+                      <option value="Havuz Falcisi">Havuz Falcı</option>
+                      <option value="Yonetici Falci">Yönetici Falcı</option>
+                    </select>
+                  </label>
                 </div>
 
                 <div className="form-group">
@@ -390,7 +492,7 @@ onChangePhone(e) {
                     name="iban"
                     value={this.state.iban}
                     onChange={this.onChangeiban}
-                    
+
                   />
                 </div>
 
@@ -402,11 +504,11 @@ onChangePhone(e) {
                     name="yediYirmidort"
                     value={this.state.yediYirmidort}
                     onChange={this.onChangeyediYirmidort}
-                    
+
                   />
                 </div>
 
-                
+
 
                 <div className="form-group">
                   <label htmlFor="FalciYetkisi">Falcı Yetki</label>
@@ -416,7 +518,7 @@ onChangePhone(e) {
                     name="FalciYetkisi"
                     value={this.state.FalciYetkisi}
                     onChange={this.onChangeFalciYetkisi}
-                    
+
                   />
                 </div>
 
@@ -428,7 +530,7 @@ onChangePhone(e) {
                     name="kazandigiKar"
                     value={this.state.kazandigiKar}
                     onChange={this.onChangekazandigiKar}
-                    
+
                   />
                 </div>
 
@@ -440,7 +542,7 @@ onChangePhone(e) {
                     name="yaziliFalFiyat"
                     value={this.state.yaziliFalFiyat}
                     onChange={this.onChangeyaziliFalFiyat}
-                    
+
                   />
                 </div>
 
@@ -452,7 +554,7 @@ onChangePhone(e) {
                     name="canlifalFiyati"
                     value={this.state.canlifalFiyati}
                     onChange={this.onChangecanlifalFiyati}
-                    
+
                   />
                 </div>
 
@@ -464,13 +566,13 @@ onChangePhone(e) {
                     name="KahveFaliSayisi"
                     value={this.state.KahveFaliSayisi}
                     onChange={this.onChangeKahveFaliSayisi}
-                    
+
                   />
                 </div>
 
                 <div className="form-group">
-                 {/*  <button className="btn btn-primary btn-block">Kayıt</button> */}
-                 <input type="submit" value="Gönder" />
+                  {/*  <button className="btn btn-primary btn-block">Kayıt</button> */}
+                  <input type="submit" value="Gönder" />
                 </div>
               </div>
             )}
@@ -502,6 +604,6 @@ onChangePhone(e) {
   }
 }
 /*
-  Falcı eklerken falcı fotosu, 
- 
+  Falcı eklerken falcı fotosu,
+
 */
