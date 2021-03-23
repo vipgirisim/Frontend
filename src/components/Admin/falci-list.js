@@ -624,7 +624,7 @@ export default class TutorialsList extends Component {
                                             type="text"
                                             className="form-control"
                                             id="FalciRutbesi"
-                                            value="Falci Yetki"//{currentTutorial.FalciRutbesi}
+                                            value= {currentTutorial.FalciRutbesi}
                                             onChange={this.onChangeFalciRutbesi}
                                         />
                                     </div>

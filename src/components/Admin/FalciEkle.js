@@ -82,7 +82,7 @@ export default class Register extends Component {
       password: "",
       phone:"",
       iban: "",
-      FalciRutbesi: "", // falci rütbesi diğeri eksik yetkilendirmesi havuz falcısımı vs 
+      FalciRutbesi: "-",
       yediYirmidort: "", 
       Falciyetkisi: "", 
       kazandigiKar: "",
@@ -124,12 +124,13 @@ export default class Register extends Component {
 
   onChangePassword(e) {
     this.setState({
-      password: e.target.value
+      password:e.target.value
     });
   }
 
  onChangeFalciRutbesi(e) {
   this.setState({
+    //FalciRutbesi: e.target.value
     FalciRutbesi: e.target.value
   });
 }  
@@ -228,13 +229,15 @@ onChangePhone(e) {
 
   handleRegister(e) {
     e.preventDefault();
-
+    alert('FalciRutbesi: ' + this.state.FalciRutbesi);
     this.setState({
       message: "",
-      successful: false
+      successful: false,
+      //FalciRutbesi:e.FalciRutbesi.value
     });
 
-    this.form.validateAll();
+    //this.form.validateAll();
+
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.Falciregister(
@@ -275,6 +278,9 @@ onChangePhone(e) {
         }
       );
     }
+  
+  
+  
   }
 
   render() {
@@ -291,9 +297,9 @@ onChangePhone(e) {
 
           <Form
             onSubmit={this.handleRegister}
-            ref={c => {
-              this.form = c;
-            }}
+           // ref={c => {
+            //  this.form = c;
+          //  }}
           >
             {!this.state.successful && (
               <div>
@@ -358,19 +364,26 @@ onChangePhone(e) {
                
 
                 <div className="form-group">
-                  <label htmlFor="falcirutbesi">Falci Rutbesi</label>
-                  <Input
+              
+                  {/* <Input
                     type="text"
                     className="form-control"
                     name="FalciRutbesi"
                     value={this.state.FalciRutbesi}
                     onChange={this.onChangeFalciRutbesi}
                     
-                  />
+                  /> */}
+
+          <label htmlFor="falcirutbesi">Falci Rutbesi Seçin :
+           <select value={this.state.FalciRutbesi} onChange={this.onChangeFalciRutbesi}>
+            <option value="HavuzFalcisi">Havuz Falcı</option>
+            <option value="YoneticiFalci">Yönetici Falcı</option> 
+          </select>
+        </label>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="falcirutbesi">iban</label>
+                  <label htmlFor="iban">iban</label>
                   <Input
                     type="text"
                     className="form-control"
@@ -382,7 +395,7 @@ onChangePhone(e) {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="falcirutbesi">7/24</label>
+                  <label htmlFor="yediyirmidort">7/24</label>
                   <Input
                     type="text"
                     className="form-control"
@@ -396,7 +409,7 @@ onChangePhone(e) {
                 
 
                 <div className="form-group">
-                  <label htmlFor="falcirutbesi">Falcı Yetki</label>
+                  <label htmlFor="FalciYetkisi">Falcı Yetki</label>
                   <Input
                     type="text"
                     className="form-control"
@@ -420,7 +433,7 @@ onChangePhone(e) {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="falcirutbesi">Yazılı Kahve Falı </label>
+                  <label htmlFor="yaziliFalFiyat">Yazılı Kahve Falı </label>
                   <Input
                     type="text"
                     className="form-control"
@@ -432,7 +445,7 @@ onChangePhone(e) {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="falcirutbesi">Canlı Kahve Falı </label>
+                  <label htmlFor="canlifalFiyati">Canlı Kahve Falı </label>
                   <Input
                     type="text"
                     className="form-control"
@@ -444,7 +457,7 @@ onChangePhone(e) {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="falcirutbesi">Kahve Falı Sayısı</label>
+                  <label htmlFor="KahveFaliSayisi">Kahve Falı Sayısı</label>
                   <Input
                     type="text"
                     className="form-control"
@@ -456,7 +469,8 @@ onChangePhone(e) {
                 </div>
 
                 <div className="form-group">
-                  <button className="btn btn-primary btn-block">Kayıt</button>
+                 {/*  <button className="btn btn-primary btn-block">Kayıt</button> */}
+                 <input type="submit" value="Gönder" />
                 </div>
               </div>
             )}

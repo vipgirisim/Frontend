@@ -48,32 +48,7 @@ class UserService {
       password
     });
   }
-  /*
-             username, 
-              email, 
-              password, 
-              iban, 
-              phone, 
-              cuzdan, 
-              falbilgisi, 
-              indirimkodu, 
-              resimyolu, 
-              profilyazisi, 
-              yorumlar, 
-              yorumsayisi, 
-              yediYirmidort, 
-              baktigiFalid, 
-              baktigiFalAdi, 
-              baktigiFalUcreti, 
-              kazandigiKar, 
-              adminFalciyaYorumlari, 
-              yaziliFalFiyat, 
-              canlifalFiyati, 
-              FalciRutbesi, 
-              KahveFaliSayis, 
-              published: status
-  
-  */
+ 
   Falciregister(
     username ,
     profilyazisi ,
@@ -93,6 +68,80 @@ class UserService {
     baktigiFalUcreti , 
   ) {
     return axios.post("http://localhost:8080/api/admin/falciekle", {
+      username ,
+      profilyazisi ,
+      email,
+      password ,
+      phone,
+      iban ,
+      FalciRutbesi ,
+      yediYirmidort ,
+      falcirutbe ,
+      kazandigiKar ,
+      yaziliFalFiyat ,
+      canlifalFiyati ,
+      KahveFaliSayisi ,
+      baktigiFalAdi ,
+      baktigiFalUcreti , 
+    });
+  }
+
+  HavuzFalciregister(
+    username ,
+    profilyazisi ,
+    email,
+    password ,
+    phone,
+    iban ,
+    FalciRutbesi ,
+    
+    yediYirmidort ,
+    falcirutbe ,
+    kazandigiKar ,
+    yaziliFalFiyat ,
+    canlifalFiyati ,
+    KahveFaliSayisi ,
+    baktigiFalAdi ,
+    baktigiFalUcreti , 
+  ) {
+    return axios.post("http://localhost:8080/api/admin/havuzfalciekle", {
+      username ,
+      profilyazisi ,
+      email,
+      password ,
+      phone,
+      iban ,
+      FalciRutbesi ,
+      yediYirmidort ,
+      falcirutbe ,
+      kazandigiKar ,
+      yaziliFalFiyat ,
+      canlifalFiyati ,
+      KahveFaliSayisi ,
+      baktigiFalAdi ,
+      baktigiFalUcreti , 
+    });
+  }
+
+  YoneticiFalciregister(
+    username ,
+    profilyazisi ,
+    email,
+    password ,
+    phone,
+    iban ,
+    FalciRutbesi ,
+    
+    yediYirmidort ,
+    falcirutbe ,
+    kazandigiKar ,
+    yaziliFalFiyat ,
+    canlifalFiyati ,
+    KahveFaliSayisi ,
+    baktigiFalAdi ,
+    baktigiFalUcreti , 
+  ) {
+    return axios.post("http://localhost:8080/api/admin/Yoneticifalciekle", {
       username ,
       profilyazisi ,
       email,
