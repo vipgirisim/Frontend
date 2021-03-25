@@ -59,9 +59,14 @@ export default class Profile extends Component {
         {this.state.user!=null?<div>
             <div> <strong>id  :</strong>{this.state.user.id}</div>
             <div> <strong>Adı Soyadı        :</strong>{this.state.user.username}</div>
+            <div> <strong>Email :</strong>{this.state.user.email}</div>
+            <div> <strong>Telefon          : </strong>{this.state.user.phone}</div>
             <div> <strong>Profil Yazısı :</strong>{this.state.user.profilyazisi}</div>
-            <div> <strong>7/24          :</strong>{this.state.user.yediYirmidort}</div>
+            <div> <strong>Online Durumu 7/24          : </strong>{this.state.user.yediYirmidort}</div>
+            <div> <strong>İban           : </strong>{this.state.user.iban}</div>
             <div> <strong>Canlı Fal Fiyatı          :</strong>{this.state.user.canlifalFiyati}</div>
+            <div> <strong>Falci Rutbesi          :</strong>{this.state.user.FalciRutbesi}</div>
+            <div> <strong>Falci falciyetkisi          :</strong>{this.state.user.falciyetkisi}</div> 
 
 
            </div>: <div></div>}
