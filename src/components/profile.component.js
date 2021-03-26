@@ -66,9 +66,9 @@ export default class Profile extends Component {
             <div> <strong>İban           : </strong>{this.state.user.iban}</div>
             <div> <strong>Canlı Fal Fiyatı          :</strong>{this.state.user.canlifalFiyati}</div>
             <div> <strong>Falci Rutbesi          :</strong>{this.state.user.FalciRutbesi}</div>
-            <div> <strong>Falci falciyetkisi          :</strong>{this.state.user.falciyetkisi}</div> 
-
-
+            <div> <strong>Falci Yetkisi          :</strong>{this.state.user.falciyetkisi}</div> 
+            <div> <strong>  Canlı Fal Fiyatı         :</strong>{this.state.user.canlifalFiyati}</div> 
+     
            </div>: <div></div>}
         <strong>Yetkilendirme:</strong>
         {/* baktığı falları ve daha önce bakılan fallarla ilgili üyelerin
@@ -86,6 +86,8 @@ export default class Profile extends Component {
           <strong>yorumlar</strong>{" "}
           
         </header>
+
+        
         
         
       
@@ -94,3 +96,4 @@ export default class Profile extends Component {
     );
   }
 }
+//./node_modules/.bin/web-push generate-vapid-keys
