@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import AuthService from "../services/auth.service";
 import axios from 'axios';
+import { Input } from "@material-ui/core";
+import { Button } from "reactstrap";
 export default class Profile extends Component {
   constructor(props) {
     super(props);
@@ -58,16 +60,20 @@ export default class Profile extends Component {
         </p>
         {this.state.user!=null?<div>
             <div> <strong>id  :</strong>{this.state.user.id}</div>
-            <div> <strong>Adı Soyadı        :</strong>{this.state.user.username}</div>
+            <div> <strong>Adı Soyadı        :</strong></div><Input value={this.state.user.username}></Input>
             <div> <strong>Email :</strong>{this.state.user.email}</div>
             <div> <strong>Telefon          : </strong>{this.state.user.phone}</div>
-            <div> <strong>Profil Yazısı :</strong>{this.state.user.profilyazisi}</div>
-            <div> <strong>Online Durumu 7/24          : </strong>{this.state.user.yediYirmidort}</div>
+            <div> <strong>Profil Yazısı :</strong></div><Input value={this.state.user.profilyazisi}/>
+            <div> <strong>Online Durumu 7/24          : </strong></div><Input value={this.state.user.yediYirmidort}/>
             <div> <strong>İban           : </strong>{this.state.user.iban}</div>
-            <div> <strong>Canlı Fal Fiyatı          :</strong>{this.state.user.canlifalFiyati}</div>
-            <div> <strong>Falci Rutbesi          :</strong>{this.state.user.FalciRutbesi}</div>
-            <div> <strong>Falci Yetkisi          :</strong>{this.state.user.falciyetkisi}</div> 
+            <div> <strong>Canlı Fal Fiyatı          :</strong> {this.state.user.canlifalFiyati}</div>
+            <div> <strong>Rütbe          :</strong>{this.state.user.FalciRutbesi}</div>
+            <div> <strong>Yetki          :</strong>{this.state.user.falciyetkisi}</div> 
             <div> <strong>  Canlı Fal Fiyatı         :</strong>{this.state.user.canlifalFiyati}</div> 
+            <div> <strong>  Yazılı Fal Fiyatı         :</strong>{this.state.user.yazilifalFiyati}</div> 
+            <div> <strong> Cüzdan / Kredi        :</strong>{this.state.user.cuzdan}</div> 
+            <Button title="Guncelle">Güncelle</Button>
+
      
            </div>: <div></div>}
         <strong>Yetkilendirme:</strong>
