@@ -4,6 +4,8 @@ import AuthService from "../services/auth.service";
 import axios from 'axios';
 import { Input } from "@material-ui/core";
 import { Button } from "reactstrap";
+import FileUploadScreen from "../../src/components/Admin/resimyukle"
+
 export default class Profile extends Component {
   constructor(props) {
     super(props);
@@ -59,6 +61,7 @@ export default class Profile extends Component {
           {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
         </p>
         {this.state.user!=null?<div>
+          <FileUploadScreen/>
             <div> <strong>id  :</strong>{this.state.user.id}</div>
             <div> <strong>Adı Soyadı        :</strong></div><Input value={this.state.user.username}></Input>
             <div> <strong>Email :</strong>{this.state.user.email}</div>
@@ -86,6 +89,17 @@ export default class Profile extends Component {
         <header className="jumbotron">
           <h3>
 
+          <strong>Bildirimler </strong>
+
+          </h3>
+          <strong>Bildirimler</strong>{" "}
+          
+        </header>
+
+
+        <header className="jumbotron">
+          <h3>
+
           <strong>Gelen Yorumlar </strong>
 
           </h3>
@@ -93,7 +107,17 @@ export default class Profile extends Component {
           
         </header>
 
-        
+        <header className="jumbotron">
+          <h3>
+
+          <strong>Gelen Fallar </strong>
+
+          </h3>
+          <strong>Fallar</strong>{" "}
+          
+        </header>
+
+       
         
         
       
